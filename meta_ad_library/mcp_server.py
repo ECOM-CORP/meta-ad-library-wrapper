@@ -43,6 +43,11 @@ _HOST = os.environ.get("MCP_HOST", "127.0.0.1")
 _PORT = int(os.environ.get("MCP_PORT", "8765"))
 _TOKEN = os.environ.get("MCP_TOKEN", "").strip()
 _PATH = f"/{_TOKEN}" if _TOKEN else "/mcp"
+# MCP_OAUTH=1 turns on an auto-approving OAuth layer (no users) so claude.ai's web
+# connector — which requires OAuth — can connect. MCP_PUBLIC_URL is the externally
+# visible base (e.g. https://metamcp.example.com) used in the OAuth metadata.
+_OAUTH = os.environ.get("MCP_OAUTH", "0").strip().lower() in ("1", "true", "yes")
+_PUBLIC_URL = os.environ.get("MCP_PUBLIC_URL", f"http://{_HOST}:{_PORT}").rstrip("/")
 
 _ACTIVE = {"all": "all", "true": "active", "false": "inactive"}
 
@@ -59,9 +64,24 @@ _INSTRUCTIONS = (
     "until `done` is true or there is no `next_cursor`."
 )
 
+_auth_kwargs: dict = {}
+if _OAUTH:
+    from mcp.server.auth.settings import AuthSettings, ClientRegistrationOptions
+
+    from .oauth import AutoApproveOAuthProvider
+
+    _auth_kwargs = {
+        "auth_server_provider": AutoApproveOAuthProvider(),
+        "auth": AuthSettings(
+            issuer_url=_PUBLIC_URL,
+            resource_server_url=_PUBLIC_URL + _PATH,
+            client_registration_options=ClientRegistrationOptions(enabled=True),
+        ),
+    }
+
 mcp = FastMCP(
     "meta-ad-library", host=_HOST, port=_PORT, streamable_http_path=_PATH,
-    instructions=_INSTRUCTIONS,
+    instructions=_INSTRUCTIONS, **_auth_kwargs,
 )
 
 _client: AdLibraryClient | None = None

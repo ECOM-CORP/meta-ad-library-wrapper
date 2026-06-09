@@ -11,6 +11,8 @@ services:
     restart: unless-stopped
     environment:
       MCP_TOKEN: "${MCP_TOKEN:?set MCP_TOKEN in .env}"
+      MCP_OAUTH: "1"            # auto-approve OAuth so claude.ai's web connector works
+      MCP_PUBLIC_URL: "${MCP_PUBLIC_URL:?set MCP_PUBLIC_URL in .env (e.g. https://metamcp.example.com)}"
     ports:
       - "127.0.0.1:8765:8765"   # localhost only; your reverse proxy fronts it
     volumes:

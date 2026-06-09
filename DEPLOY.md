@@ -4,10 +4,19 @@ The MCP server (Streamable HTTP) is the only thing that needs to be public — i
 the library in-process, so the FastAPI REST API is **not** involved and does **not** need
 to be exposed. The Docker image runs `run_mcp.py` only.
 
-## Auth: secret-in-URL
+## Auth
 
-The endpoint is `…/<MCP_TOKEN>`. Requests to any other path return 404, so only a
-caller who knows the full URL gets in (a "capability URL"). Always serve it over HTTPS.
+Two layers, both gated by your secret URL:
+
+- **Secret-in-URL** — the endpoint is `…/<MCP_TOKEN>`; any other path 404s, so only a
+  caller who knows the full URL gets in (a "capability URL"). Always serve over HTTPS.
+- **Auto-approve OAuth** (`MCP_OAUTH=1`, on by default in the compose) — claude.ai's web
+  connector *requires* OAuth, so the server runs a tiny OAuth layer that **auto-approves**
+  (no users, no login). It exists only to satisfy Claude's connector flow; real access is
+  still the secret URL. This needs `MCP_PUBLIC_URL` set to your public base (e.g.
+  `https://metamcp.example.com`) so the OAuth metadata advertises the right URLs.
+  Clients that don't need OAuth (Claude Code, the API) also work — they just complete the
+  auto-approve handshake.
 
 ## 1. Build & run (behind your existing Apache/nginx)
 
@@ -21,6 +30,8 @@ cd meta-ad-library-wrapper
 cp .env.example .env
 # set MCP_TOKEN to a long random value:
 python3 -c "import secrets; print('MCP_TOKEN='+secrets.token_urlsafe(32))" >> .env
+# then edit .env and set MCP_PUBLIC_URL to your subdomain, e.g.
+#   MCP_PUBLIC_URL=https://metamcp.yourdomain.com
 docker compose up -d --build
 ```
 
