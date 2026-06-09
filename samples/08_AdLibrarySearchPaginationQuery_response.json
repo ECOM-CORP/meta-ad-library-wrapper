@@ -1,0 +1,1051 @@
+{
+  "data": {
+    "ad_library_main": {
+      "search_results_connection": {
+        "edges": [
+          {
+            "node": {
+              "collated_results": [
+                {
+                  "ad_archive_id": "1919476165634766",
+                  "collation_count": 3,
+                  "collation_id": "2010825052654849",
+                  "is_active": false,
+                  "page_id": "637755466089763",
+                  "page_is_deleted": false,
+                  "snapshot": {
+                    "branded_content": null,
+                    "page_id": "637755466089763",
+                    "page_is_deleted": false,
+                    "page_profile_uri": "https://www.facebook.com/61576004169645/",
+                    "root_reshared_post": null,
+                    "byline": null,
+                    "disclaimer_label": null,
+                    "page_name": "Био Сила",
+                    "page_profile_picture_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/571275851_24980209534978128_935023537940177773_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=103&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=EvHK8qA8oigQ7kNvwF8kYuv&_nc_oc=AdoOc67OzIKetgNfBYJjvahgOwKCVVAg3WL1EqZM3eN-i5n2uzBdBRSWTCsK80HjEk4&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=dUJojv0FcLPWdGjmD9G4ew&_nc_ss=7b289&oh=00_Af9gX9EcmjMiiGYE7HvzFTeKgzhZBHncjuO4T_UvuAPCQw&oe=6A2D8718",
+                    "event": null,
+                    "caption": "biosila.bg",
+                    "cta_text": "Order now",
+                    "cards": [],
+                    "body": {
+                      "text": "Чувстваш се подпухнала и напрегната през деня?\n\nАшвагандата се използва от векове за понижаване на стреса и кортизола – хормона, който причинява умора, тревожност и лимфен застой.\n\nСъздадохме формула с ашваганда специално за жени, които искат да се чувстват по-леки, спокойни и тонизирани – без мозъчна мъгла и подуване.\n\n🧘‍♀️ Намалява нивата на кортизол и стрес\n💧 Стимулира лимфния дренаж и намалява подпухналостта\n😴 Подобрява съня и възстановяването\n\nПровери ефекта сама като поръчаш от тук:\nhttps://biosila.bg/products/ashwagandha-extract"
+                    },
+                    "cta_type": "ORDER_NOW",
+                    "display_format": "IMAGE",
+                    "link_description": "Чувстваш се подпухнала и напрегната през деня?\n\nАшвагандата се използва от векове за понижаване на стреса и кортизола – хормона, който причинява умора, тревожност ...",
+                    "link_url": "https://biosila.bg/products/ashwagandha-extract",
+                    "images": [
+                      {
+                        "image_crops": [],
+                        "original_image_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/571651550_671543619083259_3546516866293847465_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=YKpZ16EE_lcQ7kNvwEky5sF&_nc_oc=Ado07gIS2-2zTA7hFGC8Qvsh1Giy2eigYibY-HzbPgct_mqSIUyCWvHTXjd4GXk_J9w&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=dUJojv0FcLPWdGjmD9G4ew&_nc_ss=7b289&oh=00_Af-I4jC-nW5yAhkHNx6NAyn3CiXFsljqdLgHNp0kJ_GmnQ&oe=6A2DB355",
+                        "resized_image_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/571229524_1480569989872844_4177366924464489461_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=101&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=PNBb816ZGe0Q7kNvwEL4R6m&_nc_oc=Adr_Vt3w5lWqCIeMQyDP1hpBnsR2win_UekGqyK66RXPInninE748AskXaG2J9qd-5U&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=dUJojv0FcLPWdGjmD9G4ew&_nc_ss=7b289&oh=00_Af_VAeBSByYaLjHnKbOVxtJFX9x9du2Y3UWDebBVwglwRQ&oe=6A2DADEC",
+                        "watermarked_resized_image_url": ""
+                      }
+                    ],
+                    "page_categories": [
+                      "Nutrition"
+                    ],
+                    "page_like_count": 200,
+                    "title": "Край на лимфния застой",
+                    "videos": [],
+                    "is_reshared": false,
+                    "extra_links": [],
+                    "extra_texts": [],
+                    "extra_images": [],
+                    "extra_videos": [],
+                    "country_iso_code": null,
+                    "brazil_tax_id": null,
+                    "additional_info": null,
+                    "ec_certificates": []
+                  },
+                  "has_user_reported": false,
+                  "report_count": null,
+                  "menu_items": [],
+                  "state_media_run_label": null,
+                  "page_name": "Био Сила",
+                  "impressions_with_index": {
+                    "impressions_text": null,
+                    "impressions_index": -1
+                  },
+                  "gated_type": "ELIGIBLE",
+                  "categories": [
+                    "UNKNOWN"
+                  ],
+                  "is_aaa_eligible": true,
+                  "contains_digital_created_media": false,
+                  "reach_estimate": null,
+                  "currency": "",
+                  "spend": null,
+                  "end_date": 1768636800,
+                  "publisher_platform": [
+                    "FACEBOOK",
+                    "INSTAGRAM",
+                    "AUDIENCE_NETWORK",
+                    "MESSENGER",
+                    "THREADS"
+                  ],
+                  "start_date": 1761721200,
+                  "contains_sensitive_content": false,
+                  "total_active_time": null,
+                  "regional_regulation_data": {
+                    "finserv": {
+                      "is_deemed_finserv": false,
+                      "is_limited_delivery": false
+                    },
+                    "tw_anti_scam": {
+                      "is_limited_delivery": false
+                    }
+                  },
+                  "hide_data_status": "NONE",
+                  "fev_info": null,
+                  "ad_id": null,
+                  "targeted_or_reached_countries": []
+                }
+              ],
+              "__typename": "CollatedSearchResults"
+            },
+            "cursor": null
+          },
+          {
+            "node": {
+              "collated_results": [
+                {
+                  "ad_archive_id": "1464356481216507",
+                  "collation_count": 1,
+                  "collation_id": "1435497051201716",
+                  "is_active": true,
+                  "page_id": "904870626052390",
+                  "page_is_deleted": false,
+                  "snapshot": {
+                    "branded_content": null,
+                    "page_id": "904870626052390",
+                    "page_is_deleted": false,
+                    "page_profile_uri": "https://www.facebook.com/61587568200772/",
+                    "root_reshared_post": null,
+                    "byline": null,
+                    "disclaimer_label": null,
+                    "page_name": "Кажи Чао на Ишиаса",
+                    "page_profile_picture_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/677179413_2017440475860874_6523713024335531039_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=105&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=ebnwHN1HgVcQ7kNvwFH16gZ&_nc_oc=AdrUy1YiJ141BG_T5uB8VyHjN7gfaACHKDnZax_HcEtdgrIHZ26ju6RIMGmEDu9tyGc&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=dUJojv0FcLPWdGjmD9G4ew&_nc_ss=7b289&oh=00_Af_BUbSijbnmqnpT3tHMVd2yAM4rqJPlPLKZP6PVg7QxCQ&oe=6A2DB12B",
+                    "event": null,
+                    "caption": "biosila.bg",
+                    "cta_text": "Learn more",
+                    "cards": [],
+                    "body": {
+                      "text": "Не става дума за маскиране на болката. Става дума за възстановяване на седалищния нерв — по естествен път, от самия корен.\n\nНе исках да споделям опита си, защото е много лично.\n\nНо знам, че много хора страдат от същото… и се чувстват така, сякаш страдат в мълчание.\n\nБаща ми се бори с болки в седалищния нерв от години.\n\nВ началото беше случайна скованост и леко изтръпване в краката. Но с времето стана по-зле.\n\nПрисвиваше се от болка, когато ставаше от леглото. Охкаше, само за да си завърже обувките.\n\nНакрая спря да идва на семейни събирания. Всички го гледахме как се отказва, и не можехме да направим нищо.\n\nЕдна сутрин всичко се промени.\n\nСтана прекалено рязко, кракът му се подкоси, сякаш вече не беше част от тялото му. Закарахме го в спешното, ужасени, че е получил инсулт.\n\nЛекарите направиха изследвания.\n\nЗа щастие не беше инсулт — но ни казаха нещо, което ни накара да потърсим помощ за него.\n\nСедалищният му нерв „гладуваше\". Точно тази дума използваха.\n\nКазаха, че няма достатъчно кръвоснабдяване, за да поддържа нерва здрав. И че ако не направим нещо бързо, може да доведе до трайно увреждане.\n\nОпитахме всичко.\n\nПравиха му стероидни инжекции. Физиотерапия. Болкоуспокояващи, от които му се виеше свят и му ставаше лошо. Лумбална опора за дивана.\n\nНищо не помогна.\n\nБолката продължаваше да се разпространява. Не можеше дори да седне без болка, камо ли да спи през нощта.\n\nА най-лошото беше, че започна да вярва, че това просто е „животът му отсега нататък\".\n\nТогава, късно една вечер, попаднах на видео във Facebook. Лекар говореше за ишиаса по начин, по който никога не бях чувала преди. Каза, че болкоуспокояващите и операциите просто успокояват симптомите…\n\n…но истинската причина при много хора е нещо вътрешно.\n\nВитаминен дефицит, който блокира кръвотока и предизвиква възпаление.\n\nТози израз ме порази. Беше точно това, което лекарите бяха казали на баща ми.\n\nЛекарят дори каза, че има смес от естествени хранителни вещества, която може да помогне за възстановяването на самия нерв — без операция и без лекарства.\n\nПоръчахме добавката, която спомена — SciatiHeal© — и се молихме да помогне.\n\nВ рамките на една седмица баща ми ставаше от леглото без помощ.\n\nКачвеше се по стълбите във входа, без да има нужда от парапета. До третата седмица се разхождаше из кухнята, сякаш нищо не беше се случвало.\n\nБез парене. Без изтръпване в стъпалата.\n\nОттогава всичко се промени.\n\nСпи по-добре. Ходи повече.\n\nДори отново играе на топка с внуците — нещо, за което всички мислеха, че никога повече няма да прави.\n\nНикога не бях виждала децата ми толкова развълнувани.\n\nИстинското възстановяване най-после започна… и всичко тръгна от правилните хранителни вещества.\n\nПродуктът се казва SciatiHeal©.\n\nФормулиран е от лекари и е изграден около нещо, наречено „триадата за възстановяване на нервите\".\n\nТова означава, че действа целенасочено срещу възпалението, мускулното напрежение и белезите от тъканта — трите неща, които карат болката в седалищния нерв да се връща отново и отново.\n\nНяма да го намерите в магазините. Предлага се само директно от компанията онлайн, което помага цената да остане ниска и формулата — чиста.\n\nАко вие или някой, когото обичате, се бори с болки в седалищния нерв — не чакайте.\n\nМожете да опитате SciatiHeal© напълно без риск за 180 дни.\n\nАко не ви помогне да се почувствате по-добре, получавате парите си обратно\n\nМиналия уикенд баща ми ходи с нас в парка повече от час.\n\nВ един момент се огледа и каза: „Чувствам се така, сякаш отново съм част от света.\"\n\nТози момент е врязан в сърцето ми.\n\nАко се борите с болката… надявам се и вие да получите вашия момент.\n\nМожете да го поръчате от тук👇."
+                    },
+                    "cta_type": "LEARN_MORE",
+                    "display_format": "IMAGE",
+                    "link_description": "BioSila",
+                    "link_url": "https://biosila.bg/pages/sciati-advertorial-1",
+                    "images": [
+                      {
+                        "image_crops": [],
+                        "original_image_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/675302642_1500553828299688_3031736750085851049_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=oYHARMYXAgkQ7kNvwG6efmP&_nc_oc=AdoZBEA6Fo3pY3LT-0c6hvo9ALEJoj4mlQdS3_b-9Kf2gx38Wyb9gOTLzfyS9yKozrc&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=dUJojv0FcLPWdGjmD9G4ew&_nc_ss=7b289&oh=00_Af-n6fEBZbXqj7NL5l6_5AV2Ir4TVlo8J4DvgBA13MkKpQ&oe=6A2D87BB",
+                        "resized_image_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/673503937_4312877928954092_941654036369836090_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=110&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=ErAX3dAaMYUQ7kNvwGmf4rF&_nc_oc=AdpRxzxYZGOFZf639XpV8PGMCzxdlrbCU5BerVF7AUCEy_oHMvqOycdjvIeTCNPZ2rs&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=dUJojv0FcLPWdGjmD9G4ew&_nc_ss=7b289&oh=00_Af-Bz5W63_N8DCQJtgmoaHrGFSsx5HP6Iwz_55GDstNFpw&oe=6A2D9D7E",
+                        "watermarked_resized_image_url": ""
+                      }
+                    ],
+                    "page_categories": [
+                      "Health & wellness website"
+                    ],
+                    "page_like_count": 95,
+                    "title": "№1 Витамин срещу Ишиас?",
+                    "videos": [],
+                    "is_reshared": false,
+                    "extra_links": [],
+                    "extra_texts": [],
+                    "extra_images": [],
+                    "extra_videos": [],
+                    "country_iso_code": null,
+                    "brazil_tax_id": null,
+                    "additional_info": null,
+                    "ec_certificates": []
+                  },
+                  "has_user_reported": false,
+                  "report_count": null,
+                  "menu_items": [],
+                  "state_media_run_label": null,
+                  "page_name": "Кажи Чао на Ишиаса",
+                  "impressions_with_index": {
+                    "impressions_text": null,
+                    "impressions_index": -1
+                  },
+                  "gated_type": "ELIGIBLE",
+                  "categories": [
+                    "UNKNOWN"
+                  ],
+                  "is_aaa_eligible": true,
+                  "contains_digital_created_media": false,
+                  "reach_estimate": null,
+                  "currency": "",
+                  "spend": null,
+                  "end_date": 1780642800,
+                  "publisher_platform": [
+                    "FACEBOOK",
+                    "INSTAGRAM",
+                    "AUDIENCE_NETWORK",
+                    "MESSENGER",
+                    "THREADS"
+                  ],
+                  "start_date": 1776582000,
+                  "contains_sensitive_content": false,
+                  "total_active_time": null,
+                  "regional_regulation_data": {
+                    "finserv": {
+                      "is_deemed_finserv": false,
+                      "is_limited_delivery": false
+                    },
+                    "tw_anti_scam": {
+                      "is_limited_delivery": false
+                    }
+                  },
+                  "hide_data_status": "NONE",
+                  "fev_info": null,
+                  "ad_id": null,
+                  "targeted_or_reached_countries": []
+                }
+              ],
+              "__typename": "CollatedSearchResults"
+            },
+            "cursor": null
+          },
+          {
+            "node": {
+              "collated_results": [
+                {
+                  "ad_archive_id": "26155053810769629",
+                  "collation_count": 1,
+                  "collation_id": "949863500805787",
+                  "is_active": false,
+                  "page_id": "904870626052390",
+                  "page_is_deleted": false,
+                  "snapshot": {
+                    "branded_content": null,
+                    "page_id": "904870626052390",
+                    "page_is_deleted": false,
+                    "page_profile_uri": "https://www.facebook.com/61587568200772/",
+                    "root_reshared_post": null,
+                    "byline": null,
+                    "disclaimer_label": null,
+                    "page_name": "Кажи Чао на Ишиаса",
+                    "page_profile_picture_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/640928737_1536733327433967_1783190674938701370_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=101&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=pzl2qpJ9cm0Q7kNvwEFrl0k&_nc_oc=AdoLz49SZcB81nD_xFdt-2Rt9ImJc6Hf18eVsirvxiNzOopMObkBgsDWASu_zqh-Bro&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=dUJojv0FcLPWdGjmD9G4ew&_nc_ss=7b289&oh=00_Af-9rOWMgJdRrKFVQVmCql8eO0vM5ZIBbz6bmQCkU1wF-w&oe=6A2DB3D1",
+                    "event": null,
+                    "caption": "biosila.bg",
+                    "cta_text": "Learn more",
+                    "cards": [],
+                    "body": {
+                      "text": "Не става дума за маскиране на болката. Става дума за възстановяване на седалищния нерв — по естествен път, от самия корен.\n\nНе исках да споделям опита си, защото е много лично.\n\nНо знам, че много хора страдат от същото… и се чувстват така, сякаш страдат в мълчание.\n\nБаща ми се бори с болки в седалищния нерв от години.\n\nВ началото беше случайна скованост и леко изтръпване в краката. Но с времето стана по-зле.\n\nПрисвиваше се от болка, когато ставаше от леглото. Охкаше, само за да си завърже обувките.\n\nНакрая спря да идва на семейни събирания. Всички го гледахме как се отказва, и не можехме да направим нищо.\n\nЕдна сутрин всичко се промени.\n\nСтана прекалено рязко, кракът му се подкоси, сякаш вече не беше част от тялото му. Закарахме го в спешното, ужасени, че е получил инсулт.\n\nЛекарите направиха изследвания.\n\nЗа щастие не беше инсулт — но ни казаха нещо, което ни накара да потърсим помощ за него.\n\nСедалищният му нерв „гладуваше\". Точно тази дума използваха.\n\nКазаха, че няма достатъчно кръвоснабдяване, за да поддържа нерва здрав. И че ако не направим нещо бързо, може да доведе до трайно увреждане.\n\nОпитахме всичко.\n\nПравиха му стероидни инжекции. Физиотерапия. Болкоуспокояващи, от които му се виеше свят и му ставаше лошо. Лумбална опора за дивана.\n\nНищо не помогна.\n\nБолката продължаваше да се разпространява. Не можеше дори да седне без болка, камо ли да спи през нощта.\n\nА най-лошото беше, че започна да вярва, че това просто е „животът му отсега нататък\".\n\nТогава, късно една вечер, попаднах на видео във Facebook. Лекар говореше за ишиаса по начин, по който никога не бях чувала преди. Каза, че болкоуспокояващите и операциите просто успокояват симптомите…\n\n…но истинската причина при много хора е нещо вътрешно.\n\nВитаминен дефицит, който блокира кръвотока и предизвиква възпаление.\n\nТози израз ме порази. Беше точно това, което лекарите бяха казали на баща ми.\n\nЛекарят дори каза, че има смес от естествени хранителни вещества, която може да помогне за възстановяването на самия нерв — без операция и без лекарства.\n\nПоръчахме добавката, която спомена — SciatiHeal© — и се молихме да помогне.\n\nВ рамките на една седмица баща ми ставаше от леглото без помощ.\n\nКачвеше се по стълбите във входа, без да има нужда от парапета. До третата седмица се разхождаше из кухнята, сякаш нищо не беше се случвало.\n\nБез парене. Без изтръпване в стъпалата.\n\nОттогава всичко се промени.\n\nСпи по-добре. Ходи повече.\n\nДори отново играе на топка с внуците — нещо, за което всички мислеха, че никога повече няма да прави.\n\nНикога не бях виждала децата ми толкова развълнувани.\n\nИстинското възстановяване най-после започна… и всичко тръгна от правилните хранителни вещества.\n\nПродуктът се казва SciatiHeal©.\n\nФормулиран е от лекари и е изграден около нещо, наречено „триадата за възстановяване на нервите\".\n\nТова означава, че действа целенасочено срещу възпалението, мускулното напрежение и белезите от тъканта — трите неща, които карат болката в седалищния нерв да се връща отново и отново.\n\nНяма да го намерите в магазините. Предлага се само директно от компанията онлайн, което помага цената да остане ниска и формулата — чиста.\n\nАко вие или някой, когото обичате, се бори с болки в седалищния нерв — не чакайте.\n\nМожете да опитате SciatiHeal© напълно без риск за 180 дни.\n\nАко не ви помогне да се почувствате по-добре, получавате парите си обратно\n\nМиналия уикенд баща ми ходи с нас в парка повече от час.\n\nВ един момент се огледа и каза: „Чувствам се така, сякаш отново съм част от света.\"\n\nТози момент е врязан в сърцето ми.\n\nАко се борите с болката… надявам се и вие да получите вашия момент.\n\nМожете да го поръчате от тук👇."
+                    },
+                    "cta_type": "LEARN_MORE",
+                    "display_format": "IMAGE",
+                    "link_description": "BioSila",
+                    "link_url": "https://biosila.bg/pages/sciati-advertorial-1",
+                    "images": [
+                      {
+                        "image_crops": [],
+                        "original_image_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/641351631_1676301310397772_3817101653147231121_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=OrPz_7Y6uGUQ7kNvwENiHnY&_nc_oc=AdqhL9M2lSGux5Kf2Mw968LxFPvQOUruhApoavDDkfixVJuTKYxxYhkIkDmnxpIh7WY&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=dUJojv0FcLPWdGjmD9G4ew&_nc_ss=7b289&oh=00_Af-gyHAeQrhZjwm-tB8Dif4QuEutB7OAYoo4Yna4BT3vnw&oe=6A2D9953",
+                        "resized_image_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/641634430_1255448239862908_7132239417790145892_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=107&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=UMhDNlSj2QoQ7kNvwG4d-g-&_nc_oc=AdppuMKc187eX9r8qJca6XqbpTN4MdgGo2zpdLwpV__sL0oQ6zhz88tE1h-34n6qDTM&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=dUJojv0FcLPWdGjmD9G4ew&_nc_ss=7b289&oh=00_Af_iDkdYbJTKpcwvclEPOmzgBGiSNjDzV7H4NF8J2fv4qg&oe=6A2D8EBF",
+                        "watermarked_resized_image_url": ""
+                      }
+                    ],
+                    "page_categories": [
+                      "Health & wellness website"
+                    ],
+                    "page_like_count": 95,
+                    "title": "№1 Витамин срещу Ишиас?",
+                    "videos": [],
+                    "is_reshared": false,
+                    "extra_links": [],
+                    "extra_texts": [],
+                    "extra_images": [],
+                    "extra_videos": [],
+                    "country_iso_code": null,
+                    "brazil_tax_id": null,
+                    "additional_info": null,
+                    "ec_certificates": []
+                  },
+                  "has_user_reported": false,
+                  "report_count": null,
+                  "menu_items": [],
+                  "state_media_run_label": null,
+                  "page_name": "Кажи Чао на Ишиаса",
+                  "impressions_with_index": {
+                    "impressions_text": null,
+                    "impressions_index": -1
+                  },
+                  "gated_type": "ELIGIBLE",
+                  "categories": [
+                    "UNKNOWN"
+                  ],
+                  "is_aaa_eligible": true,
+                  "contains_digital_created_media": false,
+                  "reach_estimate": null,
+                  "currency": "",
+                  "spend": null,
+                  "end_date": 1773385200,
+                  "publisher_platform": [
+                    "FACEBOOK",
+                    "INSTAGRAM",
+                    "AUDIENCE_NETWORK",
+                    "MESSENGER",
+                    "THREADS"
+                  ],
+                  "start_date": 1771833600,
+                  "contains_sensitive_content": false,
+                  "total_active_time": null,
+                  "regional_regulation_data": {
+                    "finserv": {
+                      "is_deemed_finserv": false,
+                      "is_limited_delivery": false
+                    },
+                    "tw_anti_scam": {
+                      "is_limited_delivery": false
+                    }
+                  },
+                  "hide_data_status": "NONE",
+                  "fev_info": null,
+                  "ad_id": null,
+                  "targeted_or_reached_countries": []
+                }
+              ],
+              "__typename": "CollatedSearchResults"
+            },
+            "cursor": null
+          },
+          {
+            "node": {
+              "collated_results": [
+                {
+                  "ad_archive_id": "730664253010566",
+                  "collation_count": 2,
+                  "collation_id": "763475409970265",
+                  "is_active": false,
+                  "page_id": "637755466089763",
+                  "page_is_deleted": false,
+                  "snapshot": {
+                    "branded_content": null,
+                    "page_id": "637755466089763",
+                    "page_is_deleted": false,
+                    "page_profile_uri": "https://www.facebook.com/61576004169645/",
+                    "root_reshared_post": null,
+                    "byline": null,
+                    "disclaimer_label": null,
+                    "page_name": "Био Сила",
+                    "page_profile_picture_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/520264957_1420640668985769_279000105251137064_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=101&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=WZDpzw9Mkr8Q7kNvwGvkVPB&_nc_oc=AdpwEsWUE2fgRhyLQFriICaQNpqOxjsKgH6i5_lbmmprmpUJNzC4My2W_EcT0KgfwnM&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=dUJojv0FcLPWdGjmD9G4ew&_nc_ss=7b289&oh=00_Af-4e3GFh2Depu1a3uwlUCj1o4mQeKDc8NR-dKFjN48QOw&oe=6A2DA3A2",
+                    "event": null,
+                    "caption": "biosila.bg",
+                    "cta_text": "Order now",
+                    "cards": [],
+                    "body": {
+                      "text": "🌿 Изпитай натуралната енергия на Шилажит! 🌿\n\n✅ Повишава енергийните нива по естествен начин\n✅ Подобрява концентрация\n✅ Подобрява физическата издръжливост и представяне\n✅ Съдържа над 85 минера, нужни за човешкото тяло\n✅ Тестван в лаборатория. Сертификат за качество и безопастност.\n\nhttps://biosila.bg/products/shilajit"
+                    },
+                    "cta_type": "ORDER_NOW",
+                    "display_format": "IMAGE",
+                    "link_description": "Хималайският шилажит на Bio Sila под формите на желирани бонбони е най-новия хит на пазара за хранителни добавки!",
+                    "link_url": "https://biosila.bg/products/shilajit",
+                    "images": [
+                      {
+                        "image_crops": [],
+                        "original_image_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/520618264_2482838352096908_2879723380752157015_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=iuZN3Xy4T6gQ7kNvwGksRt6&_nc_oc=AdqJ3CvOYoIt0aeDgDqpH42aneHCxDx083Ak5K1LmgBx6BCqJL0uG84CbZjcVRwrayM&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=dUJojv0FcLPWdGjmD9G4ew&_nc_ss=7b289&oh=00_Af_DW9PXtZNtMP8tESfve7AjJchkj4FNfphY25rbuPdlog&oe=6A2D9C01",
+                        "resized_image_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/521317953_1333138241759218_869769737384469657_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=106&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=neraAsVul-0Q7kNvwElXPXF&_nc_oc=AdrK2q6rgF6YG9TTkFFF0hOtNCR32JPFVOwtU9RLvEoxT0mPbJDuUaacvGWTd3fPLFU&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=dUJojv0FcLPWdGjmD9G4ew&_nc_ss=7b289&oh=00_Af95be5yLxvFvmhR3yyg8SumSY77o4TQwa-QarnGjwM7qw&oe=6A2DAC09",
+                        "watermarked_resized_image_url": ""
+                      }
+                    ],
+                    "page_categories": [
+                      "Nutrition"
+                    ],
+                    "page_like_count": 200,
+                    "title": "Натурален хималайски шилажит",
+                    "videos": [],
+                    "is_reshared": false,
+                    "extra_links": [],
+                    "extra_texts": [],
+                    "extra_images": [],
+                    "extra_videos": [],
+                    "country_iso_code": null,
+                    "brazil_tax_id": null,
+                    "additional_info": null,
+                    "ec_certificates": []
+                  },
+                  "has_user_reported": false,
+                  "report_count": null,
+                  "menu_items": [],
+                  "state_media_run_label": null,
+                  "page_name": "Био Сила",
+                  "impressions_with_index": {
+                    "impressions_text": null,
+                    "impressions_index": -1
+                  },
+                  "gated_type": "ELIGIBLE",
+                  "categories": [
+                    "UNKNOWN"
+                  ],
+                  "is_aaa_eligible": true,
+                  "contains_digital_created_media": false,
+                  "reach_estimate": null,
+                  "currency": "",
+                  "spend": null,
+                  "end_date": 1753513200,
+                  "publisher_platform": [
+                    "FACEBOOK",
+                    "INSTAGRAM",
+                    "AUDIENCE_NETWORK",
+                    "MESSENGER",
+                    "THREADS"
+                  ],
+                  "start_date": 1753081200,
+                  "contains_sensitive_content": false,
+                  "total_active_time": null,
+                  "regional_regulation_data": {
+                    "finserv": {
+                      "is_deemed_finserv": false,
+                      "is_limited_delivery": false
+                    },
+                    "tw_anti_scam": {
+                      "is_limited_delivery": false
+                    }
+                  },
+                  "hide_data_status": "NONE",
+                  "fev_info": null,
+                  "ad_id": null,
+                  "targeted_or_reached_countries": []
+                }
+              ],
+              "__typename": "CollatedSearchResults"
+            },
+            "cursor": null
+          },
+          {
+            "node": {
+              "collated_results": [
+                {
+                  "ad_archive_id": "1460865151831066",
+                  "collation_count": 1,
+                  "collation_id": "1299792922149434",
+                  "is_active": false,
+                  "page_id": "637755466089763",
+                  "page_is_deleted": false,
+                  "snapshot": {
+                    "branded_content": null,
+                    "page_id": "637755466089763",
+                    "page_is_deleted": false,
+                    "page_profile_uri": "https://www.facebook.com/61576004169645/",
+                    "root_reshared_post": null,
+                    "byline": null,
+                    "disclaimer_label": null,
+                    "page_name": "Био Сила",
+                    "page_profile_picture_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/520438409_2544039965928831_4360829127960789194_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=107&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=D2h4AdSdvzYQ7kNvwHJtfpn&_nc_oc=Ado7W1Pt6GWKum2rsUsBAJHWrQo7f2X5rmuLN4iBSrRLlIpdu8JVmAvs-2b2S5Q2Quk&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=dUJojv0FcLPWdGjmD9G4ew&_nc_ss=7b289&oh=00_Af8Gp30nKijtjco0wi0-MEry_vg4b1yfHOotFUqYd6-z-w&oe=6A2DB35A",
+                    "event": null,
+                    "caption": "biosila.bg",
+                    "cta_text": "Order now",
+                    "cards": [],
+                    "body": {
+                      "text": "🌿 Изпитай натуралната енергия на Шилажит! 🌿\n\n✅ Повишава енергийните нива по естествен начин\n✅ Подобрява концентрация\n✅ Подобрява физическата издръжливост и представяне\n✅ Съдържа над 85 минера, нужни за човешкото тяло\n✅ Тестван в лаборатория. Сертификат за качество и безопастност.\n\nhttps://biosila.bg/products/shilajit"
+                    },
+                    "cta_type": "ORDER_NOW",
+                    "display_format": "IMAGE",
+                    "link_description": "Хималайският шилажит на Bio Sila под формите на желирани бонбони е най-новия хит на пазара за хранителни добавки!",
+                    "link_url": "https://biosila.bg/products/shilajit",
+                    "images": [
+                      {
+                        "image_crops": [],
+                        "original_image_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/519919079_4053082681597167_5004327200402723715_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=c7otJLLn_z4Q7kNvwFsh1X7&_nc_oc=Adr_9ZV99ShF9lxhBqRYUtpcqzjv0VoNokEyIU-YrJiuMA6O434fX-_xyOazOFZOfQQ&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=dUJojv0FcLPWdGjmD9G4ew&_nc_ss=7b289&oh=00_Af-_DHLH2BsXnejBYdPXEJCsyQiQANA5XcNiwf4T80-OKQ&oe=6A2D97EC",
+                        "resized_image_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/523359220_1466719938105203_208679602708080424_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=100&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=LFfzcoQRfXgQ7kNvwF7wPQk&_nc_oc=AdpGOgtLg0hcafIAumujjvygdnP-giyvgd6JiOoIxAokwb2tGPrRfgOGDTWPEBamA6c&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=dUJojv0FcLPWdGjmD9G4ew&_nc_ss=7b289&oh=00_Af9fnQRspxqQzOEWa5WUOXjJon2KUvmoWr9XvvyXNL2a2g&oe=6A2D9241",
+                        "watermarked_resized_image_url": ""
+                      }
+                    ],
+                    "page_categories": [
+                      "Nutrition"
+                    ],
+                    "page_like_count": 200,
+                    "title": "Натурален хималайски шилажит",
+                    "videos": [],
+                    "is_reshared": false,
+                    "extra_links": [],
+                    "extra_texts": [],
+                    "extra_images": [],
+                    "extra_videos": [],
+                    "country_iso_code": null,
+                    "brazil_tax_id": null,
+                    "additional_info": null,
+                    "ec_certificates": []
+                  },
+                  "has_user_reported": false,
+                  "report_count": null,
+                  "menu_items": [],
+                  "state_media_run_label": null,
+                  "page_name": "Био Сила",
+                  "impressions_with_index": {
+                    "impressions_text": null,
+                    "impressions_index": -1
+                  },
+                  "gated_type": "ELIGIBLE",
+                  "categories": [
+                    "UNKNOWN"
+                  ],
+                  "is_aaa_eligible": true,
+                  "contains_digital_created_media": false,
+                  "reach_estimate": null,
+                  "currency": "",
+                  "spend": null,
+                  "end_date": 1753426800,
+                  "publisher_platform": [
+                    "FACEBOOK",
+                    "INSTAGRAM",
+                    "AUDIENCE_NETWORK",
+                    "MESSENGER",
+                    "THREADS"
+                  ],
+                  "start_date": 1753081200,
+                  "contains_sensitive_content": false,
+                  "total_active_time": null,
+                  "regional_regulation_data": {
+                    "finserv": {
+                      "is_deemed_finserv": false,
+                      "is_limited_delivery": false
+                    },
+                    "tw_anti_scam": {
+                      "is_limited_delivery": false
+                    }
+                  },
+                  "hide_data_status": "NONE",
+                  "fev_info": null,
+                  "ad_id": null,
+                  "targeted_or_reached_countries": []
+                }
+              ],
+              "__typename": "CollatedSearchResults"
+            },
+            "cursor": null
+          },
+          {
+            "node": {
+              "collated_results": [
+                {
+                  "ad_archive_id": "2744401819262985",
+                  "collation_count": null,
+                  "collation_id": null,
+                  "is_active": true,
+                  "page_id": "1030956796778788",
+                  "page_is_deleted": false,
+                  "snapshot": {
+                    "branded_content": null,
+                    "page_id": "1030956796778788",
+                    "page_is_deleted": false,
+                    "page_profile_uri": "https://www.facebook.com/61589833794773/",
+                    "root_reshared_post": null,
+                    "byline": null,
+                    "disclaimer_label": null,
+                    "page_name": "Д-р Веселина Тодорова - Ишиас след 50",
+                    "page_profile_picture_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/697897579_1675773603722128_4760695002929821113_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=105&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=UOnO6J3IPWMQ7kNvwH8DqnK&_nc_oc=AdpDT4g7Fi6Ory__jTvwXe5u4ecb9uorTruLbT__N9f3v1io5ibUf00IJ2556YgG6Ww&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=dUJojv0FcLPWdGjmD9G4ew&_nc_ss=7b289&oh=00_Af_ZCdAxMUUgfrgQkJSN0JXwmdoi0-ycDC0MZ7VXdBeCYQ&oe=6A2D957B",
+                    "event": null,
+                    "caption": "biosila.bg",
+                    "cta_text": "Learn more",
+                    "cards": [],
+                    "body": {
+                      "text": "От 20 години работя като операционна сестра.\n\nЕдин хирург ме предупреди да не споделям това с никой, но това за мен няма значение предвид колко хора съм видяла да страдат през годините…\n\nБеше 2 часа сутринта в стаята за почивка на болницата. Бяхме само аз и двама хирурзи-вертебролози, изтощени след дълъг ден, прекаран в операции.\n\nТе си мислеха, че спя в ъгъла.\n\nНо не спях.\n\n„Днес се върна още един“, каза единият от тях. „Третият този месец.“\n\n„Същият човек от операцията за фиксация?“\n\n„Да. Операцията беше като по учебник. Чиста. Перфектна. Но той все още изпитва това парене по крака. Все още не може да седи повече от десет минути. Все още не може да спи.“\n\n„Каза ли му защо?“\n\n„Какво да му кажа? Че нервът му вече е гладувал, преди да го отворим? Че никакво режене няма да оправи това?“\n\nДругият хирург поклати глава. „Имаше една италианска невроложка – Монталчини, Нобелова награда за работата си върху нервните клетки. Тя показа, че нервите буквално гладуват, когато не получават определени хранителни вещества. Можеше да помогне на половината от неуспешните ни случаи.“\n\n„И какво да фактурираме? Две витамини? Няма пари в това да казваме на хората, че им трябва добавка, а не скалпел.“\n\nТогава ме забелязаха. С отворени очи. Слушах.\n\nЕдин от тях се приближи. „Не си чула нищо от това.“\n\nКимнах. Но бях чула всяка дума.\n\nИ това потвърди това, което подозирах от години.\n\nХирурзите знаеха. Знаеха защо пациентите им с Ишиас продължаваха да се връщат. Знаеха ЗАЩО — гладуващ, възпален нерв, който операцията не може да нахрани.\n\nНо въпреки това продължаваха да режат.\n\nЗащото операцията е това, което знаят. Операцията е това, което се плаща. Операцията е това, за което е изградена системата.\n\nСлед онази нощ започнах да проучвам д-р Рита Монталчини.\n\nТя е спечелила Нобелова награда за откриването на фактора за растеж на нервите — как нервните клетки всъщност оцеляват, възстановяват се и спират да изпращат сигнали за болка.\n\nСкрита в нейното проучване беше една фраза, която ме спря на място:\n\n„Водещи експерти сега обвиняват един-единствен, широко разпространен витаминен дефицит за увеличаването на болките в седалищния нерв.“\n\nЕто какво е открила:\n\nСлед 50-годишна възраст нивата на един критичен витамин за възстановяване на нервите не просто спадат. Те се сриват.\n\nВашият седалищен нерв – най-големият нерв в тялото ви – буквално започва да гладува.\n\nА гладуващият нерв не мълчи. Той крещи. Парене. Пробождане. Електрически шокове по крака. Изтръпване, което не спира.\n\nТова е истинската основна причина за хроничната болка от седалищния нерв. Не изпъкналият диск. Дори не компресията.\n\nГладният седалищен нерв стои зад всичко това.\n\nИ ето какво знаеха хирурзите, но не казаха:\n\nХирургията не храни гладуващия нерв.\n\nХирургията изрязва хернизираната тъкан. Тя изпилява кост. Тя сраства прешлените.\n\nНо не може да върне това, което на нерва му е липсвало години наред.\n\nЕто защо толкова много операции на ишиас се провалят. Операцията е успешна. Пациентът все още страда. Защото основната причина никога не е била отстранена.\n\nНо нещо МОЖЕ да я отстрани.\n\nВ едно знаково клинично проучване на 636 пациенти с ишиас беше приложен революционният протокол на д-р Рита.\n\nВ рамките на 7 дни нивата на болка спаднаха с до 65%.\n\nМнозина изминаваха по-дълги разстояния без пронизваща болка. Някои възвърнаха сила в краката си, каквато не бяха усещали от години. Паренето отшумя. Усещанията за ток изчезнаха.\n\nХирургията не може да направи това. Болкоуспокояващите не могат да направят това. Но правилните хранителни вещества, в правилната форма, могат.\n\nНамерих формула, която предоставя точно това, към което сочеше изследването на д-р Рита. Нарича се SciatiHeal.\n\nПърво я препоръчах на собствения си баща — пенсиониран механик, който три години се придвижваше накуцвайки из кухнята си.\n\nСлед две седмици той слизаше без проблем по стълбите, без да се хваща за перилата.\n\nТри седмици по-късно играеше с племенника ми в детската площадка.\n\nСлед това започнах тихо да го препоръчвам на пациенти. Не на онези, които наистина се нуждаеха от операция – някои състояния наистина го изискват.\n\nНо на онези, чиито скенери изглеждаха „нормални“, а те все пак бяха в агония. На онези, които бяха подтиквани към поредната фиксация, поредната инжекция с кортизон, поредния курс с болкоуспокояващи, които никога не решаваха нищо.\n\nОтделях ги настрана. Казвах им какво бях научила.\n\n„Опитайте това за 60 дни“, казвах. „Има 180-дневна гаранция. Ако не помогне, операцията все още ще е на разположение.“\n\nПовечето от тях отмениха операциите си.\n\nПовечето от тях си върнаха свободата.\n\nВероятно не би трябвало да ви казвам това. Хирургът беше прав – няма пари в това да се държат хората далеч от операционната.\n\nНо има нещо по-важно от парите: истината.\n\nЕто истината:\n\nОперацията за ишиас може да струва хиляди. 6 седмици възстановяване. Огромен процент на неуспех. И дори хирурзите си признават – когато мислят, че никой не ги слуша – че операциите са неефективни, защото не се лекува това, което наистина причинява болката.\n\nТази формула струва далеч по-малко. Лекува действителната причина. Една капсула сутрин. И има 180-дневна гаранция за връщане на парите.\n\nАко вие или някой, когото обичате, живее с болка в седалищния нерв — паренето, прострелването, безсънните нощи — моля, опитайте първо това.\n\nЗаслужавате да знаете какво казват хирурзите, когато мислят, че никой не ги слуша.\n\nКликнете върху линка по-долу, за да прочетете безплатната статия, която промени всичко за мен и баща ми. 👇\n\nПросто истината от някой, който я чу в 2 часа сутринта в стаята за почивка на болницата и вече не можеше да мълчи."
+                    },
+                    "cta_type": "LEARN_MORE",
+                    "display_format": "IMAGE",
+                    "link_description": "BioSila",
+                    "link_url": "https://biosila.bg/pages/sciati-advertorial-1",
+                    "images": [
+                      {
+                        "image_crops": [],
+                        "original_image_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/697351361_1339151684836261_1176284901497210062_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=4dayc38bvgwQ7kNvwFXwHI9&_nc_oc=AdrJXo4DlKfhIrSzqreU-Q5FfZliU5pm_dRqZbOZw89O7EcpFCCip2NIwzoNYvPvjEE&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=dUJojv0FcLPWdGjmD9G4ew&_nc_ss=7b289&oh=00_Af_i_jCshtbfG5LgwKJPRfHfc-TFPjVG_kceBN9ahhMMlA&oe=6A2DA886",
+                        "resized_image_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/697792423_967689486005069_8725711213970891794_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=105&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=MiwCy5f4AScQ7kNvwEWxbIv&_nc_oc=AdpxLyUk9BqFqpM9sSnWCf7tc1PFn8aFvuaDw7FHQEtJ-ZVNUWna3hZcNpX44ANmZL0&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=dUJojv0FcLPWdGjmD9G4ew&_nc_ss=7b289&oh=00_Af-fbOmmZ4vGowavMtLjD22cRNXBInFBgYie4dr9lcPH_A&oe=6A2DB4FA",
+                        "watermarked_resized_image_url": ""
+                      }
+                    ],
+                    "page_categories": [
+                      "Personal blog"
+                    ],
+                    "page_like_count": 9,
+                    "title": "3 Начина За Облекчаване На Болката При Ишиас",
+                    "videos": [],
+                    "is_reshared": false,
+                    "extra_links": [],
+                    "extra_texts": [],
+                    "extra_images": [],
+                    "extra_videos": [],
+                    "country_iso_code": null,
+                    "brazil_tax_id": null,
+                    "additional_info": null,
+                    "ec_certificates": []
+                  },
+                  "has_user_reported": false,
+                  "report_count": null,
+                  "menu_items": [],
+                  "state_media_run_label": null,
+                  "page_name": "Д-р Веселина Тодорова - Ишиас след 50",
+                  "impressions_with_index": {
+                    "impressions_text": null,
+                    "impressions_index": -1
+                  },
+                  "gated_type": "ELIGIBLE",
+                  "categories": [
+                    "UNKNOWN"
+                  ],
+                  "is_aaa_eligible": true,
+                  "contains_digital_created_media": false,
+                  "reach_estimate": null,
+                  "currency": "",
+                  "spend": null,
+                  "end_date": 1780902000,
+                  "publisher_platform": [
+                    "FACEBOOK",
+                    "INSTAGRAM",
+                    "AUDIENCE_NETWORK",
+                    "MESSENGER",
+                    "THREADS"
+                  ],
+                  "start_date": 1778655600,
+                  "contains_sensitive_content": false,
+                  "total_active_time": null,
+                  "regional_regulation_data": {
+                    "finserv": {
+                      "is_deemed_finserv": false,
+                      "is_limited_delivery": false
+                    },
+                    "tw_anti_scam": {
+                      "is_limited_delivery": false
+                    }
+                  },
+                  "hide_data_status": "NONE",
+                  "fev_info": null,
+                  "ad_id": null,
+                  "targeted_or_reached_countries": []
+                }
+              ],
+              "__typename": "CollatedSearchResults"
+            },
+            "cursor": null
+          },
+          {
+            "node": {
+              "collated_results": [
+                {
+                  "ad_archive_id": "941705711794323",
+                  "collation_count": null,
+                  "collation_id": null,
+                  "is_active": false,
+                  "page_id": "904870626052390",
+                  "page_is_deleted": false,
+                  "snapshot": {
+                    "branded_content": null,
+                    "page_id": "904870626052390",
+                    "page_is_deleted": false,
+                    "page_profile_uri": "https://www.facebook.com/61587568200772/",
+                    "root_reshared_post": null,
+                    "byline": null,
+                    "disclaimer_label": null,
+                    "page_name": "Кажи Чао на Ишиаса",
+                    "page_profile_picture_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/670415791_1260635432929706_2679692428083016155_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=104&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=RJON4YKa5vIQ7kNvwFbeOT8&_nc_oc=AdqXtc5VuoJX9wD2_LLQjTJ-qejFpBZi2-IOuw9G40bTSFW0ylDDlAClipdbe-UFgCs&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=dUJojv0FcLPWdGjmD9G4ew&_nc_ss=7b289&oh=00_Af8z7m_NvxSUG7hNL0ioJflPInFVdUTm9dC7cAEI_8HZqw&oe=6A2D96B5",
+                    "event": null,
+                    "caption": "biosila.bg",
+                    "cta_text": "Learn more",
+                    "cards": [],
+                    "body": {
+                      "text": "Не става дума за маскиране на болката. Става дума за възстановяване на седалищния нерв — по естествен път, от самия корен.\n\nНе исках да споделям опита си, защото е много лично.\n\nНо знам, че много хора страдат от същото… и се чувстват така, сякаш страдат в мълчание.\n\nБаща ми се бори с болки в седалищния нерв от години.\n\nВ началото беше случайна скованост и леко изтръпване в краката. Но с времето стана по-зле.\n\nПрисвиваше се от болка, когато ставаше от леглото. Охкаше, само за да си завърже обувките.\n\nНакрая спря да идва на семейни събирания. Всички го гледахме как се отказва, и не можехме да направим нищо.\n\nЕдна сутрин всичко се промени.\n\nСтана прекалено рязко, кракът му се подкоси, сякаш вече не беше част от тялото му. Закарахме го в спешното, ужасени, че е получил инсулт.\n\nЛекарите направиха изследвания.\n\nЗа щастие не беше инсулт — но ни казаха нещо, което ни накара да потърсим помощ за него.\n\nСедалищният му нерв „гладуваше\". Точно тази дума използваха.\n\nКазаха, че няма достатъчно кръвоснабдяване, за да поддържа нерва здрав. И че ако не направим нещо бързо, може да доведе до трайно увреждане.\n\nОпитахме всичко.\n\nПравиха му стероидни инжекции. Физиотерапия. Болкоуспокояващи, от които му се виеше свят и му ставаше лошо. Лумбална опора за дивана.\n\nНищо не помогна.\n\nБолката продължаваше да се разпространява. Не можеше дори да седне без болка, камо ли да спи през нощта.\n\nА най-лошото беше, че започна да вярва, че това просто е „животът му отсега нататък\".\n\nТогава, късно една вечер, попаднах на видео във Facebook. Лекар говореше за ишиаса по начин, по който никога не бях чувала преди. Каза, че болкоуспокояващите и операциите просто успокояват симптомите…\n\n…но истинската причина при много хора е нещо вътрешно.\n\nВитаминен дефицит, който блокира кръвотока и предизвиква възпаление.\n\nТози израз ме порази. Беше точно това, което лекарите бяха казали на баща ми.\n\nЛекарят дори каза, че има смес от естествени хранителни вещества, която може да помогне за възстановяването на самия нерв — без операция и без лекарства.\n\nПоръчахме добавката, която спомена — SciatiHeal© — и се молихме да помогне.\n\nВ рамките на една седмица баща ми ставаше от леглото без помощ.\n\nКачвеше се по стълбите във входа, без да има нужда от парапета. До третата седмица се разхождаше из кухнята, сякаш нищо не беше се случвало.\n\nБез парене. Без изтръпване в стъпалата.\n\nОттогава всичко се промени.\n\nСпи по-добре. Ходи повече.\n\nДори отново играе на топка с внуците — нещо, за което всички мислеха, че никога повече няма да прави.\n\nНикога не бях виждала децата ми толкова развълнувани.\n\nИстинското възстановяване най-после започна… и всичко тръгна от правилните хранителни вещества.\n\nПродуктът се казва SciatiHeal©.\n\nФормулиран е от лекари и е изграден около нещо, наречено „триадата за възстановяване на нервите\".\n\nТова означава, че действа целенасочено срещу възпалението, мускулното напрежение и белезите от тъканта — трите неща, които карат болката в седалищния нерв да се връща отново и отново.\n\nНяма да го намерите в магазините. Предлага се само директно от компанията онлайн, което помага цената да остане ниска и формулата — чиста.\n\nАко вие или някой, когото обичате, се бори с болки в седалищния нерв — не чакайте.\n\nМожете да опитате SciatiHeal© напълно без риск за 180 дни.\n\nАко не ви помогне да се почувствате по-добре, получавате парите си обратно\n\nМиналия уикенд баща ми ходи с нас в парка повече от час.\n\nВ един момент се огледа и каза: „Чувствам се така, сякаш отново съм част от света.\"\n\nТози момент е врязан в сърцето ми.\n\nАко се борите с болката… надявам се и вие да получите вашия момент.\n\nМожете да го поръчате от тук👇."
+                    },
+                    "cta_type": "LEARN_MORE",
+                    "display_format": "IMAGE",
+                    "link_description": "BioSila",
+                    "link_url": "https://biosila.bg/pages/sciati-advertorial-1",
+                    "images": [
+                      {
+                        "image_crops": [],
+                        "original_image_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/671060681_1701023201075065_4620247685784544342_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=mIPy2xOIS3EQ7kNvwHWjFMj&_nc_oc=AdpVA5G4FmugEqMSQJb2uPWr8QYLiehhukYY1JAukEHzR5wU0T9-uWQKIQJ7qJPTKos&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=dUJojv0FcLPWdGjmD9G4ew&_nc_ss=7b289&oh=00_Af-aYXUqYHKL_CzCIwYcub4NCB6FALstP05J9TgUNzDF4Q&oe=6A2D9F72",
+                        "resized_image_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/673731967_4393108737627631_5592592808395212943_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=111&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=aCSKgSq-3M4Q7kNvwEMS2Xg&_nc_oc=AdrXtk_bgJ7KKfn5CAhEqDEYRUKVE2Ux1ncNgq4qT2yvZrlFNkzhmH6fjZkVaiZo5u8&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=dUJojv0FcLPWdGjmD9G4ew&_nc_ss=7b289&oh=00_Af-qMU1yV2EdPg7WYBv5-feSjlDT5_1sqYQqB6C_qNbK_Q&oe=6A2D7EAF",
+                        "watermarked_resized_image_url": ""
+                      }
+                    ],
+                    "page_categories": [
+                      "Health & wellness website"
+                    ],
+                    "page_like_count": 95,
+                    "title": "№1 Витамин срещу Ишиас?",
+                    "videos": [],
+                    "is_reshared": false,
+                    "extra_links": [],
+                    "extra_texts": [],
+                    "extra_images": [],
+                    "extra_videos": [],
+                    "country_iso_code": null,
+                    "brazil_tax_id": null,
+                    "additional_info": null,
+                    "ec_certificates": []
+                  },
+                  "has_user_reported": false,
+                  "report_count": null,
+                  "menu_items": [],
+                  "state_media_run_label": null,
+                  "page_name": "Кажи Чао на Ишиаса",
+                  "impressions_with_index": {
+                    "impressions_text": null,
+                    "impressions_index": -1
+                  },
+                  "gated_type": "ELIGIBLE",
+                  "categories": [
+                    "UNKNOWN"
+                  ],
+                  "is_aaa_eligible": true,
+                  "contains_digital_created_media": false,
+                  "reach_estimate": null,
+                  "currency": "",
+                  "spend": null,
+                  "end_date": 1776495600,
+                  "publisher_platform": [
+                    "FACEBOOK",
+                    "INSTAGRAM",
+                    "AUDIENCE_NETWORK",
+                    "MESSENGER",
+                    "THREADS"
+                  ],
+                  "start_date": 1776236400,
+                  "contains_sensitive_content": false,
+                  "total_active_time": null,
+                  "regional_regulation_data": {
+                    "finserv": {
+                      "is_deemed_finserv": false,
+                      "is_limited_delivery": false
+                    },
+                    "tw_anti_scam": {
+                      "is_limited_delivery": false
+                    }
+                  },
+                  "hide_data_status": "NONE",
+                  "fev_info": null,
+                  "ad_id": null,
+                  "targeted_or_reached_countries": []
+                }
+              ],
+              "__typename": "CollatedSearchResults"
+            },
+            "cursor": null
+          },
+          {
+            "node": {
+              "collated_results": [
+                {
+                  "ad_archive_id": "1811946360189479",
+                  "collation_count": null,
+                  "collation_id": null,
+                  "is_active": false,
+                  "page_id": "637755466089763",
+                  "page_is_deleted": false,
+                  "snapshot": {
+                    "branded_content": null,
+                    "page_id": "637755466089763",
+                    "page_is_deleted": false,
+                    "page_profile_uri": "https://www.facebook.com/61576004169645/",
+                    "root_reshared_post": null,
+                    "byline": null,
+                    "disclaimer_label": null,
+                    "page_name": "Био Сила",
+                    "page_profile_picture_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/703092398_1349914100377775_4684656199508051567_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=111&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=EjHcdvDTTwMQ7kNvwHX4i26&_nc_oc=AdrcEMOLqvAfFuQICnxDRrNp01Ll8ZYVCCxdVrHL9vEIhju-I6dyYqF8_vvUzRwj-lc&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=dUJojv0FcLPWdGjmD9G4ew&_nc_ss=7b289&oh=00_Af_er8ipNATpoM8u673E5miF_1KqnGy59YMX9kxSCdPdmQ&oe=6A2D95ED",
+                    "event": null,
+                    "caption": "biosila.bg",
+                    "cta_text": "Shop now",
+                    "cards": [],
+                    "body": {
+                      "text": "Докторът ми се изсмя, когато казах, че не мисля, че болките в тазобедрените ми стави са от артрит 😡 Малко знаеше той… че бях права!\n\nАко беше артрит, тогава защо инжекциите с кортикостероиди и терапията с хиалуронова киселина не помогнаха да спрат болката?\n\nНямаше никакъв смисъл.\n\nОбезболяващите помагаха известно време – но в момента, в който спрях да ги вземам, болките и болезнеността се връщаха с пълна сила.\n\nБяха краткосрочно решение. Лепенка за огнестрелна рана.\n\nНе атакува ИСТИНСКАТА причина за болките в тазобедрените ми стави!\n\nНо ако не беше артрит… какво можеше да е?\n\nНикой от 5-те общопрактикуващи лекари, при които ходих, не можа да ми даде отговора.\n\n\"Това е част от стареенето\", беше обичайният отговор 🙄\n\nБележка към себе си: Не търси помощ от лекари, които са преминали през 4 часа обучение за менопауза от 4-те години в медицинския университет 🤦‍♀️\n\nТака че направих логичното нещо:\n\nОтидох при специалист по менопауза – някой, който се специализира в изучаването на ефектите, които ниският естроген може да има върху женското тяло.\n\nСлед 10 минути натискане и опипване на тазобедрените ми стави… Д-р Петрова попита:\n\n\"Усещаш ли болезненост, която се излъчва от дълбоко в ставата към външната страна на бедрото?\"\n\n\"Ъъъ… да?\", отговорих с треперещ глас – страхувайки се от най-лошото.\n\n\"Хмм точно както подозирах… това е Глутеална Тендинопатия\".\n\n\"Глутеална Тенди… какво??\", попитах – объркана и уплашена едновременно.\n\nД-р Петрова свали очилата си и ги избърса, преди да продължи:\n\n\"Това е разграждането на сухожилията в тазобедрените стави и седалището. Отговорно е за повечето болки в тазобедрените стави при женските ми пациенти над 50.\n\nНиският естроген нарушава производството на колаген – протеинът, който осигурява сила и еластичност на сухожилията ти.\n\nСухожилията ти стават по-слаби и по-сковани… причинявайки повече стрес и триене в ставите.\n\nКласическият симптом е болезненост, която се излъчва от дълбоко в ставата към външната страна на бедрото.\n\nНай-важното нещо, което трябва да знаеш, е следното:\n\nГълтането на обезболяващи и записването на повече посещения при хиропрактика ти няма да помогне…\n\nЗащото не решава основния проблем:\n\nТвоите хормони\".\n\nСедях там тихо – смилайки огромната бомба от информация, която Д-р Петрова току-що пусна върху мен.\n\nТова обясняваше защо всичко, което бях опитала досега, не накара болката да изчезне.\n\nСлагането на възглавница между коленете, за да са на същата височина с тазобедрените стави…\n\nХоденето на масажи…\n\nПравенето на рехабилитационните упражнения, препоръчани от физиотерапевта ми…\n\nВземането на глюкозамин и колаген…\n\nНищо от това не атакува основната причина за болките в тазобедрените ми стави – моите хормони.\n\n\"Тогава… как да спра болката, докторе? Не мога да приемам Хормонозаместителна терапия заради медицинската ми история… и не искам да вземам обезболяващи до края на живота си\"\n\nД-р Петрова кимна разбиращо – след което отвори чекмеджето си и извади синя бутилка:\n\n\"Не се притеснявай. Не трябва да приемаш обезболяващи или синтетични хормони.\n\nВсичко, което трябва да правиш, е да вземаш 1 капсули от това всеки ден.\n\nНарича се Revitala - специална билкова формула, която е специално формулирана да балансира хормоните естествено и да поддържа производството на колаген.\n\nhttps://biosila.bg/pages/revitala-1\n\nПовечето от женските ми пациенти над 40 споделиха, че виждат облекчение от пулсиращите болки в тазобедрените стави в рамките на няколко седмици.\n\nИ всичко това благодарение на нейната 4-стъпкова \"Формула за Хормонален Баланс\":\n\n1️⃣ Витамин B6 регулира хормоналните колебания, които възпаляват ставите\n\nВитамин B6 е \"хормоналният регулатор\" на тялото - той помага на черния дроб да разгражда излишния естроген и поддържа производството на прогестерон.\n\nКогато тези два хормона излязат от баланс след 40, тялото влиза в състояние на хронично възпаление - което директно атакува сухожилията и ставите.\n\nИзследванията показват, че жени с по-високи нива на B6 съобщават за значително по-малко ставна болка и сутрешна скованост.\n\nТова не е обикновеният B6, който намираш в супермаркета.\n\nТова е пиридоксин хидрохлорид - най-биоактивната форма, която тялото може да използва веднага, без нужда от допълнително преобразуване.\n\n2️⃣ Екстракт от семена Витекс (Vitex agnus-castus) балансира хормоните в основата им\n\nИзвестен още като \"Авраамово дърво\", Витекс се използва от над 2,500 години за подкрепа на женското хормонално здраве.\n\nЗа разлика от синтетичната хормонозаместителна терапия, Витекс не въвежда хормони в тялото.\n\nВместо това той работи с твоята хипофизна жлеза - \"командния център\" за всички хормони - и я насърчава да възстанови собствения си естествен баланс.\n\nРезултатът?\n\nПо-малко горещи вълни, по-стабилно настроение... и драстично намалено възпаление в ставите.\n\nГерманско проучване с над 1,600 жени установи, че 93% съобщават за облекчение на менопаузалните симптоми след 3 месеца прием на Витекс.\n\n3️⃣ Екстракт от стрък маточина (Melissa officinalis) намалява кортизола, който разрушава сухожилията\n\nМаточината не е просто билка за чай.\n\nТя е една от най-добре проучените естествени съставки за управление на стреса и кортизола.\n\nА ето защо това има значение:\n\nКогато кортизолът е хронично повишен (което е почти стандарт при жени над 40)...\n\nТой буквално \"изяжда\" колагена в сухожилията ти - правейки ги слаби и податливи на нараняване.\n\nПроучване от Northumbria University установи, че екстрактът от маточина намалява нивата на стрес с до 18% само за 1 час.\n\nПо-нисък кортизол = по-силни сухожилия = по-малко болка.\n\n4️⃣ Екстракт от корен на Китайски дудник (Angelica sinensis) - \"Женският Женшен\"\n\nВ Традиционната Китайска Медицина дудникът е известен като \"Дан Гуей\" - и се счита за най-важната билка за женското здраве от над 2,000 години.\n\nТой съдържа естествени фитоестрогени, които помагат да се попълнят падащите нива на естроген след менопаузата.\n\nЗащо това е важно за ставите ти?\n\nЗащото естрогенът е КРИТИЧЕН за производството на колаген.\n\nКогато падне, сухожилията се разграждат. Когато е балансиран, сухожилията се възстановяват.\n\nДудникът също подобрява кръвообращението - доставяйки повече кислород и хранителни вещества до възпалените стави, ускорявайки естественото им заздравяване.\n\nhttps://biosila.bg/pages/revitala-1\n\nЗнам, че е много за смилане в момента...\n\nНо моята гледна точка е тази:\n\nRevitala е подкрепен от науката - и съставките в него са избрани да поддържат здравето на сухожилията при жени над 40.\n\nИскам само най-доброто за пациентите си...\n\nТака че, ето, вземи тази бутилка със себе си.\n\nОпитай я в продължение на 30 дни и ако обичаш как се чувстваш… можеш да поръчаш още бутилки от уебсайта на компанията\"\n\nВзех бутилката Revitala и я разгледах скептично.\n\nТова наистина ли може да помогне с болките в тазобедрените ми стави?\n\nБила съм изгаряна от добавки, обещаващи всичко…\n\nНо хей, тъй като мога да я тествам безплатно… защо не?\n\nТака че взимах по 1 капсула на ден според инструкциите в продължение на 30 дни…\n\nИ резултатите… бяха НЕВЕРОЯТНИ:\n\nВ рамките на първите 2 седмици болките в тазобедрените ми стави намаляха значително.\n\nМожех да правя сутрешни и вечерни разходки с моя голдън ретривър без да трябва да слагам лед след това.\n\nВ края на 30-те дни можех да спя на една страна отново без никакъв дискомфорт!\n\nТолкова обикнах трансформациите, че поръчах още 2 бутилки:\n\nВ края на 2-рата бутилка другите стави в тялото ми също започнаха да се чувстват по-гладко.\n\nКоленете ми се чувстваха по-силни (можех да изкачвам стълбите по две на едно без да се държа за парапета за живота си 😆)...\n\nПериодичното \"замръзнало\" рамо се подобри без никакви инжекции или терапия...\n\nИ в края на 3-тата бутилка?\n\nМожех да тичам на дълги разстояния.\n\nНе да вървя бързо.\n\nА наистина… ДА ТИЧАМ 🏃‍♀️🏃‍♀️\n\nЗнам, че звучи невероятно…\n\nНо това е истината пред Бога:\n\nПриемането на Revitala възстанови тазобедрените ми стави, коленете и раменете 🎉\n\nСилно препоръчвам Revitala на всяка жена над 40, която има болки в ставите и иска естествено облекчение.\n\nТова промени всичко за мен.\n\nИ се надявам да бъде и за теб ❤️\n\nКликни по-долу, за да го опиташ сама - и да кажеш сбогом на болезнените тазобедрени стави и безсънните нощи:\n\nhttps://biosila.bg/pages/revitala-1\n\nP.S Има хиляди положителни отзиви за Revitala, които можеш да прочетеш на официалната им страница чрез линка по-горе.\n\nПросто помислих, че ще споделя някои тук – за да можеш да изслушаш и историите за трансформация с Revitala на други жени 😌\n\n⭐ Янка Г., 45, София ⭐\n\n\"Този продукт е невероятен и силно го препоръчвам на жени над 40. Тази есен се класирах за Маратона на София. Мисля, че тази добавка ми помогна да постигна тази цел, тъй като съм по-лека, отколкото съм била от години, и ставите ми вече изобщо не ме болят.\"\n\n⭐ Капка Х., 53, Пловдив ⭐\n\n\"ОБОЖАВАМ ГО. Винаги съм била скептична към отзиви, но трябва да оставя един. Преди това ми беше трудно да се качвам и слизам по стълбите и ако седнех твърде дълго, се чувствах, сякаш имам нужда от проходилка, за да ходя. Чувствах се на 98, а съм само на 53. Казаха, че менопаузата руши ставите ти и боже мой, така е.\n\nТака че проучих, за да опитам да намеря нещо там, което да помогне. Намерих Revitala и сега съм на втората си бутилка.\n\nТова, че мога да се движа без болка, определено е най-голямата промяна за мен! Замръзналото ми рамо също изглежда се подобрява без никакви инжекции или терапия откакто започнах с тези хапчета.\n\nНямам болка, когато ставам, и вече не се клатушкам. Коленете ми не са ме болели от втората седмица на приемането на тези. Мога да се движа нормално отново\"\n\n⭐ Жени С., 51, Варна ⭐\n\n“Имам болки в коляното от години. Видях отзив за Revitala, където някой каза, че ежедневният прием помогнал с дискомфорта в ставите. Нищо не беше работило за мен до този момент… така че бях готова да опитам всичко.\n\nRevitala беше най-доброто решение в живота ми. Видях облекчение само след 2 дози! Толкова съм благодарна!\n\nСъщо свалих излишните килограми и съм обратно до предишния си размер. Наистина РАБОТИ.\"\n\n====\n\nP.P.S Тези жени прекарваха всеки ден в агония…\n\nНо сега се събуждат без болки всяка сутрин и танцуват, тичат и ходят на туризъм със здрави стави отново.\n\nВсичко, което направиха, беше да оставят скептицизма си настрана за малко – и да дадат шанс на Revitala.\n\nИскрено се надявам, че ще направиш същото…\n\nЗа да можеш да изпиташ радостите от свободното движение без болки или болезненост, които те задържат.\n\nВсички първи поръчки са защитени с 90-дневна гаранция за връщане на парите…\n\nТака че няма какво да загубиш.\n\nОпитай Revitala без да рискуваш нищо тук:\n\nhttps://biosila.bg/pages/revitala-1"
+                    },
+                    "cta_type": "SHOP_NOW",
+                    "display_format": "IMAGE",
+                    "link_description": "BioSila",
+                    "link_url": "https://biosila.bg/pages/revitala-1",
+                    "images": [
+                      {
+                        "image_crops": [],
+                        "original_image_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/702265434_27077042325287275_4168981972691831204_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=Rvija30OfOYQ7kNvwEdlo1U&_nc_oc=AdqR4oxDF61aS_FjJTTB19QvbM4IgFehakE6b0XU_t6Vzk0CFn314bztIBt7b7n03z0&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=dUJojv0FcLPWdGjmD9G4ew&_nc_ss=7b289&oh=00_Af8uqkgeS0oEH2n_0UnjpTY7GAf750Bf-mclx3OUdZqlJA&oe=6A2D9B23",
+                        "resized_image_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/702091003_1410736717486247_5194525283283943074_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=101&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=tr-9C0qKSaUQ7kNvwGfLN_v&_nc_oc=AdoWP2doK8-2tkDwNinvDs05YM2IFtJntHSKM6xPU0Cl6Ao7HJyuktU-AHdKbv55sNk&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=dUJojv0FcLPWdGjmD9G4ew&_nc_ss=7b289&oh=00_Af9Fav0-G4xIVkQdJy8llNTF-PBT7H0zO7Ar75R5MZZYNw&oe=6A2D9432",
+                        "watermarked_resized_image_url": ""
+                      }
+                    ],
+                    "page_categories": [
+                      "Nutrition"
+                    ],
+                    "page_like_count": 200,
+                    "title": "Не Знаех, Че Ниският Естроген Нанася Толкова Много Щети...",
+                    "videos": [],
+                    "is_reshared": false,
+                    "extra_links": [],
+                    "extra_texts": [],
+                    "extra_images": [],
+                    "extra_videos": [],
+                    "country_iso_code": null,
+                    "brazil_tax_id": null,
+                    "additional_info": null,
+                    "ec_certificates": []
+                  },
+                  "has_user_reported": false,
+                  "report_count": null,
+                  "menu_items": [],
+                  "state_media_run_label": null,
+                  "page_name": "Био Сила",
+                  "impressions_with_index": {
+                    "impressions_text": null,
+                    "impressions_index": -1
+                  },
+                  "gated_type": "AD_ACCOUNT_DISABLED",
+                  "categories": [
+                    "UNKNOWN"
+                  ],
+                  "is_aaa_eligible": true,
+                  "contains_digital_created_media": false,
+                  "reach_estimate": null,
+                  "currency": "",
+                  "spend": null,
+                  "end_date": 1779692400,
+                  "publisher_platform": [
+                    "FACEBOOK",
+                    "INSTAGRAM",
+                    "AUDIENCE_NETWORK",
+                    "MESSENGER",
+                    "THREADS"
+                  ],
+                  "start_date": 1779174000,
+                  "contains_sensitive_content": false,
+                  "total_active_time": null,
+                  "regional_regulation_data": {
+                    "finserv": {
+                      "is_deemed_finserv": false,
+                      "is_limited_delivery": false
+                    },
+                    "tw_anti_scam": {
+                      "is_limited_delivery": false
+                    }
+                  },
+                  "hide_data_status": "NONE",
+                  "fev_info": null,
+                  "ad_id": null,
+                  "targeted_or_reached_countries": []
+                }
+              ],
+              "__typename": "CollatedSearchResults"
+            },
+            "cursor": null
+          },
+          {
+            "node": {
+              "collated_results": [
+                {
+                  "ad_archive_id": "831521559841451",
+                  "collation_count": 1,
+                  "collation_id": "856329510276398",
+                  "is_active": false,
+                  "page_id": "637755466089763",
+                  "page_is_deleted": false,
+                  "snapshot": {
+                    "branded_content": null,
+                    "page_id": "637755466089763",
+                    "page_is_deleted": false,
+                    "page_profile_uri": "https://www.facebook.com/61576004169645/",
+                    "root_reshared_post": null,
+                    "byline": null,
+                    "disclaimer_label": null,
+                    "page_name": "Био Сила",
+                    "page_profile_picture_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/576477968_2600477050318235_8110691176941908194_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=105&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=0Ru3R2Fbk0cQ7kNvwGflFXx&_nc_oc=AdqC7s2_FjSlVuq8I3NTdZWwgS_qFv_1tDj7TWDak11n1OJsVmEPHzTdxmGTdVvT9AI&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=dUJojv0FcLPWdGjmD9G4ew&_nc_ss=7b289&oh=00_Af-1SrsAw_ilE2nLh0sdF150DgByIotnErBNnPZK6g98qA&oe=6A2D94F8",
+                    "event": null,
+                    "caption": "biosila.bg",
+                    "cta_text": "Order now",
+                    "cards": [],
+                    "body": {
+                      "text": "Чувстваш се подпухнала и напрегната през деня?\n\nАшвагандата се използва от векове за понижаване на стреса и кортизола – хормона, който причинява умора, тревожност и лимфен застой.\n\nСъздадохме формула с ашваганда специално за жени, които искат да се чувстват по-леки, спокойни и тонизирани – без мозъчна мъгла и подуване.\n\n🧘‍♀️ Намалява нивата на кортизол и стрес\n💧 Стимулира лимфния дренаж и намалява подпухналостта\n😴 Подобрява съня и възстановяването\n\nПровери ефекта сама като поръчаш от тук:\nhttps://biosila.bg/products/ashwagandha-extract"
+                    },
+                    "cta_type": "ORDER_NOW",
+                    "display_format": "IMAGE",
+                    "link_description": "Чувстваш се подпухнала и напрегната през деня?\n\nАшвагандата се използва от векове за понижаване на стреса и кортизола – хормона, който причинява умора, тревожност ...",
+                    "link_url": "https://biosila.bg/products/ashwagandha-extract",
+                    "images": [
+                      {
+                        "image_crops": [],
+                        "original_image_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/576204336_771208442753637_2841747239035040129_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=zt-G9cJGlRMQ7kNvwGtNijB&_nc_oc=AdpJQwTJjbpjK1_2H8_QdTFLvcVvyz6jKaMwR5lLZs5k3ZP3J7-Wppy8t54CWJUC-H4&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=dUJojv0FcLPWdGjmD9G4ew&_nc_ss=7b289&oh=00_Af-a84VUezsnac5qCLbTpemI7m3uvid6nygN-FULnRfoAw&oe=6A2D885E",
+                        "resized_image_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/576392063_1164871845612658_7867403767892029639_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=107&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=nr86_UDlNoMQ7kNvwHOMvO2&_nc_oc=AdpGcCcORe9nXg4vzcmOr1ldtXypZrrL10wlUfJCmX4JWJENrolblyCluA0L6BpeKZg&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=dUJojv0FcLPWdGjmD9G4ew&_nc_ss=7b289&oh=00_Af9QZ4T-fT8lyeN0B7r7t2GTnOypFbOOloPAWWgk3Cu-RQ&oe=6A2D9CF2",
+                        "watermarked_resized_image_url": ""
+                      }
+                    ],
+                    "page_categories": [
+                      "Nutrition"
+                    ],
+                    "page_like_count": 200,
+                    "title": "Предотврати подуването",
+                    "videos": [],
+                    "is_reshared": false,
+                    "extra_links": [],
+                    "extra_texts": [],
+                    "extra_images": [],
+                    "extra_videos": [],
+                    "country_iso_code": null,
+                    "brazil_tax_id": null,
+                    "additional_info": null,
+                    "ec_certificates": []
+                  },
+                  "has_user_reported": false,
+                  "report_count": null,
+                  "menu_items": [],
+                  "state_media_run_label": null,
+                  "page_name": "Био Сила",
+                  "impressions_with_index": {
+                    "impressions_text": null,
+                    "impressions_index": -1
+                  },
+                  "gated_type": "ELIGIBLE",
+                  "categories": [
+                    "UNKNOWN"
+                  ],
+                  "is_aaa_eligible": true,
+                  "contains_digital_created_media": false,
+                  "reach_estimate": null,
+                  "currency": "",
+                  "spend": null,
+                  "end_date": 1773385200,
+                  "publisher_platform": [
+                    "FACEBOOK",
+                    "INSTAGRAM",
+                    "AUDIENCE_NETWORK",
+                    "MESSENGER",
+                    "THREADS"
+                  ],
+                  "start_date": 1762156800,
+                  "contains_sensitive_content": false,
+                  "total_active_time": null,
+                  "regional_regulation_data": {
+                    "finserv": {
+                      "is_deemed_finserv": false,
+                      "is_limited_delivery": false
+                    },
+                    "tw_anti_scam": {
+                      "is_limited_delivery": false
+                    }
+                  },
+                  "hide_data_status": "NONE",
+                  "fev_info": null,
+                  "ad_id": null,
+                  "targeted_or_reached_countries": []
+                }
+              ],
+              "__typename": "CollatedSearchResults"
+            },
+            "cursor": null
+          },
+          {
+            "node": {
+              "collated_results": [
+                {
+                  "ad_archive_id": "1532021375172584",
+                  "collation_count": null,
+                  "collation_id": null,
+                  "is_active": false,
+                  "page_id": "637755466089763",
+                  "page_is_deleted": false,
+                  "snapshot": {
+                    "branded_content": null,
+                    "page_id": "637755466089763",
+                    "page_is_deleted": false,
+                    "page_profile_uri": "https://www.facebook.com/61576004169645/",
+                    "root_reshared_post": null,
+                    "byline": null,
+                    "disclaimer_label": null,
+                    "page_name": "Био Сила",
+                    "page_profile_picture_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/700506582_1735973197561177_1128499480778069682_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=104&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=xcLusJ5zQJwQ7kNvwHuOIKg&_nc_oc=AdrC4wYO3shPJTKPezOtOGpWXEkmFyjqD94Xc8kt-YNaOaxYKpdrpHbDFyTyp3rvESs&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=dUJojv0FcLPWdGjmD9G4ew&_nc_ss=7b289&oh=00_Af_s312qLa4PYG946-GSUDYEIm-yxefJ1HHhMwUZbT0ZvA&oe=6A2DA4AF",
+                    "event": null,
+                    "caption": "biosila.bg",
+                    "cta_text": "Shop now",
+                    "cards": [],
+                    "body": {
+                      "text": "Докторът ми се изсмя, когато казах, че не мисля, че болките в тазобедрените ми стави са от артрит 😡 Малко знаеше той… че бях права!\n\nАко беше артрит, тогава защо инжекциите с кортикостероиди и терапията с хиалуронова киселина не помогнаха да спрат болката?\n\nНямаше никакъв смисъл.\n\nОбезболяващите помагаха известно време – но в момента, в който спрях да ги вземам, болките и болезнеността се връщаха с пълна сила.\n\nБяха краткосрочно решение. Лепенка за огнестрелна рана.\n\nНе атакува ИСТИНСКАТА причина за болките в тазобедрените ми стави!\n\nНо ако не беше артрит… какво можеше да е?\n\nНикой от 5-те общопрактикуващи лекари, при които ходих, не можа да ми даде отговора.\n\n\"Това е част от стареенето\", беше обичайният отговор 🙄\n\nБележка към себе си: Не търси помощ от лекари, които са преминали през 4 часа обучение за менопауза от 4-те години в медицинския университет 🤦‍♀️\n\nТака че направих логичното нещо:\n\nОтидох при специалист по менопауза – някой, който се специализира в изучаването на ефектите, които ниският естроген може да има върху женското тяло.\n\nСлед 10 минути натискане и опипване на тазобедрените ми стави… Д-р Петрова попита:\n\n\"Усещаш ли болезненост, която се излъчва от дълбоко в ставата към външната страна на бедрото?\"\n\n\"Ъъъ… да?\", отговорих с треперещ глас – страхувайки се от най-лошото.\n\n\"Хмм точно както подозирах… това е Глутеална Тендинопатия\".\n\n\"Глутеална Тенди… какво??\", попитах – объркана и уплашена едновременно.\n\nД-р Петрова свали очилата си и ги избърса, преди да продължи:\n\n\"Това е разграждането на сухожилията в тазобедрените стави и седалището. Отговорно е за повечето болки в тазобедрените стави при женските ми пациенти над 50.\n\nНиският естроген нарушава производството на колаген – протеинът, който осигурява сила и еластичност на сухожилията ти.\n\nСухожилията ти стават по-слаби и по-сковани… причинявайки повече стрес и триене в ставите.\n\nКласическият симптом е болезненост, която се излъчва от дълбоко в ставата към външната страна на бедрото.\n\nНай-важното нещо, което трябва да знаеш, е следното:\n\nГълтането на обезболяващи и записването на повече посещения при хиропрактика ти няма да помогне…\n\nЗащото не решава основния проблем:\n\nТвоите хормони\".\n\nСедях там тихо – смилайки огромната бомба от информация, която Д-р Петрова току-що пусна върху мен.\n\nТова обясняваше защо всичко, което бях опитала досега, не накара болката да изчезне.\n\nСлагането на възглавница между коленете, за да са на същата височина с тазобедрените стави…\n\nХоденето на масажи…\n\nПравенето на рехабилитационните упражнения, препоръчани от физиотерапевта ми…\n\nВземането на глюкозамин и колаген…\n\nНищо от това не атакува основната причина за болките в тазобедрените ми стави – моите хормони.\n\n\"Тогава… как да спра болката, докторе? Не мога да приемам Хормонозаместителна терапия заради медицинската ми история… и не искам да вземам обезболяващи до края на живота си\"\n\nД-р Петрова кимна разбиращо – след което отвори чекмеджето си и извади синя бутилка:\n\n\"Не се притеснявай. Не трябва да приемаш обезболяващи или синтетични хормони.\n\nВсичко, което трябва да правиш, е да вземаш 1 капсули от това всеки ден.\n\nНарича се Revitala - специална билкова формула, която е специално формулирана да балансира хормоните естествено и да поддържа производството на колаген.\n\nhttps://biosila.bg/pages/revitala-1\n\nПовечето от женските ми пациенти над 40 споделиха, че виждат облекчение от пулсиращите болки в тазобедрените стави в рамките на няколко седмици.\n\nИ всичко това благодарение на нейната 4-стъпкова \"Формула за Хормонален Баланс\":\n\n1️⃣ Витамин B6 регулира хормоналните колебания, които възпаляват ставите\n\nВитамин B6 е \"хормоналният регулатор\" на тялото - той помага на черния дроб да разгражда излишния естроген и поддържа производството на прогестерон.\n\nКогато тези два хормона излязат от баланс след 40, тялото влиза в състояние на хронично възпаление - което директно атакува сухожилията и ставите.\n\nИзследванията показват, че жени с по-високи нива на B6 съобщават за значително по-малко ставна болка и сутрешна скованост.\n\nТова не е обикновеният B6, който намираш в супермаркета.\n\nТова е пиридоксин хидрохлорид - най-биоактивната форма, която тялото може да използва веднага, без нужда от допълнително преобразуване.\n\n2️⃣ Екстракт от семена Витекс (Vitex agnus-castus) балансира хормоните в основата им\n\nИзвестен още като \"Авраамово дърво\", Витекс се използва от над 2,500 години за подкрепа на женското хормонално здраве.\n\nЗа разлика от синтетичната хормонозаместителна терапия, Витекс не въвежда хормони в тялото.\n\nВместо това той работи с твоята хипофизна жлеза - \"командния център\" за всички хормони - и я насърчава да възстанови собствения си естествен баланс.\n\nРезултатът?\n\nПо-малко горещи вълни, по-стабилно настроение... и драстично намалено възпаление в ставите.\n\nГерманско проучване с над 1,600 жени установи, че 93% съобщават за облекчение на менопаузалните симптоми след 3 месеца прием на Витекс.\n\n3️⃣ Екстракт от стрък маточина (Melissa officinalis) намалява кортизола, който разрушава сухожилията\n\nМаточината не е просто билка за чай.\n\nТя е една от най-добре проучените естествени съставки за управление на стреса и кортизола.\n\nА ето защо това има значение:\n\nКогато кортизолът е хронично повишен (което е почти стандарт при жени над 40)...\n\nТой буквално \"изяжда\" колагена в сухожилията ти - правейки ги слаби и податливи на нараняване.\n\nПроучване от Northumbria University установи, че екстрактът от маточина намалява нивата на стрес с до 18% само за 1 час.\n\nПо-нисък кортизол = по-силни сухожилия = по-малко болка.\n\n4️⃣ Екстракт от корен на Китайски дудник (Angelica sinensis) - \"Женският Женшен\"\n\nВ Традиционната Китайска Медицина дудникът е известен като \"Дан Гуей\" - и се счита за най-важната билка за женското здраве от над 2,000 години.\n\nТой съдържа естествени фитоестрогени, които помагат да се попълнят падащите нива на естроген след менопаузата.\n\nЗащо това е важно за ставите ти?\n\nЗащото естрогенът е КРИТИЧЕН за производството на колаген.\n\nКогато падне, сухожилията се разграждат. Когато е балансиран, сухожилията се възстановяват.\n\nДудникът също подобрява кръвообращението - доставяйки повече кислород и хранителни вещества до възпалените стави, ускорявайки естественото им заздравяване.\n\nhttps://biosila.bg/pages/revitala-1\n\nЗнам, че е много за смилане в момента...\n\nНо моята гледна точка е тази:\n\nRevitala е подкрепен от науката - и съставките в него са избрани да поддържат здравето на сухожилията при жени над 40.\n\nИскам само най-доброто за пациентите си...\n\nТака че, ето, вземи тази бутилка със себе си.\n\nОпитай я в продължение на 30 дни и ако обичаш как се чувстваш… можеш да поръчаш още бутилки от уебсайта на компанията\"\n\nВзех бутилката Revitala и я разгледах скептично.\n\nТова наистина ли може да помогне с болките в тазобедрените ми стави?\n\nБила съм изгаряна от добавки, обещаващи всичко…\n\nНо хей, тъй като мога да я тествам безплатно… защо не?\n\nТака че взимах по 1 капсула на ден според инструкциите в продължение на 30 дни…\n\nИ резултатите… бяха НЕВЕРОЯТНИ:\n\nВ рамките на първите 2 седмици болките в тазобедрените ми стави намаляха значително.\n\nМожех да правя сутрешни и вечерни разходки с моя голдън ретривър без да трябва да слагам лед след това.\n\nВ края на 30-те дни можех да спя на една страна отново без никакъв дискомфорт!\n\nТолкова обикнах трансформациите, че поръчах още 2 бутилки:\n\nВ края на 2-рата бутилка другите стави в тялото ми също започнаха да се чувстват по-гладко.\n\nКоленете ми се чувстваха по-силни (можех да изкачвам стълбите по две на едно без да се държа за парапета за живота си 😆)...\n\nПериодичното \"замръзнало\" рамо се подобри без никакви инжекции или терапия...\n\nИ в края на 3-тата бутилка?\n\nМожех да тичам на дълги разстояния.\n\nНе да вървя бързо.\n\nА наистина… ДА ТИЧАМ 🏃‍♀️🏃‍♀️\n\nЗнам, че звучи невероятно…\n\nНо това е истината пред Бога:\n\nПриемането на Revitala възстанови тазобедрените ми стави, коленете и раменете 🎉\n\nСилно препоръчвам Revitala на всяка жена над 40, която има болки в ставите и иска естествено облекчение.\n\nТова промени всичко за мен.\n\nИ се надявам да бъде и за теб ❤️\n\nКликни по-долу, за да го опиташ сама - и да кажеш сбогом на болезнените тазобедрени стави и безсънните нощи:\n\nhttps://biosila.bg/pages/revitala-1\n\nP.S Има хиляди положителни отзиви за Revitala, които можеш да прочетеш на официалната им страница чрез линка по-горе.\n\nПросто помислих, че ще споделя някои тук – за да можеш да изслушаш и историите за трансформация с Revitala на други жени 😌\n\n⭐ Янка Г., 45, София ⭐\n\n\"Този продукт е невероятен и силно го препоръчвам на жени над 40. Тази есен се класирах за Маратона на София. Мисля, че тази добавка ми помогна да постигна тази цел, тъй като съм по-лека, отколкото съм била от години, и ставите ми вече изобщо не ме болят.\"\n\n⭐ Капка Х., 53, Пловдив ⭐\n\n\"ОБОЖАВАМ ГО. Винаги съм била скептична към отзиви, но трябва да оставя един. Преди това ми беше трудно да се качвам и слизам по стълбите и ако седнех твърде дълго, се чувствах, сякаш имам нужда от проходилка, за да ходя. Чувствах се на 98, а съм само на 53. Казаха, че менопаузата руши ставите ти и боже мой, така е.\n\nТака че проучих, за да опитам да намеря нещо там, което да помогне. Намерих Revitala и сега съм на втората си бутилка.\n\nТова, че мога да се движа без болка, определено е най-голямата промяна за мен! Замръзналото ми рамо също изглежда се подобрява без никакви инжекции или терапия откакто започнах с тези хапчета.\n\nНямам болка, когато ставам, и вече не се клатушкам. Коленете ми не са ме болели от втората седмица на приемането на тези. Мога да се движа нормално отново\"\n\n⭐ Жени С., 51, Варна ⭐\n\n“Имам болки в коляното от години. Видях отзив за Revitala, където някой каза, че ежедневният прием помогнал с дискомфорта в ставите. Нищо не беше работило за мен до този момент… така че бях готова да опитам всичко.\n\nRevitala беше най-доброто решение в живота ми. Видях облекчение само след 2 дози! Толкова съм благодарна!\n\nСъщо свалих излишните килограми и съм обратно до предишния си размер. Наистина РАБОТИ.\"\n\n====\n\nP.P.S Тези жени прекарваха всеки ден в агония…\n\nНо сега се събуждат без болки всяка сутрин и танцуват, тичат и ходят на туризъм със здрави стави отново.\n\nВсичко, което направиха, беше да оставят скептицизма си настрана за малко – и да дадат шанс на Revitala.\n\nИскрено се надявам, че ще направиш същото…\n\nЗа да можеш да изпиташ радостите от свободното движение без болки или болезненост, които те задържат.\n\nВсички първи поръчки са защитени с 90-дневна гаранция за връщане на парите…\n\nТака че няма какво да загубиш.\n\nОпитай Revitala без да рискуваш нищо тук:\n\nhttps://biosila.bg/pages/revitala-1"
+                    },
+                    "cta_type": "SHOP_NOW",
+                    "display_format": "IMAGE",
+                    "link_description": "BioSila",
+                    "link_url": "https://biosila.bg/pages/revitala-1",
+                    "images": [
+                      {
+                        "image_crops": [],
+                        "original_image_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/700679622_1656764762295095_6048347252665065742_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=m04zymyD3UoQ7kNvwGxd182&_nc_oc=AdrP7tqhFsejG4sl2dZ_e3e5jpBNxdC8rMBKM6UoXbIodKSgVJLdIorMKdrHjpUUAKI&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=dUJojv0FcLPWdGjmD9G4ew&_nc_ss=7b289&oh=00_Af-9EfwXPS-BWzMI7C3szPFK9KiNhWGlE2iHecmoM2HPXw&oe=6A2DA105",
+                        "resized_image_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/701757253_1141601729033473_707113957702394334_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=108&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=XluRN_QrkIQQ7kNvwF5fT2a&_nc_oc=AdrgFsuP0pRuGKuuOt6kMuxZxYamf4RmBnYAi77h67QeZeHAvum54V7vQiYcTyhNfeE&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=dUJojv0FcLPWdGjmD9G4ew&_nc_ss=7b289&oh=00_Af-MZ8nY95AnfE7nEcUd6VA7Hx_GH9eAmSLKoohofhyFqA&oe=6A2DA7A5",
+                        "watermarked_resized_image_url": ""
+                      }
+                    ],
+                    "page_categories": [
+                      "Nutrition"
+                    ],
+                    "page_like_count": 200,
+                    "title": "Не Знаех, Че Ниският Естроген Нанася Толкова Много Щети...",
+                    "videos": [],
+                    "is_reshared": false,
+                    "extra_links": [],
+                    "extra_texts": [],
+                    "extra_images": [],
+                    "extra_videos": [],
+                    "country_iso_code": null,
+                    "brazil_tax_id": null,
+                    "additional_info": null,
+                    "ec_certificates": []
+                  },
+                  "has_user_reported": false,
+                  "report_count": null,
+                  "menu_items": [],
+                  "state_media_run_label": null,
+                  "page_name": "Био Сила",
+                  "impressions_with_index": {
+                    "impressions_text": null,
+                    "impressions_index": -1
+                  },
+                  "gated_type": "AD_ACCOUNT_DISABLED",
+                  "categories": [
+                    "UNKNOWN"
+                  ],
+                  "is_aaa_eligible": true,
+                  "contains_digital_created_media": false,
+                  "reach_estimate": null,
+                  "currency": "",
+                  "spend": null,
+                  "end_date": 1780210800,
+                  "publisher_platform": [
+                    "FACEBOOK",
+                    "INSTAGRAM",
+                    "AUDIENCE_NETWORK",
+                    "MESSENGER",
+                    "THREADS"
+                  ],
+                  "start_date": 1779087600,
+                  "contains_sensitive_content": false,
+                  "total_active_time": null,
+                  "regional_regulation_data": {
+                    "finserv": {
+                      "is_deemed_finserv": false,
+                      "is_limited_delivery": false
+                    },
+                    "tw_anti_scam": {
+                      "is_limited_delivery": false
+                    }
+                  },
+                  "hide_data_status": "NONE",
+                  "fev_info": null,
+                  "ad_id": null,
+                  "targeted_or_reached_countries": []
+                }
+              ],
+              "__typename": "CollatedSearchResults"
+            },
+            "cursor": null
+          }
+        ],
+        "page_info": {
+          "end_cursor": "AQHSBRlDoTgFAwCYrVFS2v04UBgaJlEnfHnDypDtQXeTXw-iTDpEv6_KzrHoLAJp8Vh8D4vCzOH9MtB4eb7N-Dc5iTCiGPzgbO0AjlAFlJJHKGofbQ2qmCPc2RNp4mWNA6_uf2qoisGYmCwB291yICO4kYkKj5t6jY0ptWz7_ZYByGRVUmySi0T3CheemPrsi-h8SRJNFEdpse5-szzrEJ0mN_fJlNWCQBG_2Lp0g7YKg7vUwwuzeUzP7Ti8G-2MekTe12fPGFO0wvEvQtCr3htNQcvj_r6QP5z2dflZK0x1dSzX-p2tVm0JgAKX0s2Uz6fh5df8MB6WJ7HfxgRc0icUdhit-X0-U-hZ3l6pPURqYYYl4WAQjHPBImpTrdq30O_I6l11dE4CLZHb8yC_UcxOlpPFTq2oOSCvtZeSU9F5iFGDy-kp_SK4OyG0mqRsLl5nLxxwMKmdtcz08BjO4NUSmDWt7EYKcpugxipy9hG8rqYKJaXONftYZ9xhsWbTCuAeu4tPuoKWoM6yxkuFLg5INvNer0U88bWWTnPq_Mlno37nh7V5TsUk35_DXMCtM7zfzodnUcFV82EXP7fIyyvt-KXO5EwlqDUWCZJh4pHADORuMrTNn3kfp9QgfSAxslhBBpluHolG14QYcCQqr6RAh74yPFiKC_bsHjoc7UyAtUzXywAxUXG3Km99EDfIMsbq_113uU8ePRydaQ_TvJA8gkmqVi0QSE9BIc_YFmXvJhydMoi6n_XuMo33fNyXLBOOJpJVS_Ow7AZwIKPkgiq-xUku1gXSEFFBah62mkOyRHT9DEZ2Zo1CDuZLp3vq2uCcO2QWy2oIsMTjdP6DMXtlMKpIW6Bt_TqkvP6rr4MD8ypHm2212MPt22xBV11Vu1-ysPd8AmsK73smQE7cMeJgOQbSS_LPNmo2XogKctByAlV3TKND3ces7WqxE7XeBzlJktoTI7BGfMGZaBIpLB7SDGGXLpoJhCyXjtwgZTBOYsOIdSQNE8oLqY_IZvFY6_LtDJ4FpIyTLaPyG6ltnz--2JMjmVarMwlmHXbcyKU1paSsV1_PuIb_X1VdPvunUkkShuuplObp_MPfDFxE4H3GzDXAzyDkLremJ1EQXb5hCSTITWCFTv5CyAo3uqpFVXlI",
+          "has_next_page": true
+        }
+      }
+    }
+  },
+  "extensions": {
+    "server_metadata": {
+      "request_start_time_ms": 1780991947028,
+      "time_at_flush_ms": 1780991947805
+    },
+    "is_final": true
+  }
+}

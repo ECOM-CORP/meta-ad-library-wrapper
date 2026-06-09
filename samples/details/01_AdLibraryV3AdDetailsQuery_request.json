@@ -1,0 +1,13 @@
+{
+  "doc_id": "25068828942793558",
+  "friendly_name": "AdLibraryV3AdDetailsQuery",
+  "variables": {
+    "adArchiveID": "924497020441203",
+    "pageID": "644879998709673",
+    "country": "BG",
+    "sessionID": "7c809390-c88d-4f89-bf21-4bfe4050ac4a",
+    "source": null,
+    "isAdNonPolitical": true,
+    "isAdNotAAAEligible": false
+  }
+}

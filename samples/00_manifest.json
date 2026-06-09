@@ -1,0 +1,79 @@
+[
+  {
+    "file_stem": "01_AdLibraryFilterContextProviderQuery",
+    "friendly_name": "AdLibraryFilterContextProviderQuery",
+    "doc_id": "29650582277919185",
+    "response_parsed_ok": true,
+    "response_bytes": 824
+  },
+  {
+    "file_stem": "02_AdLibrarySearchPaginationQuery",
+    "friendly_name": "AdLibrarySearchPaginationQuery",
+    "doc_id": "24922295957467452",
+    "response_parsed_ok": true,
+    "response_bytes": 221984
+  },
+  {
+    "file_stem": "03_AdLibrarySearchPaginationQuery",
+    "friendly_name": "AdLibrarySearchPaginationQuery",
+    "doc_id": "24922295957467452",
+    "response_parsed_ok": true,
+    "response_bytes": 175055
+  },
+  {
+    "file_stem": "04_AdLibrarySearchPaginationQuery",
+    "friendly_name": "AdLibrarySearchPaginationQuery",
+    "doc_id": "24922295957467452",
+    "response_parsed_ok": true,
+    "response_bytes": 216889
+  },
+  {
+    "file_stem": "05_AdLibrarySearchPaginationQuery",
+    "friendly_name": "AdLibrarySearchPaginationQuery",
+    "doc_id": "24922295957467452",
+    "response_parsed_ok": true,
+    "response_bytes": 176759
+  },
+  {
+    "file_stem": "06_AdLibrarySearchPaginationQuery",
+    "friendly_name": "AdLibrarySearchPaginationQuery",
+    "doc_id": "24922295957467452",
+    "response_parsed_ok": true,
+    "response_bytes": 228144
+  },
+  {
+    "file_stem": "07_AdLibrarySearchPaginationQuery",
+    "friendly_name": "AdLibrarySearchPaginationQuery",
+    "doc_id": "24922295957467452",
+    "response_parsed_ok": true,
+    "response_bytes": 170109
+  },
+  {
+    "file_stem": "08_AdLibrarySearchPaginationQuery",
+    "friendly_name": "AdLibrarySearchPaginationQuery",
+    "doc_id": "24922295957467452",
+    "response_parsed_ok": true,
+    "response_bytes": 230717
+  },
+  {
+    "file_stem": "09_AdLibrarySearchPaginationQuery",
+    "friendly_name": "AdLibrarySearchPaginationQuery",
+    "doc_id": "24922295957467452",
+    "response_parsed_ok": true,
+    "response_bytes": 169356
+  },
+  {
+    "file_stem": "10_AdLibrarySearchPaginationQuery",
+    "friendly_name": "AdLibrarySearchPaginationQuery",
+    "doc_id": "24922295957467452",
+    "response_parsed_ok": true,
+    "response_bytes": 168078
+  },
+  {
+    "file_stem": "11_AdLibrarySearchPaginationQuery",
+    "friendly_name": "AdLibrarySearchPaginationQuery",
+    "doc_id": "24922295957467452",
+    "response_parsed_ok": true,
+    "response_bytes": 121842
+  }
+]

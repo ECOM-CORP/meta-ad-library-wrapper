@@ -1,0 +1,135 @@
+{
+  "data": {
+    "ad_library_main": {
+      "ad_details": {
+        "advertiser": {
+          "page": {
+            "about": {
+              "text": ""
+            },
+            "is_delegate_page_with_linked_primary_profile": false,
+            "id": "644879998709673"
+          },
+          "ad_library_page_info": {
+            "page_spend": {
+              "current_week": null,
+              "lifetime_by_disclaimer": [],
+              "weekly_by_disclaimer": [],
+              "is_political_page": false
+            },
+            "page_info": {
+              "entity_type": "PERSON_PROFILE",
+              "ig_followers": null,
+              "ig_username": null,
+              "ig_verification": null,
+              "likes": 183,
+              "page_alias": "",
+              "page_category": "Health & wellness website",
+              "page_cover_photo": null,
+              "page_id": "644879998709673",
+              "page_is_deleted": false,
+              "page_is_restricted": false,
+              "page_name": "Гергана Симеонова",
+              "page_profile_uri": "https://www.facebook.com/61575908852958/",
+              "page_verification": "NOT_VERIFIED",
+              "profile_photo": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.30808-1/651323889_122169346634863628_2613994552626585327_n.webp?stp=dst-png_s148x148&_nc_cat=100&ccb=1-7&_nc_sid=418b77&_nc_ohc=qD_Ofx9LMLkQ7kNvwGtJ3za&_nc_oc=AdoxOFHr1b4iaNiL747X7k_ULb91iPvSxp4EqG1zHDtjvioYuUKJZnpl_uNW10zZ_xA&_nc_zt=24&_nc_ht=scontent-otp1-1.xx&_nc_gid=Aqb3ssQwLsaWRuyK59QUBA&_nc_ss=7b289&oh=00_Af9mLWV6tC1o7fvvACyUjmgsvgzbgUo9ohn9ZahERfWnDA&oe=6A2D9F8E",
+              "is_profile_page": false
+            }
+          }
+        },
+        "aaa_info": {
+          "payer_beneficiary_data": [
+            {
+              "payer": "Troneli",
+              "beneficiary": "Troneli"
+            }
+          ],
+          "targets_eu": true,
+          "has_violating_payer_beneficiary": false,
+          "is_ad_taken_down": false
+        },
+        "violation_types": [],
+        "verified_voice_context": null,
+        "transparency_by_location": {
+          "br_transparency": null,
+          "eu_transparency": {
+            "targets_eu": true,
+            "location_audience": [
+              {
+                "name": "Bulgaria",
+                "num_obfuscated": 0,
+                "type": "countries",
+                "excluded": false
+              }
+            ],
+            "gender_audience": "All",
+            "age_audience": {
+              "min": 18,
+              "max": 65
+            },
+            "eu_total_reach": 611904,
+            "age_country_gender_reach_breakdown": [
+              {
+                "country": "BG",
+                "age_gender_breakdowns": [
+                  {
+                    "age_range": "18-24",
+                    "male": 2523,
+                    "female": 3054,
+                    "unknown": 44
+                  },
+                  {
+                    "age_range": "45-54",
+                    "male": 54136,
+                    "female": 72750,
+                    "unknown": 530
+                  },
+                  {
+                    "age_range": "Unknown",
+                    "male": null,
+                    "female": 1,
+                    "unknown": 40
+                  },
+                  {
+                    "age_range": "65+",
+                    "male": 60508,
+                    "female": 137986,
+                    "unknown": 585
+                  },
+                  {
+                    "age_range": "55-64",
+                    "male": 69864,
+                    "female": 120479,
+                    "unknown": 538
+                  },
+                  {
+                    "age_range": "35-44",
+                    "male": 31057,
+                    "female": 32573,
+                    "unknown": 331
+                  },
+                  {
+                    "age_range": "25-34",
+                    "male": 13935,
+                    "female": 13746,
+                    "unknown": 141
+                  }
+                ]
+              }
+            ]
+          },
+          "uk_transparency": null
+        },
+        "is_siep_advertiser_eligible_for_ai_disclosure": false,
+        "is_violating_eu_siep": false
+      }
+    }
+  },
+  "extensions": {
+    "server_metadata": {
+      "request_start_time_ms": 1780994811419,
+      "time_at_flush_ms": 1780994811521
+    },
+    "is_final": true
+  }
+}

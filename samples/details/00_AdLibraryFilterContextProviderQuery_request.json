@@ -1,0 +1,14 @@
+{
+  "doc_id": "29650582277919185",
+  "friendly_name": "AdLibraryFilterContextProviderQuery",
+  "variables": {
+    "adType": "ALL",
+    "country": "BG",
+    "searchType": "PAGE",
+    "location": null,
+    "queryString": null,
+    "source": null,
+    "sessionId": "7c809390-c88d-4f89-bf21-4bfe4050ac4a",
+    "viewAllPageId": "644879998709673"
+  }
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "stem": "00_AdLibraryFilterContextProviderQuery",
+    "friendly_name": "AdLibraryFilterContextProviderQuery",
+    "doc_id": "29650582277919185",
+    "bytes": 350,
+    "reachish": false
+  },
+  {
+    "stem": "01_AdLibraryV3AdDetailsQuery",
+    "friendly_name": "AdLibraryV3AdDetailsQuery",
+    "doc_id": "25068828942793558",
+    "bytes": 2492,
+    "reachish": true
+  }
+]

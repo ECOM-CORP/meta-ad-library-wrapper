@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.pyc
+.superpowers/
+.pw-profile/
+session_cache.json
+*.har
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+
+# personal scan outputs (research data, not part of the project)
+dp*.json
+scan_results.json
+scan_results.txt
+

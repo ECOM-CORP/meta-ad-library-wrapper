@@ -1,0 +1,44 @@
+{
+  "data": {
+    "ad_library_main": {
+      "dynamic_filter_options": {
+        "content_languages": [
+          {
+            "count": 100,
+            "key": "bg",
+            "display_name": "Bulgarian"
+          }
+        ],
+        "disclaimers": [],
+        "pages": [
+          {
+            "count": 100,
+            "key": "637755466089763",
+            "display_name": "Био Сила"
+          },
+          {
+            "count": 10,
+            "key": "1030956796778788",
+            "display_name": "Д-р Веселина Тодорова - Ишиас след 50"
+          },
+          {
+            "count": 1,
+            "key": "904870626052390",
+            "display_name": "Кажи Чао на Ишиаса"
+          }
+        ],
+        "reached_regions": [],
+        "countries": [],
+        "cities": [],
+        "targeted_regions": []
+      }
+    }
+  },
+  "extensions": {
+    "server_metadata": {
+      "request_start_time_ms": 1780991917623,
+      "time_at_flush_ms": 1780991917834
+    },
+    "is_final": true
+  }
+}

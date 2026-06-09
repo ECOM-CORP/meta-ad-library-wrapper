@@ -1,0 +1,1054 @@
+{
+  "data": {
+    "ad_library_main": {
+      "search_results_connection": {
+        "edges": [
+          {
+            "node": {
+              "collated_results": [
+                {
+                  "ad_archive_id": "789365210527892",
+                  "collation_count": 1,
+                  "collation_id": "1141063408221230",
+                  "is_active": false,
+                  "page_id": "637755466089763",
+                  "page_is_deleted": false,
+                  "snapshot": {
+                    "branded_content": null,
+                    "page_id": "637755466089763",
+                    "page_is_deleted": false,
+                    "page_profile_uri": "https://www.facebook.com/61576004169645/",
+                    "root_reshared_post": null,
+                    "byline": null,
+                    "disclaimer_label": null,
+                    "page_name": "Био Сила",
+                    "page_profile_picture_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/576519070_1210452950923576_4294947545419889552_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=105&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=34A863wecZUQ7kNvwGQjUBQ&_nc_oc=Adrz8INsSOxxUMM_Sa9-Brp1Q9mydSLI3TBe6uXn8J2Sn3ACGCglUKn2_TkRQ0g9bdg&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=WnSv2D8_sd9NLSJGuB4jrQ&_nc_ss=7b289&oh=00_Af9DbL7bBCkOknmozKbJbFYn-KTIE07X0uo0_oFH5sY6Sg&oe=6A2D96AE",
+                    "event": null,
+                    "caption": "biosila.bg",
+                    "cta_text": "Order now",
+                    "cards": [],
+                    "body": {
+                      "text": "Чувстваш се уморена през деня?\n\nАшвагандата се използва от векове за понижаване на стреса и кортизола – хормона, който причинява умора, тревожност и подуване.\n\nСъздадохме формула с ашваганда специално за жени, които искат да се чувстват по-леки, спокойни и тонизирани – без мозъчна мъгла и подуване.\n\n🧘‍♀️ Намалява нивата на кортизол и стрес\n💧 Стимулира лимфния дренаж и намалява подпухналостта\n😴 Подобрява съня и възстановяването\n\nПровери ефекта сама като поръчаш от тук:\nhttps://biosila.bg/products/ashwagandha-extract"
+                    },
+                    "cta_type": "ORDER_NOW",
+                    "display_format": "IMAGE",
+                    "link_description": "Чувстваш се уморена през деня?\n\nАшвагандата се използва от векове за понижаване на стреса и кортизола – хормона, който причинява умора, тревожност и подуване.\n\nСъзд...",
+                    "link_url": "https://biosila.bg/products/ashwagandha-extract",
+                    "images": [
+                      {
+                        "image_crops": [],
+                        "original_image_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/577764516_1553176656119419_9093904331955913370_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=BmNj951-TvoQ7kNvwGpHuGH&_nc_oc=AdpFy3nc8H0n6grYxqcdRHy7crcokdc698fREsB3Zyxfyx538bhRU_ZhzyeDn0n8ECA&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=WnSv2D8_sd9NLSJGuB4jrQ&_nc_ss=7b289&oh=00_Af-rvFb2a7IJHnlB1DsxClJafN8UovfjJ-ccWfjcepiVBw&oe=6A2D93EE",
+                        "resized_image_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/576374320_1530153874780730_4059334497591999549_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=100&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=gguw3ggzpwMQ7kNvwGXFRrg&_nc_oc=AdoIF0fbfokWb3YDyOA6U7ZC3MMRRH42UhJeKhUqP_Ucou8ioZb-C37BDb9etn7fb_E&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=WnSv2D8_sd9NLSJGuB4jrQ&_nc_ss=7b289&oh=00_Af-z_iWIzlBEFfRMTJ012U7W6wwVDvpUZkw09YsBeDTqUg&oe=6A2D8564",
+                        "watermarked_resized_image_url": ""
+                      }
+                    ],
+                    "page_categories": [
+                      "Nutrition"
+                    ],
+                    "page_like_count": 200,
+                    "title": "Върни натуралната си енергия",
+                    "videos": [],
+                    "is_reshared": false,
+                    "extra_links": [],
+                    "extra_texts": [],
+                    "extra_images": [],
+                    "extra_videos": [],
+                    "country_iso_code": null,
+                    "brazil_tax_id": null,
+                    "additional_info": null,
+                    "ec_certificates": []
+                  },
+                  "has_user_reported": false,
+                  "report_count": null,
+                  "menu_items": [],
+                  "state_media_run_label": null,
+                  "page_name": "Био Сила",
+                  "impressions_with_index": {
+                    "impressions_text": null,
+                    "impressions_index": -1
+                  },
+                  "gated_type": "ELIGIBLE",
+                  "categories": [
+                    "UNKNOWN"
+                  ],
+                  "is_aaa_eligible": true,
+                  "contains_digital_created_media": false,
+                  "reach_estimate": null,
+                  "currency": "",
+                  "spend": null,
+                  "end_date": 1773298800,
+                  "publisher_platform": [
+                    "FACEBOOK",
+                    "INSTAGRAM",
+                    "AUDIENCE_NETWORK",
+                    "MESSENGER",
+                    "THREADS"
+                  ],
+                  "start_date": 1762416000,
+                  "contains_sensitive_content": false,
+                  "total_active_time": null,
+                  "regional_regulation_data": {
+                    "finserv": {
+                      "is_deemed_finserv": false,
+                      "is_limited_delivery": false
+                    },
+                    "tw_anti_scam": {
+                      "is_limited_delivery": false
+                    }
+                  },
+                  "hide_data_status": "NONE",
+                  "fev_info": null,
+                  "ad_id": null,
+                  "targeted_or_reached_countries": []
+                }
+              ],
+              "__typename": "CollatedSearchResults"
+            },
+            "cursor": null
+          },
+          {
+            "node": {
+              "collated_results": [
+                {
+                  "ad_archive_id": "1801650984049552",
+                  "collation_count": 1,
+                  "collation_id": "1153986660007794",
+                  "is_active": false,
+                  "page_id": "637755466089763",
+                  "page_is_deleted": false,
+                  "snapshot": {
+                    "branded_content": null,
+                    "page_id": "637755466089763",
+                    "page_is_deleted": false,
+                    "page_profile_uri": "https://www.facebook.com/61576004169645/",
+                    "root_reshared_post": null,
+                    "byline": null,
+                    "disclaimer_label": null,
+                    "page_name": "Био Сила",
+                    "page_profile_picture_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/571370211_3751733775128185_4866804237242042056_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=111&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=UWW4acLcLOMQ7kNvwHf-ktg&_nc_oc=Ado7gHA_qI6suprYqUrz42aPCRZsfZSG0FyLfRRmPVTIznlLipE6IOfo_Z6jwPmTmbo&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=WnSv2D8_sd9NLSJGuB4jrQ&_nc_ss=7b289&oh=00_Af_xDbRf3EEiuwoyj4PL5olwYl3KCOGqzGpWq12oRigBSA&oe=6A2D83B4",
+                    "event": null,
+                    "caption": "biosila.bg",
+                    "cta_text": "Order now",
+                    "cards": [],
+                    "body": {
+                      "text": "Не можеш да заспиш лесно? Будиш се уморена и подпухнала?\n\nПричината често е стресът и високите нива на кортизол.\n\nАшвагандата помага на тялото да се отпусне, ума – да се успокои, а сънят – да стане дълбок и възстановяващ.\nФормулата на Био Сила е създадена специално за жени, които искат повече енергия, лекота и вътрешен баланс.\n\n🧘‍♀️ Намалява стреса\n💧 Подпомага лимфния поток\n😴 Подобрява съня и възстановяването\n\n🌿 Почувствай разликата още след първата седмициа\nhttps://biosila.bg/products/ashwagandha-extract"
+                    },
+                    "cta_type": "ORDER_NOW",
+                    "display_format": "IMAGE",
+                    "link_description": "Не можеш да заспиш лесно? Будиш се уморена и подпухнала?\n\nПричината често е стресът и високите нива на кортизол.\n\nАшвагандата помага на тялото да се отпусне, ума – да ...",
+                    "link_url": "https://biosila.bg/products/ashwagandha-extract",
+                    "images": [
+                      {
+                        "image_crops": [],
+                        "original_image_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/571761590_1755806125808035_5948877059611903031_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=drsIrA1H9N0Q7kNvwHBEUbz&_nc_oc=AdrP-2oQUD7NpQBrRZNVItg5XG31-G6WoV4IHmb3FxEU4Z4JK6j13-KAtrBHlRJtFGA&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=WnSv2D8_sd9NLSJGuB4jrQ&_nc_ss=7b289&oh=00_Af-d9zqpKXXxOIj2k4THkPXEybGCIr8pZ7YHWUIpyLQbYw&oe=6A2D90CD",
+                        "resized_image_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/572798218_2297527240669105_943681054192266243_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=100&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=CeHzFbufMUAQ7kNvwGExNuk&_nc_oc=AdpPDi6hPWfidw7oYEFGGcoO-p7UcTc0R2jwYGE7-YTXsF-MXeawq5vV8Q-VUkkGaL0&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=WnSv2D8_sd9NLSJGuB4jrQ&_nc_ss=7b289&oh=00_Af8rT1nlCazm29HhIZIaTF0XDGz8DcVkcwv8phPwGGKqEA&oe=6A2D9BB8",
+                        "watermarked_resized_image_url": ""
+                      }
+                    ],
+                    "page_categories": [
+                      "Nutrition"
+                    ],
+                    "page_like_count": 200,
+                    "title": "Спокойният сън започва, когато стресът изчезне",
+                    "videos": [],
+                    "is_reshared": false,
+                    "extra_links": [],
+                    "extra_texts": [],
+                    "extra_images": [],
+                    "extra_videos": [],
+                    "country_iso_code": null,
+                    "brazil_tax_id": null,
+                    "additional_info": null,
+                    "ec_certificates": []
+                  },
+                  "has_user_reported": false,
+                  "report_count": null,
+                  "menu_items": [],
+                  "state_media_run_label": null,
+                  "page_name": "Био Сила",
+                  "impressions_with_index": {
+                    "impressions_text": null,
+                    "impressions_index": -1
+                  },
+                  "gated_type": "ELIGIBLE",
+                  "categories": [
+                    "UNKNOWN"
+                  ],
+                  "is_aaa_eligible": true,
+                  "contains_digital_created_media": false,
+                  "reach_estimate": null,
+                  "currency": "",
+                  "spend": null,
+                  "end_date": 1762156800,
+                  "publisher_platform": [
+                    "FACEBOOK",
+                    "INSTAGRAM",
+                    "AUDIENCE_NETWORK",
+                    "MESSENGER",
+                    "THREADS"
+                  ],
+                  "start_date": 1761721200,
+                  "contains_sensitive_content": false,
+                  "total_active_time": null,
+                  "regional_regulation_data": {
+                    "finserv": {
+                      "is_deemed_finserv": false,
+                      "is_limited_delivery": false
+                    },
+                    "tw_anti_scam": {
+                      "is_limited_delivery": false
+                    }
+                  },
+                  "hide_data_status": "NONE",
+                  "fev_info": null,
+                  "ad_id": null,
+                  "targeted_or_reached_countries": []
+                }
+              ],
+              "__typename": "CollatedSearchResults"
+            },
+            "cursor": null
+          },
+          {
+            "node": {
+              "collated_results": [
+                {
+                  "ad_archive_id": "1812842906319556",
+                  "collation_count": 2,
+                  "collation_id": "1061380559438703",
+                  "is_active": false,
+                  "page_id": "637755466089763",
+                  "page_is_deleted": false,
+                  "snapshot": {
+                    "branded_content": null,
+                    "page_id": "637755466089763",
+                    "page_is_deleted": false,
+                    "page_profile_uri": "https://www.facebook.com/61576004169645/",
+                    "root_reshared_post": null,
+                    "byline": null,
+                    "disclaimer_label": null,
+                    "page_name": "Био Сила",
+                    "page_profile_picture_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/517403080_950396483846378_5935932369474587062_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=104&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=PJkltRgbdoYQ7kNvwGAvBR3&_nc_oc=Ado1yJECwqXB-SmzM305__vpF7sU1LvhT8pRnKa0xETWSGN_mg4MQiDh-5FoQcbiut4&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=WnSv2D8_sd9NLSJGuB4jrQ&_nc_ss=7b289&oh=00_Af_pgRMk7i9aFYoAVkolg4k7wFqW4714TV61Pn0YctxwsQ&oe=6A2DA9F8",
+                    "event": null,
+                    "caption": "biosila.bg",
+                    "cta_text": "Order now",
+                    "cards": [],
+                    "body": {
+                      "text": "🌿 Изпитай натуралната енергия на Шилажит! 🌿\n\n✅ Повишава енергийните нива по естествен начин\n✅ Подобрява концентрация\n✅ Подобрява физическата издръжливост и представяне\n✅ Съдържа над 85 минера, нужни за човешкото тяло\n✅ Тестван в лаборатория. Сертификат за качество и безопастност.\n\nhttps://biosila.bg/products/shilajit"
+                    },
+                    "cta_type": "ORDER_NOW",
+                    "display_format": "VIDEO",
+                    "link_description": null,
+                    "link_url": "https://biosila.bg/products/shilajit",
+                    "images": [],
+                    "page_categories": [
+                      "Nutrition"
+                    ],
+                    "page_like_count": 200,
+                    "title": "Натурален хималайски шилажит",
+                    "videos": [
+                      {
+                        "video_hd_url": null,
+                        "video_preview_image_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/518238688_1279916770317211_9082796170540211079_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=rpwlhPe48_cQ7kNvwF-CVyK&_nc_oc=Ado_bAuoRCNzy8vhUqU2_u1ctdxdniO5x4owQgKhh3sgQgCEi-LKQ4xmCfRilE-KTsk&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=WnSv2D8_sd9NLSJGuB4jrQ&_nc_ss=7b289&oh=00_Af_jzT3AVDmwQC8g9iut142ktubHV_hYjofw3xbdI9LBGg&oe=6A2DA497",
+                        "video_sd_url": "https://video-otp1-1.xx.fbcdn.net/o1/v/t2/f2/m412/AQPY3x1PaJpqjVLPnm4ZMPe9fpMillP-nSugJ3PBHti33kJicx_ekMSSi7PxQL-oxvdQY5uNj7A_Ue2RXMoJhkOK7jZVrUr3H3Sx0CjvYQ.mp4?_nc_cat=100&_nc_sid=8bf8fe&_nc_ht=video-otp1-1.xx.fbcdn.net&_nc_ohc=GPypGbtSbEIQ7kNvwFimTxj&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTI5OTkxNTg5MTU4MjI0NCwiYXNzZXRfYWdlX2RheXMiOjMyOCwidmlfdXNlY2FzZV9pZCI6MTA3OTksImR1cmF0aW9uX3MiOjM2LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=WnSv2D8_sd9NLSJGuB4jrQ&_nc_ss=7b289&_nc_zt=28&oh=00_Af-ZNGzmZFlSEV9gevnixODMocsAjxhqqhsO6bUn_yVx_w&oe=6A2DAE8E",
+                        "watermarked_video_hd_url": "",
+                        "watermarked_video_sd_url": ""
+                      }
+                    ],
+                    "is_reshared": false,
+                    "extra_links": [],
+                    "extra_texts": [],
+                    "extra_images": [],
+                    "extra_videos": [],
+                    "country_iso_code": null,
+                    "brazil_tax_id": null,
+                    "additional_info": null,
+                    "ec_certificates": []
+                  },
+                  "has_user_reported": false,
+                  "report_count": null,
+                  "menu_items": [],
+                  "state_media_run_label": null,
+                  "page_name": "Био Сила",
+                  "impressions_with_index": {
+                    "impressions_text": null,
+                    "impressions_index": -1
+                  },
+                  "gated_type": "ELIGIBLE",
+                  "categories": [
+                    "UNKNOWN"
+                  ],
+                  "is_aaa_eligible": true,
+                  "contains_digital_created_media": false,
+                  "reach_estimate": null,
+                  "currency": "",
+                  "spend": null,
+                  "end_date": 1753513200,
+                  "publisher_platform": [
+                    "FACEBOOK",
+                    "INSTAGRAM",
+                    "AUDIENCE_NETWORK",
+                    "MESSENGER",
+                    "THREADS"
+                  ],
+                  "start_date": 1752562800,
+                  "contains_sensitive_content": false,
+                  "total_active_time": null,
+                  "regional_regulation_data": {
+                    "finserv": {
+                      "is_deemed_finserv": false,
+                      "is_limited_delivery": false
+                    },
+                    "tw_anti_scam": {
+                      "is_limited_delivery": false
+                    }
+                  },
+                  "hide_data_status": "NONE",
+                  "fev_info": null,
+                  "ad_id": null,
+                  "targeted_or_reached_countries": []
+                }
+              ],
+              "__typename": "CollatedSearchResults"
+            },
+            "cursor": null
+          },
+          {
+            "node": {
+              "collated_results": [
+                {
+                  "ad_archive_id": "1603996667248933",
+                  "collation_count": 2,
+                  "collation_id": "1135307392151245",
+                  "is_active": false,
+                  "page_id": "637755466089763",
+                  "page_is_deleted": false,
+                  "snapshot": {
+                    "branded_content": null,
+                    "page_id": "637755466089763",
+                    "page_is_deleted": false,
+                    "page_profile_uri": "https://www.facebook.com/61576004169645/",
+                    "root_reshared_post": null,
+                    "byline": null,
+                    "disclaimer_label": null,
+                    "page_name": "Био Сила",
+                    "page_profile_picture_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/576848436_1758300774860729_2060771038362760237_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=104&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=C7dIEcm00gkQ7kNvwHRPYYS&_nc_oc=AdpWGmo9G6OcEgdn5D6PseUQd0nmYmb3WjjRlnPNNV2QIyb_kpqzU3Qr_b1bzlF-YSU&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=WnSv2D8_sd9NLSJGuB4jrQ&_nc_ss=7b289&oh=00_Af-i9Z8ZyqMGRiIHhYLjr2zvL2XEHuBB1bd8nWH6ulVO3g&oe=6A2D851E",
+                    "event": null,
+                    "caption": "biosila.bg",
+                    "cta_text": "Order now",
+                    "cards": [],
+                    "body": {
+                      "text": "🌿 Изпитай натуралната енергия на Шилажит! 🌿\n\n✅ Повишава енергийните нива по естествен начин\n✅ Подобрява концентрация\n✅ Подобрява физическата издръжливост и представяне\n✅ Съдържа над 85 минера, нужни за човешкото тяло\n✅ Тестван в лаборатория. Сертификат за качество и безопастност.\n\nhttps://biosila.bg/products/shilajit-extract"
+                    },
+                    "cta_type": "ORDER_NOW",
+                    "display_format": "VIDEO",
+                    "link_description": null,
+                    "link_url": "https://biosila.bg/products/shilajit-extract",
+                    "images": [],
+                    "page_categories": [
+                      "Nutrition"
+                    ],
+                    "page_like_count": 200,
+                    "title": "Натурален хималайски шилажит",
+                    "videos": [
+                      {
+                        "video_hd_url": null,
+                        "video_preview_image_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/577359755_720617623778424_959221110439233673_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=HNF_OrNfJk4Q7kNvwGAHztZ&_nc_oc=AdpwUapq7-YFqDoJtZDYGIeaXTa1egiekZ3q2cBAWWotpXwuuYzj6vqsOvfePlbBy0k&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=WnSv2D8_sd9NLSJGuB4jrQ&_nc_ss=7b289&oh=00_Af-NR_8pP3dZPj1DCyCnpxTn-regoLPL4k_P7WqFFaoX4w&oe=6A2D9CA4",
+                        "video_sd_url": "https://video-otp1-1.xx.fbcdn.net/o1/v/t2/f2/m412/AQOAZTP4yNlm-jIQlicYUgg8XIWfx8x6KaETnigPNty1BcOclYazFz_Y9N3KY8dB_H3qDfbE6VIGV5fIUXYe48G3kJtfOTVH5_eDqaHMSA.mp4?_nc_cat=104&_nc_sid=8bf8fe&_nc_ht=video-otp1-1.xx.fbcdn.net&_nc_ohc=xDM2iKDw6J8Q7kNvwFW99aP&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6ODM5NzM5ODM1MjQ1MTg2LCJhc3NldF9hZ2VfZGF5cyI6MjM4LCJ2aV91c2VjYXNlX2lkIjoxMDc5OSwiZHVyYXRpb25fcyI6NDYsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&_nc_gid=WnSv2D8_sd9NLSJGuB4jrQ&_nc_ss=7b289&_nc_zt=28&oh=00_Af-dLahSfZRik7vjsLy22DNyJe4cE_JNJisT1LKWMTS10w&oe=6A2DAC6A",
+                        "watermarked_video_hd_url": null,
+                        "watermarked_video_sd_url": null
+                      }
+                    ],
+                    "is_reshared": false,
+                    "extra_links": [],
+                    "extra_texts": [],
+                    "extra_images": [],
+                    "extra_videos": [],
+                    "country_iso_code": null,
+                    "brazil_tax_id": null,
+                    "additional_info": null,
+                    "ec_certificates": []
+                  },
+                  "has_user_reported": false,
+                  "report_count": null,
+                  "menu_items": [],
+                  "state_media_run_label": null,
+                  "page_name": "Био Сила",
+                  "impressions_with_index": {
+                    "impressions_text": null,
+                    "impressions_index": -1
+                  },
+                  "gated_type": "ELIGIBLE",
+                  "categories": [
+                    "UNKNOWN"
+                  ],
+                  "is_aaa_eligible": true,
+                  "contains_digital_created_media": false,
+                  "reach_estimate": null,
+                  "currency": "",
+                  "spend": null,
+                  "end_date": 1773298800,
+                  "publisher_platform": [
+                    "FACEBOOK",
+                    "INSTAGRAM",
+                    "AUDIENCE_NETWORK",
+                    "MESSENGER",
+                    "THREADS"
+                  ],
+                  "start_date": 1762243200,
+                  "contains_sensitive_content": false,
+                  "total_active_time": null,
+                  "regional_regulation_data": {
+                    "finserv": {
+                      "is_deemed_finserv": false,
+                      "is_limited_delivery": false
+                    },
+                    "tw_anti_scam": {
+                      "is_limited_delivery": false
+                    }
+                  },
+                  "hide_data_status": "NONE",
+                  "fev_info": null,
+                  "ad_id": null,
+                  "targeted_or_reached_countries": []
+                }
+              ],
+              "__typename": "CollatedSearchResults"
+            },
+            "cursor": null
+          },
+          {
+            "node": {
+              "collated_results": [
+                {
+                  "ad_archive_id": "1800209523977394",
+                  "collation_count": 1,
+                  "collation_id": "1961976964527508",
+                  "is_active": false,
+                  "page_id": "904870626052390",
+                  "page_is_deleted": false,
+                  "snapshot": {
+                    "branded_content": null,
+                    "page_id": "904870626052390",
+                    "page_is_deleted": false,
+                    "page_profile_uri": "https://www.facebook.com/61587568200772/",
+                    "root_reshared_post": null,
+                    "byline": null,
+                    "disclaimer_label": null,
+                    "page_name": "Кажи Чао на Ишиаса",
+                    "page_profile_picture_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/639929793_1295822705940235_7900861411866083224_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=109&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=qLnl4bBOXugQ7kNvwEg0PCi&_nc_oc=Ado_6W_iVkZH9KmsaQgRuScn9H8ynjZENhRpcoAzQRzjmcdmc-BRjui-oQIGTaUeyUM&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=WnSv2D8_sd9NLSJGuB4jrQ&_nc_ss=7b289&oh=00_Af_6CMfzxbPJABx5dDiXs-RyycY_BsLF6IG83I6hUYhTrA&oe=6A2D80FC",
+                    "event": null,
+                    "caption": "biosila.bg",
+                    "cta_text": "Learn more",
+                    "cards": [],
+                    "body": {
+                      "text": "Не става дума за маскиране на болката. Става дума за възстановяване на седалищния нерв — по естествен път, от самия корен.\n\nНе исках да споделям опита си, защото е много лично.\n\nНо знам, че много хора страдат от същото… и се чувстват така, сякаш страдат в мълчание.\n\nБаща ми се бори с болки в седалищния нерв от години.\n\nВ началото беше случайна скованост и леко изтръпване в краката. Но с времето стана по-зле.\n\nПрисвиваше се от болка, когато ставаше от леглото. Охкаше, само за да си завърже обувките.\n\nНакрая спря да идва на семейни събирания. Всички го гледахме как се отказва, и не можехме да направим нищо.\n\nЕдна сутрин всичко се промени.\n\nСтана прекалено рязко, кракът му се подкоси, сякаш вече не беше част от тялото му. Закарахме го в спешното, ужасени, че е получил инсулт.\n\nЛекарите направиха изследвания.\n\nЗа щастие не беше инсулт — но ни казаха нещо, което ни накара да потърсим помощ за него.\n\nСедалищният му нерв „гладуваше\". Точно тази дума използваха.\n\nКазаха, че няма достатъчно кръвоснабдяване, за да поддържа нерва здрав. И че ако не направим нещо бързо, може да доведе до трайно увреждане.\n\nОпитахме всичко.\n\nПравиха му стероидни инжекции. Физиотерапия. Болкоуспокояващи, от които му се виеше свят и му ставаше лошо. Лумбална опора за дивана.\n\nНищо не помогна.\n\nБолката продължаваше да се разпространява. Не можеше дори да седне без болка, камо ли да спи през нощта.\n\nА най-лошото беше, че започна да вярва, че това просто е „животът му отсега нататък\".\n\nТогава, късно една вечер, попаднах на видео във Facebook. Лекар говореше за ишиаса по начин, по който никога не бях чувала преди. Каза, че болкоуспокояващите и операциите просто успокояват симптомите…\n\n…но истинската причина при много хора е нещо вътрешно.\n\nВитаминен дефицит, който блокира кръвотока и предизвиква възпаление.\n\nТози израз ме порази. Беше точно това, което лекарите бяха казали на баща ми.\n\nЛекарят дори каза, че има смес от естествени хранителни вещества, която може да помогне за възстановяването на самия нерв — без операция и без лекарства.\n\nПоръчахме добавката, която спомена — SciatiHeal© — и се молихме да помогне.\n\nВ рамките на една седмица баща ми ставаше от леглото без помощ.\n\nКачвеше се по стълбите във входа, без да има нужда от парапета. До третата седмица се разхождаше из кухнята, сякаш нищо не беше се случвало.\n\nБез парене. Без изтръпване в стъпалата.\n\nОттогава всичко се промени.\n\nСпи по-добре. Ходи повече.\n\nДори отново играе на топка с внуците — нещо, за което всички мислеха, че никога повече няма да прави.\n\nНикога не бях виждала децата ми толкова развълнувани.\n\nИстинското възстановяване най-после започна… и всичко тръгна от правилните хранителни вещества.\n\nПродуктът се казва SciatiHeal©.\n\nФормулиран е от лекари и е изграден около нещо, наречено „триадата за възстановяване на нервите\".\n\nТова означава, че действа целенасочено срещу възпалението, мускулното напрежение и белезите от тъканта — трите неща, които карат болката в седалищния нерв да се връща отново и отново.\n\nНяма да го намерите в магазините. Предлага се само директно от компанията онлайн, което помага цената да остане ниска и формулата — чиста.\n\nАко вие или някой, когото обичате, се бори с болки в седалищния нерв — не чакайте.\n\nМожете да опитате SciatiHeal© напълно без риск за 180 дни.\n\nАко не ви помогне да се почувствате по-добре, получавате парите си обратно\n\nМиналия уикенд баща ми ходи с нас в парка повече от час.\n\nВ един момент се огледа и каза: „Чувствам се така, сякаш отново съм част от света.\"\n\nТози момент е врязан в сърцето ми.\n\nАко се борите с болката… надявам се и вие да получите вашия момент.\n\nМожете да го поръчате от тук👇."
+                    },
+                    "cta_type": "LEARN_MORE",
+                    "display_format": "IMAGE",
+                    "link_description": "BioSila",
+                    "link_url": "https://biosila.bg/pages/sciati-advertorial-1",
+                    "images": [
+                      {
+                        "image_crops": [],
+                        "original_image_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/639808068_4500261113534956_1552779529358044673_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=BMKCbEICXHMQ7kNvwFPNRXR&_nc_oc=AdrhCHG6nx5jZsq6Uz9I1WvQVqjTepDmloeAk7Qt_dhmoH5znXAlhMe4Zrt98nJBVUQ&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=WnSv2D8_sd9NLSJGuB4jrQ&_nc_ss=7b289&oh=00_Af-dkiPCQcYuzb42H7FSAstyliESApK1G2R2T_CGVlNKSw&oe=6A2D9664",
+                        "resized_image_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/640875100_1485391363207035_4762022861589103376_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=105&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=rc0dXikvjLUQ7kNvwFQ-Vmm&_nc_oc=AdoNPuc0wjzgQlWrB265Z9SKGwja7Z673VZMnixmDkJ-H8h5K7Lxo36y_jmYbBrGGjQ&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=WnSv2D8_sd9NLSJGuB4jrQ&_nc_ss=7b289&oh=00_Af9oah5idZ0-M5gfbzUZfxJTVECl-CNWs1CUQn-4Ztx3TQ&oe=6A2D9EF6",
+                        "watermarked_resized_image_url": ""
+                      }
+                    ],
+                    "page_categories": [
+                      "Health & wellness website"
+                    ],
+                    "page_like_count": 95,
+                    "title": "№1 Витамин срещу Ишиас?",
+                    "videos": [],
+                    "is_reshared": false,
+                    "extra_links": [],
+                    "extra_texts": [],
+                    "extra_images": [],
+                    "extra_videos": [],
+                    "country_iso_code": null,
+                    "brazil_tax_id": null,
+                    "additional_info": null,
+                    "ec_certificates": []
+                  },
+                  "has_user_reported": false,
+                  "report_count": null,
+                  "menu_items": [],
+                  "state_media_run_label": null,
+                  "page_name": "Кажи Чао на Ишиаса",
+                  "impressions_with_index": {
+                    "impressions_text": null,
+                    "impressions_index": -1
+                  },
+                  "gated_type": "ELIGIBLE",
+                  "categories": [
+                    "UNKNOWN"
+                  ],
+                  "is_aaa_eligible": true,
+                  "contains_digital_created_media": false,
+                  "reach_estimate": null,
+                  "currency": "",
+                  "spend": null,
+                  "end_date": 1773385200,
+                  "publisher_platform": [
+                    "FACEBOOK",
+                    "INSTAGRAM",
+                    "AUDIENCE_NETWORK",
+                    "MESSENGER",
+                    "THREADS"
+                  ],
+                  "start_date": 1771833600,
+                  "contains_sensitive_content": false,
+                  "total_active_time": null,
+                  "regional_regulation_data": {
+                    "finserv": {
+                      "is_deemed_finserv": false,
+                      "is_limited_delivery": false
+                    },
+                    "tw_anti_scam": {
+                      "is_limited_delivery": false
+                    }
+                  },
+                  "hide_data_status": "NONE",
+                  "fev_info": null,
+                  "ad_id": null,
+                  "targeted_or_reached_countries": []
+                }
+              ],
+              "__typename": "CollatedSearchResults"
+            },
+            "cursor": null
+          },
+          {
+            "node": {
+              "collated_results": [
+                {
+                  "ad_archive_id": "1847563923307144",
+                  "collation_count": 2,
+                  "collation_id": "4356208937995527",
+                  "is_active": false,
+                  "page_id": "637755466089763",
+                  "page_is_deleted": false,
+                  "snapshot": {
+                    "branded_content": null,
+                    "page_id": "637755466089763",
+                    "page_is_deleted": false,
+                    "page_profile_uri": "https://www.facebook.com/61576004169645/",
+                    "root_reshared_post": null,
+                    "byline": null,
+                    "disclaimer_label": null,
+                    "page_name": "Био Сила",
+                    "page_profile_picture_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/565635254_802965619312880_8894162747320621681_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=101&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=pN2suCFuc7UQ7kNvwENbPoG&_nc_oc=AdpZ3ztnNugUd91g5ei4ALSWNlP_iZ_ZShzM0WlEi9RZg-gh81sLRhBhOI7-ggWWocU&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=WnSv2D8_sd9NLSJGuB4jrQ&_nc_ss=7b289&oh=00_Af8DGHE-Qda6RoA3Xhg_GRx078RGLtzCCMnosjjn-LVhHw&oe=6A2D8A48",
+                    "event": null,
+                    "caption": "biosila.bg",
+                    "cta_text": "Order now",
+                    "cards": [],
+                    "body": {
+                      "text": "🌿 Изпитай натуралната енергия на Шилажит! 🌿\n\n✅ Повишава енергийните нива по естествен начин\n✅ Подобрява концентрация\n✅ Подобрява физическата издръжливост и представяне\n✅ Съдържа над 85 минера, нужни за човешкото тяло\n✅ Тестван в лаборатория. Сертификат за качество и безопастност.\n\nhttps://biosila.bg/products/shilajit-extract"
+                    },
+                    "cta_type": "ORDER_NOW",
+                    "display_format": "VIDEO",
+                    "link_description": null,
+                    "link_url": "https://biosila.bg/products/shilajit-extract",
+                    "images": [],
+                    "page_categories": [
+                      "Nutrition"
+                    ],
+                    "page_like_count": 200,
+                    "title": "Натурален хималайски шилажит",
+                    "videos": [
+                      {
+                        "video_hd_url": null,
+                        "video_preview_image_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/558883287_672198588881248_6020759364534983257_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=y-ruzCXjP70Q7kNvwFu0igK&_nc_oc=Ado8BkVrgCpkKF9WaNsP0Gs018YM6FzHoI_LeQsRisL7iFKzCbDRHs5h1q8KZaIHsVk&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=WnSv2D8_sd9NLSJGuB4jrQ&_nc_ss=7b289&oh=00_Af_94xy6p3F6MlD03ng0sMI3wdcXBVUUOsmt92J1WnAI6g&oe=6A2D81C3",
+                        "video_sd_url": "https://video-otp1-1.xx.fbcdn.net/o1/v/t2/f2/m412/AQPechmm0_bz8Yhnib4m8DufK08qxGIx6NNZNR0TAkCXoY2oxsr-oy3C3xeEnwu1QUfJjzRmsrVYOTWW2vugmvJD4vhga1Y8d13ddcjsOA.mp4?_nc_cat=104&_nc_sid=8bf8fe&_nc_ht=video-otp1-1.xx.fbcdn.net&_nc_ohc=ou7WoPzlEn4Q7kNvwFajcP-&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6Nzg0MjYzMDg0MjI4MTIzLCJhc3NldF9hZ2VfZGF5cyI6MjM4LCJ2aV91c2VjYXNlX2lkIjoxMDc5OSwiZHVyYXRpb25fcyI6NDYsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&_nc_gid=WnSv2D8_sd9NLSJGuB4jrQ&_nc_ss=7b289&_nc_zt=28&oh=00_Af9Z3IIjEYJQELWIMdpJIguwpHl_gLjs5KFldgsBmvQXXg&oe=6A2D84D2",
+                        "watermarked_video_hd_url": null,
+                        "watermarked_video_sd_url": null
+                      }
+                    ],
+                    "is_reshared": false,
+                    "extra_links": [],
+                    "extra_texts": [],
+                    "extra_images": [],
+                    "extra_videos": [],
+                    "country_iso_code": null,
+                    "brazil_tax_id": null,
+                    "additional_info": null,
+                    "ec_certificates": []
+                  },
+                  "has_user_reported": false,
+                  "report_count": null,
+                  "menu_items": [],
+                  "state_media_run_label": null,
+                  "page_name": "Био Сила",
+                  "impressions_with_index": {
+                    "impressions_text": null,
+                    "impressions_index": -1
+                  },
+                  "gated_type": "ELIGIBLE",
+                  "categories": [
+                    "UNKNOWN"
+                  ],
+                  "is_aaa_eligible": true,
+                  "contains_digital_created_media": false,
+                  "reach_estimate": null,
+                  "currency": "",
+                  "spend": null,
+                  "end_date": 1762066800,
+                  "publisher_platform": [
+                    "FACEBOOK",
+                    "INSTAGRAM",
+                    "AUDIENCE_NETWORK",
+                    "MESSENGER",
+                    "THREADS"
+                  ],
+                  "start_date": 1760338800,
+                  "contains_sensitive_content": false,
+                  "total_active_time": null,
+                  "regional_regulation_data": {
+                    "finserv": {
+                      "is_deemed_finserv": false,
+                      "is_limited_delivery": false
+                    },
+                    "tw_anti_scam": {
+                      "is_limited_delivery": false
+                    }
+                  },
+                  "hide_data_status": "NONE",
+                  "fev_info": null,
+                  "ad_id": null,
+                  "targeted_or_reached_countries": []
+                }
+              ],
+              "__typename": "CollatedSearchResults"
+            },
+            "cursor": null
+          },
+          {
+            "node": {
+              "collated_results": [
+                {
+                  "ad_archive_id": "1295135396052364",
+                  "collation_count": null,
+                  "collation_id": null,
+                  "is_active": true,
+                  "page_id": "904870626052390",
+                  "page_is_deleted": false,
+                  "snapshot": {
+                    "branded_content": null,
+                    "page_id": "904870626052390",
+                    "page_is_deleted": false,
+                    "page_profile_uri": "https://www.facebook.com/61587568200772/",
+                    "root_reshared_post": null,
+                    "byline": null,
+                    "disclaimer_label": null,
+                    "page_name": "Кажи Чао на Ишиаса",
+                    "page_profile_picture_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/675061736_1509557267177786_4771652886205359132_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=104&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=b1veoLgYXC4Q7kNvwHdNz6S&_nc_oc=AdqLKOQxYwDSs4FL06QFHvxthl6ncnMOzRQTT6B0Mygv_fdEDxPfLXxkRBOasJu-m_M&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=WnSv2D8_sd9NLSJGuB4jrQ&_nc_ss=7b289&oh=00_Af_4LEanBFAIUbGtN6w50mY55m56ZVwT3ePwNCrWZX-KRA&oe=6A2DA523",
+                    "event": null,
+                    "caption": "biosila.bg",
+                    "cta_text": "Learn more",
+                    "cards": [],
+                    "body": {
+                      "text": "Не става дума за маскиране на болката. Става дума за възстановяване на седалищния нерв — по естествен път, от самия корен.\n\nНе исках да споделям опита си, защото е много лично.\n\nНо знам, че много хора страдат от същото… и се чувстват така, сякаш страдат в мълчание.\n\nБаща ми се бори с болки в седалищния нерв от години.\n\nВ началото беше случайна скованост и леко изтръпване в краката. Но с времето стана по-зле.\n\nПрисвиваше се от болка, когато ставаше от леглото. Охкаше, само за да си завърже обувките.\n\nНакрая спря да идва на семейни събирания. Всички го гледахме как се отказва, и не можехме да направим нищо.\n\nЕдна сутрин всичко се промени.\n\nСтана прекалено рязко, кракът му се подкоси, сякаш вече не беше част от тялото му. Закарахме го в спешното, ужасени, че е получил инсулт.\n\nЛекарите направиха изследвания.\n\nЗа щастие не беше инсулт — но ни казаха нещо, което ни накара да потърсим помощ за него.\n\nСедалищният му нерв „гладуваше\". Точно тази дума използваха.\n\nКазаха, че няма достатъчно кръвоснабдяване, за да поддържа нерва здрав. И че ако не направим нещо бързо, може да доведе до трайно увреждане.\n\nОпитахме всичко.\n\nПравиха му стероидни инжекции. Физиотерапия. Болкоуспокояващи, от които му се виеше свят и му ставаше лошо. Лумбална опора за дивана.\n\nНищо не помогна.\n\nБолката продължаваше да се разпространява. Не можеше дори да седне без болка, камо ли да спи през нощта.\n\nА най-лошото беше, че започна да вярва, че това просто е „животът му отсега нататък\".\n\nТогава, късно една вечер, попаднах на видео във Facebook. Лекар говореше за ишиаса по начин, по който никога не бях чувала преди. Каза, че болкоуспокояващите и операциите просто успокояват симптомите…\n\n…но истинската причина при много хора е нещо вътрешно.\n\nВитаминен дефицит, който блокира кръвотока и предизвиква възпаление.\n\nТози израз ме порази. Беше точно това, което лекарите бяха казали на баща ми.\n\nЛекарят дори каза, че има смес от естествени хранителни вещества, която може да помогне за възстановяването на самия нерв — без операция и без лекарства.\n\nПоръчахме добавката, която спомена — SciatiHeal© — и се молихме да помогне.\n\nВ рамките на една седмица баща ми ставаше от леглото без помощ.\n\nКачвеше се по стълбите във входа, без да има нужда от парапета. До третата седмица се разхождаше из кухнята, сякаш нищо не беше се случвало.\n\nБез парене. Без изтръпване в стъпалата.\n\nОттогава всичко се промени.\n\nСпи по-добре. Ходи повече.\n\nДори отново играе на топка с внуците — нещо, за което всички мислеха, че никога повече няма да прави.\n\nНикога не бях виждала децата ми толкова развълнувани.\n\nИстинското възстановяване най-после започна… и всичко тръгна от правилните хранителни вещества.\n\nПродуктът се казва SciatiHeal©.\n\nФормулиран е от лекари и е изграден около нещо, наречено „триадата за възстановяване на нервите\".\n\nТова означава, че действа целенасочено срещу възпалението, мускулното напрежение и белезите от тъканта — трите неща, които карат болката в седалищния нерв да се връща отново и отново.\n\nНяма да го намерите в магазините. Предлага се само директно от компанията онлайн, което помага цената да остане ниска и формулата — чиста.\n\nАко вие или някой, когото обичате, се бори с болки в седалищния нерв — не чакайте.\n\nМожете да опитате SciatiHeal© напълно без риск за 180 дни.\n\nАко не ви помогне да се почувствате по-добре, получавате парите си обратно\n\nМиналия уикенд баща ми ходи с нас в парка повече от час.\n\nВ един момент се огледа и каза: „Чувствам се така, сякаш отново съм част от света.\"\n\nТози момент е врязан в сърцето ми.\n\nАко се борите с болката… надявам се и вие да получите вашия момент.\n\nМожете да го поръчате от тук👇."
+                    },
+                    "cta_type": "LEARN_MORE",
+                    "display_format": "IMAGE",
+                    "link_description": "BioSila",
+                    "link_url": "https://biosila.bg/pages/sciati-advertorial-1",
+                    "images": [
+                      {
+                        "image_crops": [],
+                        "original_image_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/673759964_2851016785254951_1274566360224282873_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=5C2B1GHcSsYQ7kNvwEHFN8P&_nc_oc=Ado_HQ8rHFJrFKji4sSGLfmssTf7N0kXdYqKb1Ka8Av7vvHshYcUxvUuiVoCfuCbMDw&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=WnSv2D8_sd9NLSJGuB4jrQ&_nc_ss=7b289&oh=00_Af8vphcmxuLFGBOBc8HRTco_Sg7qJI2r6DAAI4NGAEnP3w&oe=6A2DB4BA",
+                        "resized_image_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/672690816_826599763268108_2159189417592253944_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=111&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=w4Aqwk8ZwlUQ7kNvwEGnkGs&_nc_oc=Adr9Ukn_Z8gO0srWnxDno7R3QnEus22tPd9uxDBTYIT7mtcrN4S3M_A7piUiAMcvvUU&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=WnSv2D8_sd9NLSJGuB4jrQ&_nc_ss=7b289&oh=00_Af_hidbWWOl_y2q2lSh2_fqKUK0LlPVHeym_CdViRe_ITg&oe=6A2DAE3B",
+                        "watermarked_resized_image_url": ""
+                      }
+                    ],
+                    "page_categories": [
+                      "Health & wellness website"
+                    ],
+                    "page_like_count": 95,
+                    "title": "№1 Витамин срещу Ишиас?",
+                    "videos": [],
+                    "is_reshared": false,
+                    "extra_links": [],
+                    "extra_texts": [],
+                    "extra_images": [],
+                    "extra_videos": [],
+                    "country_iso_code": null,
+                    "brazil_tax_id": null,
+                    "additional_info": null,
+                    "ec_certificates": []
+                  },
+                  "has_user_reported": false,
+                  "report_count": null,
+                  "menu_items": [],
+                  "state_media_run_label": null,
+                  "page_name": "Кажи Чао на Ишиаса",
+                  "impressions_with_index": {
+                    "impressions_text": null,
+                    "impressions_index": -1
+                  },
+                  "gated_type": "ELIGIBLE",
+                  "categories": [
+                    "UNKNOWN"
+                  ],
+                  "is_aaa_eligible": true,
+                  "contains_digital_created_media": false,
+                  "reach_estimate": null,
+                  "currency": "",
+                  "spend": null,
+                  "end_date": 1780815600,
+                  "publisher_platform": [
+                    "FACEBOOK",
+                    "INSTAGRAM",
+                    "AUDIENCE_NETWORK",
+                    "MESSENGER",
+                    "THREADS"
+                  ],
+                  "start_date": 1776582000,
+                  "contains_sensitive_content": false,
+                  "total_active_time": null,
+                  "regional_regulation_data": {
+                    "finserv": {
+                      "is_deemed_finserv": false,
+                      "is_limited_delivery": false
+                    },
+                    "tw_anti_scam": {
+                      "is_limited_delivery": false
+                    }
+                  },
+                  "hide_data_status": "NONE",
+                  "fev_info": null,
+                  "ad_id": null,
+                  "targeted_or_reached_countries": []
+                }
+              ],
+              "__typename": "CollatedSearchResults"
+            },
+            "cursor": null
+          },
+          {
+            "node": {
+              "collated_results": [
+                {
+                  "ad_archive_id": "2364487870715233",
+                  "collation_count": null,
+                  "collation_id": null,
+                  "is_active": false,
+                  "page_id": "904870626052390",
+                  "page_is_deleted": false,
+                  "snapshot": {
+                    "branded_content": null,
+                    "page_id": "904870626052390",
+                    "page_is_deleted": false,
+                    "page_profile_uri": "https://www.facebook.com/61587568200772/",
+                    "root_reshared_post": null,
+                    "byline": null,
+                    "disclaimer_label": null,
+                    "page_name": "Кажи Чао на Ишиаса",
+                    "page_profile_picture_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/672574972_1469177134700149_716067487423055357_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=108&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=-xZqpqctAykQ7kNvwEGexxi&_nc_oc=Adpz4rvo6NdjWygN9eLIlV6Y0mF8Z2ylMGoEdntb6KBYCPcNil4J5Hb2VeC_mfdDlVU&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=WnSv2D8_sd9NLSJGuB4jrQ&_nc_ss=7b289&oh=00_Af9ikdE-xCNWcobOilmA4uYSBuzRkMDX7pfCTYPpzl35rw&oe=6A2DB0ED",
+                    "event": null,
+                    "caption": "biosila.bg",
+                    "cta_text": "Learn more",
+                    "cards": [],
+                    "body": {
+                      "text": "Не става дума за маскиране на болката. Става дума за възстановяване на седалищния нерв — по естествен път, от самия корен.\n\nНе исках да споделям опита си, защото е много лично.\n\nНо знам, че много хора страдат от същото… и се чувстват така, сякаш страдат в мълчание.\n\nБаща ми се бори с болки в седалищния нерв от години.\n\nВ началото беше случайна скованост и леко изтръпване в краката. Но с времето стана по-зле.\n\nПрисвиваше се от болка, когато ставаше от леглото. Охкаше, само за да си завърже обувките.\n\nНакрая спря да идва на семейни събирания. Всички го гледахме как се отказва, и не можехме да направим нищо.\n\nЕдна сутрин всичко се промени.\n\nСтана прекалено рязко, кракът му се подкоси, сякаш вече не беше част от тялото му. Закарахме го в спешното, ужасени, че е получил инсулт.\n\nЛекарите направиха изследвания.\n\nЗа щастие не беше инсулт — но ни казаха нещо, което ни накара да потърсим помощ за него.\n\nСедалищният му нерв „гладуваше\". Точно тази дума използваха.\n\nКазаха, че няма достатъчно кръвоснабдяване, за да поддържа нерва здрав. И че ако не направим нещо бързо, може да доведе до трайно увреждане.\n\nОпитахме всичко.\n\nПравиха му стероидни инжекции. Физиотерапия. Болкоуспокояващи, от които му се виеше свят и му ставаше лошо. Лумбална опора за дивана.\n\nНищо не помогна.\n\nБолката продължаваше да се разпространява. Не можеше дори да седне без болка, камо ли да спи през нощта.\n\nА най-лошото беше, че започна да вярва, че това просто е „животът му отсега нататък\".\n\nТогава, късно една вечер, попаднах на видео във Facebook. Лекар говореше за ишиаса по начин, по който никога не бях чувала преди. Каза, че болкоуспокояващите и операциите просто успокояват симптомите…\n\n…но истинската причина при много хора е нещо вътрешно.\n\nВитаминен дефицит, който блокира кръвотока и предизвиква възпаление.\n\nТози израз ме порази. Беше точно това, което лекарите бяха казали на баща ми.\n\nЛекарят дори каза, че има смес от естествени хранителни вещества, която може да помогне за възстановяването на самия нерв — без операция и без лекарства.\n\nПоръчахме добавката, която спомена — SciatiHeal© — и се молихме да помогне.\n\nВ рамките на една седмица баща ми ставаше от леглото без помощ.\n\nКачвеше се по стълбите във входа, без да има нужда от парапета. До третата седмица се разхождаше из кухнята, сякаш нищо не беше се случвало.\n\nБез парене. Без изтръпване в стъпалата.\n\nОттогава всичко се промени.\n\nСпи по-добре. Ходи повече.\n\nДори отново играе на топка с внуците — нещо, за което всички мислеха, че никога повече няма да прави.\n\nНикога не бях виждала децата ми толкова развълнувани.\n\nИстинското възстановяване най-после започна… и всичко тръгна от правилните хранителни вещества.\n\nПродуктът се казва SciatiHeal©.\n\nФормулиран е от лекари и е изграден около нещо, наречено „триадата за възстановяване на нервите\".\n\nТова означава, че действа целенасочено срещу възпалението, мускулното напрежение и белезите от тъканта — трите неща, които карат болката в седалищния нерв да се връща отново и отново.\n\nНяма да го намерите в магазините. Предлага се само директно от компанията онлайн, което помага цената да остане ниска и формулата — чиста.\n\nАко вие или някой, когото обичате, се бори с болки в седалищния нерв — не чакайте.\n\nМожете да опитате SciatiHeal© напълно без риск за 180 дни.\n\nАко не ви помогне да се почувствате по-добре, получавате парите си обратно\n\nМиналия уикенд баща ми ходи с нас в парка повече от час.\n\nВ един момент се огледа и каза: „Чувствам се така, сякаш отново съм част от света.\"\n\nТози момент е врязан в сърцето ми.\n\nАко се борите с болката… надявам се и вие да получите вашия момент.\n\nМожете да го поръчате от тук👇."
+                    },
+                    "cta_type": "LEARN_MORE",
+                    "display_format": "IMAGE",
+                    "link_description": "BioSila",
+                    "link_url": "https://biosila.bg/pages/sciati-advertorial-1",
+                    "images": [
+                      {
+                        "image_crops": [],
+                        "original_image_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/671409756_1280018186917850_9035821229711567415_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=lV72VKcW0PwQ7kNvwE8KK59&_nc_oc=AdqOyp73PpGwPzruw6ydX4KuhmoVsdaDsnf1vCFP0ht8DXUzV5lPHOTXDfEg0GEZKFk&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=WnSv2D8_sd9NLSJGuB4jrQ&_nc_ss=7b289&oh=00_Af9gmw1ClvXZ1H7FYn7omtknn3O3UxvYfwEEan-j0ssVlg&oe=6A2D838C",
+                        "resized_image_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/672670422_26387965494207067_8195614199444690563_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=106&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=jgnVEn6eyTMQ7kNvwGuXNsX&_nc_oc=AdqeziX775hgQ3SWfeaAiKH5rv-vhYQzc4-XzBEdciVaE66KDJUX6WyAz9bhgkZOu30&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=WnSv2D8_sd9NLSJGuB4jrQ&_nc_ss=7b289&oh=00_Af-EX70sl93eXQHoEvusR438IWfBqiJWO3XY8NdKpeYaaQ&oe=6A2D8B05",
+                        "watermarked_resized_image_url": ""
+                      }
+                    ],
+                    "page_categories": [
+                      "Health & wellness website"
+                    ],
+                    "page_like_count": 95,
+                    "title": "№1 Витамин срещу Ишиас?",
+                    "videos": [],
+                    "is_reshared": false,
+                    "extra_links": [],
+                    "extra_texts": [],
+                    "extra_images": [],
+                    "extra_videos": [],
+                    "country_iso_code": null,
+                    "brazil_tax_id": null,
+                    "additional_info": null,
+                    "ec_certificates": []
+                  },
+                  "has_user_reported": false,
+                  "report_count": null,
+                  "menu_items": [],
+                  "state_media_run_label": null,
+                  "page_name": "Кажи Чао на Ишиаса",
+                  "impressions_with_index": {
+                    "impressions_text": null,
+                    "impressions_index": -1
+                  },
+                  "gated_type": "ELIGIBLE",
+                  "categories": [
+                    "UNKNOWN"
+                  ],
+                  "is_aaa_eligible": true,
+                  "contains_digital_created_media": false,
+                  "reach_estimate": null,
+                  "currency": "",
+                  "spend": null,
+                  "end_date": 1776495600,
+                  "publisher_platform": [
+                    "FACEBOOK",
+                    "INSTAGRAM",
+                    "AUDIENCE_NETWORK",
+                    "MESSENGER",
+                    "THREADS"
+                  ],
+                  "start_date": 1776236400,
+                  "contains_sensitive_content": false,
+                  "total_active_time": null,
+                  "regional_regulation_data": {
+                    "finserv": {
+                      "is_deemed_finserv": false,
+                      "is_limited_delivery": false
+                    },
+                    "tw_anti_scam": {
+                      "is_limited_delivery": false
+                    }
+                  },
+                  "hide_data_status": "NONE",
+                  "fev_info": null,
+                  "ad_id": null,
+                  "targeted_or_reached_countries": []
+                }
+              ],
+              "__typename": "CollatedSearchResults"
+            },
+            "cursor": null
+          },
+          {
+            "node": {
+              "collated_results": [
+                {
+                  "ad_archive_id": "1353686926416563",
+                  "collation_count": 3,
+                  "collation_id": "873690934994350",
+                  "is_active": false,
+                  "page_id": "637755466089763",
+                  "page_is_deleted": false,
+                  "snapshot": {
+                    "branded_content": null,
+                    "page_id": "637755466089763",
+                    "page_is_deleted": false,
+                    "page_profile_uri": "https://www.facebook.com/61576004169645/",
+                    "root_reshared_post": null,
+                    "byline": null,
+                    "disclaimer_label": null,
+                    "page_name": "Био Сила",
+                    "page_profile_picture_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/571376885_1406929790765024_1675334022199268908_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=103&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=Z9C03BJ90csQ7kNvwGRCaBR&_nc_oc=Adqsdq0WLTu1206keS5vevBlYQMMPSYOCvEfIQMaW0GxjMK7Sap5UBU_1fW5sEIxoXE&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=WnSv2D8_sd9NLSJGuB4jrQ&_nc_ss=7b289&oh=00_Af-CTDfnK8C2Jc8onddjYP1L7rU-BDLSlyjcV5pIafRdNQ&oe=6A2DB5E6",
+                    "event": null,
+                    "caption": "biosila.bg",
+                    "cta_text": "Order now",
+                    "cards": [],
+                    "body": {
+                      "text": "Чувстваш се стресирана през целия ден?\n\nАшвагандата се използва от векове за понижаване на стреса и кортизола – хормона, който причинява умора, тревожност и лимфен застой.\n\nСъздадохме формула с ашваганда специално за жени, които искат да се чувстват по-леки, спокойни и тонизирани – без мозъчна мъгла и подуване.\n\n🧘‍♀️ Намалява нивата на кортизол и стрес\n💧 Стимулира лимфния дренаж и намалява подпухналостта\n😴 Подобрява съня и възстановяването\n\nПровери ефекта сама като поръчаш от тук:\nhttps://biosila.bg/products/ashwagandha-extract"
+                    },
+                    "cta_type": "ORDER_NOW",
+                    "display_format": "IMAGE",
+                    "link_description": "Чувстваш се подпухнала и напрегната през деня?\n\nАшвагандата се използва от векове за понижаване на стреса и кортизола – хормона, който причинява умора, тревожност ...",
+                    "link_url": "https://biosila.bg/products/ashwagandha-extract",
+                    "images": [
+                      {
+                        "image_crops": [],
+                        "original_image_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/571191998_1306714527430062_748773398485012677_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=k-XQ0il7zGoQ7kNvwF5sb1i&_nc_oc=Adq0sWucG6pczBG7LrTATqDe-OVnl_vcrcDLPjdVC-hUzNyMxOIAVbNYw4sQsK7f1B0&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=WnSv2D8_sd9NLSJGuB4jrQ&_nc_ss=7b289&oh=00_Af9uISK4aqtJW4zSccdawA63kF7IbPuu-5uYcfj1003SMQ&oe=6A2DA476",
+                        "resized_image_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/572886627_1379067573651970_2284686758083296796_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=100&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=RqogC6AptVEQ7kNvwHlImJE&_nc_oc=Adqpi8Z6CA0ZW0FCOMF7n_uM3ipsrqQBn2BzuxjSBVtKusWGND84xPKI3_AhZY2BOLo&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=WnSv2D8_sd9NLSJGuB4jrQ&_nc_ss=7b289&oh=00_Af8v2eW4x7UsTD1nrwnnZUlqOziRr01ho4E0Q30pQ18w4w&oe=6A2DB5CD",
+                        "watermarked_resized_image_url": ""
+                      }
+                    ],
+                    "page_categories": [
+                      "Nutrition"
+                    ],
+                    "page_like_count": 200,
+                    "title": "Кажи чао на стреса",
+                    "videos": [],
+                    "is_reshared": false,
+                    "extra_links": [],
+                    "extra_texts": [],
+                    "extra_images": [],
+                    "extra_videos": [],
+                    "country_iso_code": null,
+                    "brazil_tax_id": null,
+                    "additional_info": null,
+                    "ec_certificates": []
+                  },
+                  "has_user_reported": false,
+                  "report_count": null,
+                  "menu_items": [],
+                  "state_media_run_label": null,
+                  "page_name": "Био Сила",
+                  "impressions_with_index": {
+                    "impressions_text": null,
+                    "impressions_index": -1
+                  },
+                  "gated_type": "ELIGIBLE",
+                  "categories": [
+                    "UNKNOWN"
+                  ],
+                  "is_aaa_eligible": true,
+                  "contains_digital_created_media": false,
+                  "reach_estimate": null,
+                  "currency": "",
+                  "spend": null,
+                  "end_date": 1767513600,
+                  "publisher_platform": [
+                    "FACEBOOK",
+                    "INSTAGRAM",
+                    "AUDIENCE_NETWORK",
+                    "MESSENGER",
+                    "THREADS"
+                  ],
+                  "start_date": 1761721200,
+                  "contains_sensitive_content": false,
+                  "total_active_time": null,
+                  "regional_regulation_data": {
+                    "finserv": {
+                      "is_deemed_finserv": false,
+                      "is_limited_delivery": false
+                    },
+                    "tw_anti_scam": {
+                      "is_limited_delivery": false
+                    }
+                  },
+                  "hide_data_status": "NONE",
+                  "fev_info": null,
+                  "ad_id": null,
+                  "targeted_or_reached_countries": []
+                }
+              ],
+              "__typename": "CollatedSearchResults"
+            },
+            "cursor": null
+          },
+          {
+            "node": {
+              "collated_results": [
+                {
+                  "ad_archive_id": "828957599675267",
+                  "collation_count": null,
+                  "collation_id": null,
+                  "is_active": true,
+                  "page_id": "904870626052390",
+                  "page_is_deleted": false,
+                  "snapshot": {
+                    "branded_content": null,
+                    "page_id": "904870626052390",
+                    "page_is_deleted": false,
+                    "page_profile_uri": "https://www.facebook.com/61587568200772/",
+                    "root_reshared_post": null,
+                    "byline": null,
+                    "disclaimer_label": null,
+                    "page_name": "Кажи Чао на Ишиаса",
+                    "page_profile_picture_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/672689998_3939790739485436_4933292503486049405_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=109&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=oFFfTSmZ87gQ7kNvwGSasQs&_nc_oc=AdpdJXIcUTW3MVcIMQzExDkc4eMluDWL-2iK6m_4jOkpvI53_lnlqvIeyXiw8DqFJLk&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=WnSv2D8_sd9NLSJGuB4jrQ&_nc_ss=7b289&oh=00_Af-N5roazzW7M-2XjWHn8FzWVhIuJtuD5c4yCwhlSuchnw&oe=6A2DB052",
+                    "event": null,
+                    "caption": "biosila.bg",
+                    "cta_text": "Learn more",
+                    "cards": [],
+                    "body": {
+                      "text": "Не става дума за маскиране на болката. Става дума за възстановяване на седалищния нерв — по естествен път, от самия корен.\n\nНе исках да споделям опита си, защото е много лично.\n\nНо знам, че много хора страдат от същото… и се чувстват така, сякаш страдат в мълчание.\n\nБаща ми се бори с болки в седалищния нерв от години.\n\nВ началото беше случайна скованост и леко изтръпване в краката. Но с времето стана по-зле.\n\nПрисвиваше се от болка, когато ставаше от леглото. Охкаше, само за да си завърже обувките.\n\nНакрая спря да идва на семейни събирания. Всички го гледахме как се отказва, и не можехме да направим нищо.\n\nЕдна сутрин всичко се промени.\n\nСтана прекалено рязко, кракът му се подкоси, сякаш вече не беше част от тялото му. Закарахме го в спешното, ужасени, че е получил инсулт.\n\nЛекарите направиха изследвания.\n\nЗа щастие не беше инсулт — но ни казаха нещо, което ни накара да потърсим помощ за него.\n\nСедалищният му нерв „гладуваше\". Точно тази дума използваха.\n\nКазаха, че няма достатъчно кръвоснабдяване, за да поддържа нерва здрав. И че ако не направим нещо бързо, може да доведе до трайно увреждане.\n\nОпитахме всичко.\n\nПравиха му стероидни инжекции. Физиотерапия. Болкоуспокояващи, от които му се виеше свят и му ставаше лошо. Лумбална опора за дивана.\n\nНищо не помогна.\n\nБолката продължаваше да се разпространява. Не можеше дори да седне без болка, камо ли да спи през нощта.\n\nА най-лошото беше, че започна да вярва, че това просто е „животът му отсега нататък\".\n\nТогава, късно една вечер, попаднах на видео във Facebook. Лекар говореше за ишиаса по начин, по който никога не бях чувала преди. Каза, че болкоуспокояващите и операциите просто успокояват симптомите…\n\n…но истинската причина при много хора е нещо вътрешно.\n\nВитаминен дефицит, който блокира кръвотока и предизвиква възпаление.\n\nТози израз ме порази. Беше точно това, което лекарите бяха казали на баща ми.\n\nЛекарят дори каза, че има смес от естествени хранителни вещества, която може да помогне за възстановяването на самия нерв — без операция и без лекарства.\n\nПоръчахме добавката, която спомена — SciatiHeal© — и се молихме да помогне.\n\nВ рамките на една седмица баща ми ставаше от леглото без помощ.\n\nКачвеше се по стълбите във входа, без да има нужда от парапета. До третата седмица се разхождаше из кухнята, сякаш нищо не беше се случвало.\n\nБез парене. Без изтръпване в стъпалата.\n\nОттогава всичко се промени.\n\nСпи по-добре. Ходи повече.\n\nДори отново играе на топка с внуците — нещо, за което всички мислеха, че никога повече няма да прави.\n\nНикога не бях виждала децата ми толкова развълнувани.\n\nИстинското възстановяване най-после започна… и всичко тръгна от правилните хранителни вещества.\n\nПродуктът се казва SciatiHeal©.\n\nФормулиран е от лекари и е изграден около нещо, наречено „триадата за възстановяване на нервите\".\n\nТова означава, че действа целенасочено срещу възпалението, мускулното напрежение и белезите от тъканта — трите неща, които карат болката в седалищния нерв да се връща отново и отново.\n\nНяма да го намерите в магазините. Предлага се само директно от компанията онлайн, което помага цената да остане ниска и формулата — чиста.\n\nАко вие или някой, когото обичате, се бори с болки в седалищния нерв — не чакайте.\n\nМожете да опитате SciatiHeal© напълно без риск за 180 дни.\n\nАко не ви помогне да се почувствате по-добре, получавате парите си обратно\n\nМиналия уикенд баща ми ходи с нас в парка повече от час.\n\nВ един момент се огледа и каза: „Чувствам се така, сякаш отново съм част от света.\"\n\nТози момент е врязан в сърцето ми.\n\nАко се борите с болката… надявам се и вие да получите вашия момент.\n\nМожете да го поръчате от тук👇."
+                    },
+                    "cta_type": "LEARN_MORE",
+                    "display_format": "IMAGE",
+                    "link_description": "BioSila",
+                    "link_url": "https://biosila.bg/pages/sciati-advertorial-1",
+                    "images": [
+                      {
+                        "image_crops": [],
+                        "original_image_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/674186992_1509622257407029_1990660460244359126_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=SuuOxIf4BIIQ7kNvwFM3EDq&_nc_oc=AdrDmnJZcLRHvHHHMobYnIgJ46q8UgCMcKaCOyVJznVGsOe3DYUwIJQ4YCOl2O5EUZE&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=WnSv2D8_sd9NLSJGuB4jrQ&_nc_ss=7b289&oh=00_Af8oLLWSIr-vXBshPYxlr-kVjqSTWUqRRqz8EDT6unIjOw&oe=6A2D9A78",
+                        "resized_image_url": "https://scontent-otp1-1.xx.fbcdn.net/v/t39.35426-6/674065930_967799829133078_4038630449037916665_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=101&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=MOLT2_pe-N8Q7kNvwFs1AD-&_nc_oc=AdqvASFZuaSuzvb-S_NG2YpKTUwakHffKdKurpSKO1Ke385s31WxnRBJkybv6hOY27g&_nc_zt=14&_nc_ht=scontent-otp1-1.xx&_nc_gid=WnSv2D8_sd9NLSJGuB4jrQ&_nc_ss=7b289&oh=00_Af8CywXNHchSTgXllDOTjM7mFXieos9-b0IcnH4RjeNJSQ&oe=6A2DAF7B",
+                        "watermarked_resized_image_url": ""
+                      }
+                    ],
+                    "page_categories": [
+                      "Health & wellness website"
+                    ],
+                    "page_like_count": 95,
+                    "title": "№1 Витамин срещу Ишиас?",
+                    "videos": [],
+                    "is_reshared": false,
+                    "extra_links": [],
+                    "extra_texts": [],
+                    "extra_images": [],
+                    "extra_videos": [],
+                    "country_iso_code": null,
+                    "brazil_tax_id": null,
+                    "additional_info": null,
+                    "ec_certificates": []
+                  },
+                  "has_user_reported": false,
+                  "report_count": null,
+                  "menu_items": [],
+                  "state_media_run_label": null,
+                  "page_name": "Кажи Чао на Ишиаса",
+                  "impressions_with_index": {
+                    "impressions_text": null,
+                    "impressions_index": -1
+                  },
+                  "gated_type": "ELIGIBLE",
+                  "categories": [
+                    "UNKNOWN"
+                  ],
+                  "is_aaa_eligible": true,
+                  "contains_digital_created_media": false,
+                  "reach_estimate": null,
+                  "currency": "",
+                  "spend": null,
+                  "end_date": 1780902000,
+                  "publisher_platform": [
+                    "FACEBOOK",
+                    "INSTAGRAM",
+                    "AUDIENCE_NETWORK",
+                    "MESSENGER",
+                    "THREADS"
+                  ],
+                  "start_date": 1776668400,
+                  "contains_sensitive_content": false,
+                  "total_active_time": null,
+                  "regional_regulation_data": {
+                    "finserv": {
+                      "is_deemed_finserv": false,
+                      "is_limited_delivery": false
+                    },
+                    "tw_anti_scam": {
+                      "is_limited_delivery": false
+                    }
+                  },
+                  "hide_data_status": "NONE",
+                  "fev_info": null,
+                  "ad_id": null,
+                  "targeted_or_reached_countries": []
+                }
+              ],
+              "__typename": "CollatedSearchResults"
+            },
+            "cursor": null
+          }
+        ],
+        "page_info": {
+          "end_cursor": "AQHSdwv7lgFIF89w6El2_hWvWOZUMhda1pU52TXdzISB6GxiK9U1uy6pd6JUGPof1B-4MPx1SvadapylBAQ6JtkcPKm21eD78jDI6v8_6IHMXFLIbem7FAZ14uO7f_MXa55T23y4AA1KZa1Fx27nvNWuncztvOyNLNMaA5sMXPNNTf99Eqk9pe4-2iqEIrQQhtRtbQK08SSKFqFylpFRglbHlGkoJa59vbsmLoJKADVSgL_GzrGjw00NiMQzuD4uMPXrJosTh6-2fvNVw7TJls63u0BCcsu_kgZLZmEHpPPJ-Gl5-F3i1P26-K397lnWRk_iNJuMM6FpiLFJpWvSlv16bOxk4DLlpGggAbClvTSJb_tU1K8EJh-sWZIgBxWZqT7fbp76ysAjMQxxtFQl6dlCmvWdTtixcLAV2u39wKcEy-ypRI9-0yuJItMBrdc9btE_jjyYTLX64vFuWs1ctH1k6kaxH7E6ytG8ekiHo2JDyTC4YZZrY3HjWnbGvT7LZ2-6oLOIIjf6ozvpivZySnM_nmXd6KBx5mtrUMAsxJg5PvMOBI8DploAGIJ7460ZAscAb6FI9J6_ruhO_ihoXsMPmac59PUUQAgkRPHwyy-7NpH5juA3LcJvP2kgPXK94X8aZjwet_jP5bs_0vbnOzhy9EloHjQ4pZ_9I_jgR5BRQWRUuLX0_vzgc7mEXpMJGE1SExaK3-M26G-d46pylTBNNa76ws4sk4fxwYczOZN45T7HDV4xwkYw8YUCQzu9xp3Ft1GRBFqMqUtkbUXyttpz0C1yR3cUZC5vfjQDwzdNV2LlCM0zREQo6ZjSVk1tE7J69YspjJIAmi2ofzHDKLx6TiyH5gCOeLPIs_04ZHZvwyZLKTBH09EKHu6DkEeuEeDL6YjdXel3oxIHKkjBtglHLoJn9yvYMouq6Znud-gGN00aZzc3Zm4APV-7Lmu4m90-0u4_0yDoyxyZJxtCLo6WC2-jao4UhCUhhKYoyvDa-u0ieU6TSrcW94Q4CCGKgIVR468GM2LfGYBttXhrQ7N4AmdCSOdaxcWJewxQ1PfCjLpzx1SQgSXYHiKIP-84AD4dXhQQkHzY16YPe_svN533glOXUIGcPQXzDGgkFqztF6D7hIC3VTaxVbF4K_GQG3c_",
+          "has_next_page": true
+        }
+      }
+    }
+  },
+  "extensions": {
+    "server_metadata": {
+      "request_start_time_ms": 1780991952558,
+      "time_at_flush_ms": 1780991953525
+    },
+    "is_final": true
+  }
+}

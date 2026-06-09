@@ -1,0 +1,28 @@
+{
+  "data": {
+    "ad_library_main": {
+      "dynamic_filter_options": {
+        "content_languages": [
+          {
+            "count": 10,
+            "key": "bg",
+            "display_name": "Bulgarian"
+          }
+        ],
+        "disclaimers": [],
+        "pages": [],
+        "reached_regions": [],
+        "countries": [],
+        "cities": [],
+        "targeted_regions": []
+      }
+    }
+  },
+  "extensions": {
+    "server_metadata": {
+      "request_start_time_ms": 1780994803634,
+      "time_at_flush_ms": 1780994803743
+    },
+    "is_final": true
+  }
+}
