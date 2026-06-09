@@ -233,7 +233,7 @@ country's language, which means **no display/xvfb is needed** and it works on a 
 VPS. (Pass `headless=false` only to watch / hand-clear a consent dialog.)
 
 **Deploying to a VPS:** the server is env-configurable (`MCP_HOST`, `MCP_PORT`,
-`MCP_TOKEN` for a secret-in-URL `…/mcp/<token>`, `MCP_SESSION_CACHE`, `MCP_PROFILE_DIR`)
+`MCP_TOKEN` for a secret-in-URL `…/<token>`, `MCP_SESSION_CACHE`, `MCP_PROFILE_DIR`)
 and ships with a `Dockerfile` (just Chromium — headless bootstrap captures reach, no
 xvfb). See [DEPLOY.md](DEPLOY.md) — it covers running behind an existing Apache/nginx
 (the common case) or with bundled Caddy HTTPS, plus seeding/refreshing the session.

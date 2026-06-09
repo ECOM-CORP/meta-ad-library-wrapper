@@ -31,10 +31,10 @@ from .session import bootstrap_session
 # Config via env (so the same code runs locally and on a VPS):
 #   MCP_HOST           bind address (default 127.0.0.1; use 0.0.0.0 in a container)
 #   MCP_PORT           port (default 8765)
-#   MCP_TOKEN          secret embedded in the URL path — the endpoint becomes
-#                      /mcp/<MCP_TOKEN>; requests to any other path 404. This is the
-#                      capability-URL auth: only callers who know the full URL get in.
-#                      Empty = no token (endpoint at /mcp) — local dev only.
+#   MCP_TOKEN          secret that becomes the URL path — the endpoint is /<MCP_TOKEN>
+#                      (e.g. https://mcp.example.com/<token>); any other path 404s. This
+#                      is the capability-URL auth: only callers who know the full URL get
+#                      in. Empty = no token (endpoint at /mcp) — local dev only.
 #   MCP_SESSION_CACHE  path to session_cache.json (default ./session_cache.json)
 #   MCP_PROFILE_DIR    Playwright profile dir for bootstrap (default ./.pw-profile)
 CACHE_PATH = Path(os.environ.get("MCP_SESSION_CACHE", "session_cache.json"))
@@ -42,7 +42,7 @@ PROFILE_DIR = os.environ.get("MCP_PROFILE_DIR", ".pw-profile")
 _HOST = os.environ.get("MCP_HOST", "127.0.0.1")
 _PORT = int(os.environ.get("MCP_PORT", "8765"))
 _TOKEN = os.environ.get("MCP_TOKEN", "").strip()
-_PATH = f"/mcp/{_TOKEN}" if _TOKEN else "/mcp"
+_PATH = f"/{_TOKEN}" if _TOKEN else "/mcp"
 
 _ACTIVE = {"all": "all", "true": "active", "false": "inactive"}
 

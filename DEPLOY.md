@@ -6,7 +6,7 @@ to be exposed. The Docker image runs `run_mcp.py` only.
 
 ## Auth: secret-in-URL
 
-The endpoint is `…/mcp/<MCP_TOKEN>`. Requests to any other path return 404, so only a
+The endpoint is `…/<MCP_TOKEN>`. Requests to any other path return 404, so only a
 caller who knows the full URL gets in (a "capability URL"). Always serve it over HTTPS.
 
 ## 1. Build & run (behind your existing Apache/nginx)
@@ -24,7 +24,7 @@ python3 -c "import secrets; print('MCP_TOKEN='+secrets.token_urlsafe(32))" >> .e
 docker compose up -d --build
 ```
 
-The MCP is now at `http://127.0.0.1:8765/mcp/<MCP_TOKEN>` on the box (not yet public).
+The MCP is now at `http://127.0.0.1:8765/<MCP_TOKEN>` on the box (not yet public).
 
 ### Apache vhost (reverse proxy + your existing HTTPS)
 
@@ -46,7 +46,7 @@ subdomain (get its cert with `certbot --apache -d mcp.yourdomain.com`):
 </VirtualHost>
 ```
 
-`systemctl reload apache2`. Public URL: `https://mcp.yourdomain.com/mcp/<MCP_TOKEN>`.
+`systemctl reload apache2`. Public URL: `https://mcp.yourdomain.com/<MCP_TOKEN>`.
 
 > nginx equivalent: `proxy_pass http://127.0.0.1:8765;` with `proxy_buffering off;` and
 > `proxy_http_version 1.1;` so SSE isn't buffered.
@@ -60,7 +60,7 @@ record pointed at the VPS), then:
 docker compose -f docker-compose.caddy.yml up -d --build
 ```
 
-Caddy fetches HTTPS automatically. URL: `https://<MCP_DOMAIN>/mcp/<MCP_TOKEN>`.
+Caddy fetches HTTPS automatically. URL: `https://<MCP_DOMAIN>/<MCP_TOKEN>`.
 
 ## 2. Seed the session
 
@@ -82,8 +82,17 @@ Two ways to get one:
 ## 3. Connect from Claude
 
 - **claude.ai web / desktop:** Settings → Connectors → Add custom connector →
-  `https://mcp.yourdomain.com/mcp/<MCP_TOKEN>`.
-- **Claude Code:** `claude mcp add --transport http meta-ad-library https://mcp.yourdomain.com/mcp/<MCP_TOKEN>`
+  `https://mcp.yourdomain.com/<MCP_TOKEN>`.
+- **Claude Code:** `claude mcp add --transport http meta-ad-library https://mcp.yourdomain.com/<MCP_TOKEN>`
+
+## Staying up & updating
+
+- **24/7:** the container runs with `restart: unless-stopped`, so the Docker daemon
+  (a systemd service that starts on boot) keeps it alive across crashes and reboots. You
+  don't run anything to keep it up — it stays up until you `docker compose stop` it.
+- **Updating:** to ship new code, just run **`./deploy.sh`** — it pulls the latest, rebuilds
+  the image, and restarts the container. The session in `data/` survives the redeploy, so
+  you don't re-bootstrap. (On first run it also creates `.env` with a random token.)
 
 ## Notes
 
