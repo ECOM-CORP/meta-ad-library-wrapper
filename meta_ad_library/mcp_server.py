@@ -294,6 +294,22 @@ async def session_status(probe: bool = True) -> dict:
 
 
 @mcp.tool()
+async def clear_session() -> dict:
+    """Invalidate the session: delete session_cache.json and drop the in-memory client,
+    so there's no session until you `bootstrap` again. Use to force a clean slate (e.g.
+    a stale/rate-limited session). After this, search/scan/reach return a no-session
+    error until you bootstrap."""
+    global _client
+    _client = None
+    existed = CACHE_PATH.exists()
+    CACHE_PATH.unlink(missing_ok=True)
+    return {
+        "cleared": existed,
+        "detail": "deleted session_cache.json" if existed else "no session file to delete",
+    }
+
+
+@mcp.tool()
 async def bootstrap(country: str = "BG", headless: bool = True) -> dict:
     """Re-harvest the session (doc_id, lsd, cookies + the ad-details doc_id for reach)
     by driving a browser, then reload it. Use this when session_status reports
