@@ -18,8 +18,14 @@ import anyio
 from mcp.server.fastmcp import FastMCP
 
 from .client import AdLibraryClient
-from .exceptions import AdLibraryError, SessionExpiredError, StaleDocIdError
+from .exceptions import (
+    AdLibraryError,
+    BootstrapError,
+    SessionExpiredError,
+    StaleDocIdError,
+)
 from .models import SessionData
+from .session import bootstrap_session
 
 CACHE_PATH = Path("session_cache.json")
 _ACTIVE = {"all": "all", "true": "active", "false": "inactive"}
@@ -38,6 +44,50 @@ def _get_client() -> AdLibraryClient | None:
 
 def _active(value: str) -> str:
     return _ACTIVE.get((value or "all").strip().lower(), "all")
+
+
+# The lean field set returned per ad by default. The full normalized `Ad` has many
+# more fields (dates, platforms, caption, link_description, cta_text, reach breakdown,
+# ...); pass verbose=true to get them all. `raw` is ALWAYS stripped for now — it holds
+# the original Meta node (incl. image refs) and will get dedicated handling later.
+DEFAULT_AD_FIELDS = (
+    "id",
+    "page_id",
+    "page_name",
+    "creative_bodies",
+    "snapshot_url",
+    "link_url",
+    "title",
+    "eu_total_reach",
+)
+
+
+def _shape(result: dict, verbose: bool = False) -> dict:
+    """Shape an MCP response in place: always strip `raw`; project ads to
+    DEFAULT_AD_FIELDS unless verbose.
+
+    Handles every tool shape: the single AdReach-shaped dict (get_ad_reach) — only its
+    top-level `raw` is dropped — and search/scan pages whose ads each carry `raw` plus a
+    nested `reach.raw`. Error dicts (no `ads`, no `raw`) pass through untouched."""
+    if not isinstance(result, dict):
+        return result
+    result.pop("raw", None)  # get_ad_reach (AdReach-shaped)
+    ads = result.get("ads")
+    if isinstance(ads, list):  # search_* / scan_* pages
+        shaped = []
+        for ad in ads:
+            if not isinstance(ad, dict):
+                shaped.append(ad)
+                continue
+            ad.pop("raw", None)
+            if isinstance(ad.get("reach"), dict):
+                ad["reach"].pop("raw", None)
+            shaped.append(
+                ad if verbose
+                else {k: ad[k] for k in DEFAULT_AD_FIELDS if k in ad}
+            )
+        result["ads"] = shaped
+    return result
 
 
 async def _call(method: str, **kwargs) -> dict:
@@ -62,72 +112,88 @@ async def _call(method: str, **kwargs) -> dict:
 async def search_keyword(
     query: str, country: str = "ALL", active: str = "all", ad_type: str = "all",
     limit: int = 30, cursor: str | None = None, with_reach: bool = False,
+    verbose: bool = False,
 ) -> dict:
     """Search the Meta Ad Library by keyword. Returns one page:
     {count, has_next_page, next_cursor, ads}. For the next page, call again with
     cursor=next_cursor. country is an ISO code (BG, DE, ...) or ALL. active is
     all|true|false (true=active only). with_reach=true adds EU reach per ad (slower:
-    one extra request per ad)."""
-    return await _call(
+    one extra request per ad). Each ad returns a lean field set by default
+    (id, page_id, page_name, creative_bodies, snapshot_url, link_url, title,
+    eu_total_reach); pass verbose=true for all fields (raw excluded)."""
+    res = await _call(
         "fetch_by_keyword", query=query, country=country, active_status=_active(active),
         ad_type=ad_type, limit=limit, cursor=cursor, with_reach=with_reach,
     )
+    return _shape(res, verbose)
 
 
 @mcp.tool()
 async def search_page(
     page_id: str, country: str = "ALL", active: str = "all", ad_type: str = "all",
     limit: int = 30, cursor: str | None = None, with_reach: bool = False,
+    verbose: bool = False,
 ) -> dict:
     """Search all ads from one advertiser page. page_id is the INTERNAL page id
     (the ad.page_id from a keyword result), NOT the number in a facebook.com/<id>
-    profile URL. Returns one page; paginate with cursor=next_cursor."""
-    return await _call(
+    profile URL. Returns one page; paginate with cursor=next_cursor. Each ad returns a
+    lean field set by default; pass verbose=true for all fields (raw excluded)."""
+    res = await _call(
         "fetch_by_page_id", page_id=page_id, country=country, active_status=_active(active),
         ad_type=ad_type, limit=limit, cursor=cursor, with_reach=with_reach,
     )
+    return _shape(res, verbose)
 
 
 @mcp.tool()
 async def get_ad_reach(ad_archive_id: str, page_id: str, country: str = "BG") -> dict:
     """EU transparency reach for one ad (the 'EU ad delivery' panel): eu_total_reach
-    plus targeted countries/age/gender and payer/beneficiary. eu_total_reach is null
-    for ads that don't target the EU."""
-    return await _call(
+    plus targeted countries/age/gender and payer/beneficiary, including the full
+    per-country age/gender breakdown. eu_total_reach is null for ads that don't target
+    the EU. (The original `raw` node is stripped.)"""
+    res = await _call(
         "get_ad_reach", ad_archive_id=ad_archive_id, page_id=page_id, country=country
     )
+    return _shape(res)
 
 
 @mcp.tool()
 async def scan_keyword(
     query: str, reach_threshold: int, country: str = "ALL", patience: int = 3,
     active: str = "all", ad_type: str = "all", cursor: str | None = None, streak: int = 0,
+    verbose: bool = False,
 ) -> dict:
     """Find an advertiser's high-reach 'winning' ads. Sorts by impressions desc,
     enriches EU reach, and stops after `patience` ads in a row below reach_threshold.
     Returns ONE page: {count, done, stop_reason, streak, next_cursor, ads}. IMPORTANT:
     if done is false, call again with cursor=next_cursor AND streak=streak (the streak
     is stateful across pages). Stop when done is true. stop_reason is
-    streak|exhausted."""
-    return await _call(
+    streak|exhausted. Each ad returns a lean field set by default; pass verbose=true
+    for all fields (raw excluded)."""
+    res = await _call(
         "scan_page_by_keyword", query=query, country=country, reach_threshold=reach_threshold,
         patience=patience, active_status=_active(active), ad_type=ad_type,
         cursor=cursor, streak=streak,
     )
+    return _shape(res, verbose)
 
 
 @mcp.tool()
 async def scan_page(
     page_id: str, reach_threshold: int, country: str = "ALL", patience: int = 3,
     active: str = "all", ad_type: str = "all", cursor: str | None = None, streak: int = 0,
+    verbose: bool = False,
 ) -> dict:
     """Like scan_keyword but for one advertiser page (internal page_id). Returns one
-    page; if done is false, call again with cursor=next_cursor and streak=streak."""
-    return await _call(
+    page; if done is false, call again with cursor=next_cursor and streak=streak. Each
+    ad returns a lean field set by default; pass verbose=true for all fields (raw
+    excluded)."""
+    res = await _call(
         "scan_page_by_page_id", page_id=page_id, country=country, reach_threshold=reach_threshold,
         patience=patience, active_status=_active(active), ad_type=ad_type,
         cursor=cursor, streak=streak,
     )
+    return _shape(res, verbose)
 
 
 @mcp.tool()
@@ -150,6 +216,34 @@ async def session_status(probe: bool = True) -> dict:
     if "error" in res:
         info["detail"] = res["error"]
     return info
+
+
+@mcp.tool()
+async def bootstrap(country: str = "BG", headless: bool = False) -> dict:
+    """Re-harvest the session (doc_id, lsd, cookies + the ad-details doc_id for reach)
+    by driving a real browser, then reload it. Use this when session_status reports
+    valid=false (tokens rotate over time). Opens a VISIBLE browser by default — if a
+    cookie/consent dialog appears, clear it; pass headless=true to run without a window
+    once consent has been cleared once. Slow (~20-40s). Returns the fresh doc_id and
+    whether the reach (details) doc_id was captured."""
+    global _client
+    try:
+        session = await anyio.to_thread.run_sync(
+            functools.partial(
+                bootstrap_session, country=country, headless=headless,
+                save_to=str(CACHE_PATH),
+            )
+        )
+    except BootstrapError as exc:
+        return {"error": f"Bootstrap failed: {exc}"}
+    except Exception as exc:  # noqa: BLE001 — surface any Playwright/runtime failure
+        return {"error": f"Bootstrap error: {type(exc).__name__}: {exc}"}
+    _client = None  # next call reloads the fresh session
+    return {
+        "status": "bootstrapped",
+        "doc_id": session.doc_id,
+        "has_details_doc_id": session.details_doc_id is not None,
+    }
 
 
 def main() -> None:

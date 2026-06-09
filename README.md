@@ -223,7 +223,13 @@ Or in a Claude Desktop config:
 ```
 
 **Tools:** `search_keyword`, `search_page`, `get_ad_reach`, `scan_keyword`,
-`scan_page`, `session_status`.
+`scan_page`, `session_status`, `bootstrap`.
+
+`bootstrap` re-harvests the session from inside the server (use it when
+`session_status` reports `valid:false`). It defaults to a **headed** browser because the
+reach (`AdLibraryV3AdDetailsQuery`) doc_id is only captured reliably with a visible
+window; `headless=true` works for search but returns `has_details_doc_id:false`, so
+reach stays unavailable until a headed bootstrap.
 
 The `search_*` and `scan_*` tools are **paginated** — they return one page plus a
 `next_cursor` (and, for scans, a `streak`). The tool descriptions instruct the model to
