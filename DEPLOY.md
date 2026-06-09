@@ -13,8 +13,9 @@ Two layers, both gated by your secret URL:
 - **Auto-approve OAuth** (`MCP_OAUTH=1`, on by default in the compose) — claude.ai's web
   connector *requires* OAuth, so the server runs a tiny OAuth layer that **auto-approves**
   (no users, no login). It exists only to satisfy Claude's connector flow; real access is
-  still the secret URL. This needs `MCP_PUBLIC_URL` set to your public base (e.g.
-  `https://metamcp.example.com`) so the OAuth metadata advertises the right URLs.
+  still the secret URL. The OAuth metadata URL is built from `MCP_DOMAIN` (e.g.
+  `metamcp.example.com` → `https://metamcp.example.com`); set `MCP_PUBLIC_URL` only to
+  override it.
   Clients that don't need OAuth (Claude Code, the API) also work — they just complete the
   auto-approve handshake.
 
@@ -30,8 +31,8 @@ cd meta-ad-library-wrapper
 cp .env.example .env
 # set MCP_TOKEN to a long random value:
 python3 -c "import secrets; print('MCP_TOKEN='+secrets.token_urlsafe(32))" >> .env
-# then edit .env and set MCP_PUBLIC_URL to your subdomain, e.g.
-#   MCP_PUBLIC_URL=https://metamcp.yourdomain.com
+# then edit .env and set MCP_DOMAIN to your subdomain, e.g.
+#   MCP_DOMAIN=metamcp.yourdomain.com
 docker compose up -d --build
 ```
 

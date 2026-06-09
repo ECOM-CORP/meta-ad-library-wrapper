@@ -44,10 +44,14 @@ _PORT = int(os.environ.get("MCP_PORT", "8765"))
 _TOKEN = os.environ.get("MCP_TOKEN", "").strip()
 _PATH = f"/{_TOKEN}" if _TOKEN else "/mcp"
 # MCP_OAUTH=1 turns on an auto-approving OAuth layer (no users) so claude.ai's web
-# connector — which requires OAuth — can connect. MCP_PUBLIC_URL is the externally
-# visible base (e.g. https://metamcp.example.com) used in the OAuth metadata.
+# connector — which requires OAuth — can connect. The externally visible base used in
+# the OAuth metadata is taken from MCP_PUBLIC_URL, else https://<MCP_DOMAIN>, else the
+# local host:port.
 _OAUTH = os.environ.get("MCP_OAUTH", "0").strip().lower() in ("1", "true", "yes")
-_PUBLIC_URL = os.environ.get("MCP_PUBLIC_URL", f"http://{_HOST}:{_PORT}").rstrip("/")
+_PUBLIC_URL = os.environ.get("MCP_PUBLIC_URL", "").strip().rstrip("/")
+if not _PUBLIC_URL:
+    _domain = os.environ.get("MCP_DOMAIN", "").strip()
+    _PUBLIC_URL = f"https://{_domain}" if _domain else f"http://{_HOST}:{_PORT}"
 
 _ACTIVE = {"all": "all", "true": "active", "false": "inactive"}
 

@@ -31,10 +31,10 @@ if [ ! -f .env ]; then
   echo "    Save it — it IS your URL path: https://<your-domain>/${TOKEN}"
 fi
 
-# OAuth metadata needs a correct public URL — fail loudly if it's still the placeholder.
-if grep -qE '^MCP_PUBLIC_URL=.*example\.com' .env 2>/dev/null || ! grep -qE '^MCP_PUBLIC_URL=' .env 2>/dev/null; then
-  echo "ERROR: set MCP_PUBLIC_URL in .env to your real public URL" >&2
-  echo "       e.g. MCP_PUBLIC_URL=https://metamcp.yourdomain.com" >&2
+# OAuth metadata needs your real domain — fail loudly if it's missing or the placeholder.
+if grep -qE '^MCP_DOMAIN=.*example\.com' .env 2>/dev/null || ! grep -qE '^MCP_DOMAIN=' .env 2>/dev/null; then
+  echo "ERROR: set MCP_DOMAIN in .env to your real subdomain" >&2
+  echo "       e.g. MCP_DOMAIN=metamcp.yourdomain.com" >&2
   exit 1
 fi
 
