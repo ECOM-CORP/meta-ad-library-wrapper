@@ -199,6 +199,40 @@ In the library: `client.scan_by_keyword(query, country, reach_threshold, patienc
   (`python capture_details.py <ad_archive_id> BG`).
 - `python -m pytest tests/` — offline parser tests against committed samples.
 
+## MCP server (for AI clients)
+
+The same wrapper is exposed as an **MCP server** (Streamable HTTP) so AI clients
+(Claude Code, Claude Desktop, etc.) can search the Ad Library as tools. It wraps the
+library in-process and shares `session_cache.json` with the REST API.
+
+```powershell
+.venv\Scripts\python run_mcp.py        # http://127.0.0.1:8765/mcp
+```
+
+Add it to Claude Code:
+
+```powershell
+claude mcp add --transport http meta-ad-library http://127.0.0.1:8765/mcp
+```
+
+Or in a Claude Desktop config:
+
+```json
+{ "mcpServers": { "meta-ad-library": {
+  "type": "streamable-http", "url": "http://127.0.0.1:8765/mcp" } } }
+```
+
+**Tools:** `search_keyword`, `search_page`, `get_ad_reach`, `scan_keyword`,
+`scan_page`, `session_status`.
+
+The `search_*` and `scan_*` tools are **paginated** — they return one page plus a
+`next_cursor` (and, for scans, a `streak`). The tool descriptions instruct the model to
+call again with those values until `done`/no `next_cursor`, so the AI client walks
+through results page by page. Tools return `{"error": ...}` (not a crash) when the
+session is missing/stale, so the model can ask you to re-run `bootstrap_session()`.
+Bootstrap stays a manual CLI step (it opens a browser); the MCP server only consumes
+the cached session.
+
 ## Troubleshooting
 
 - **Empty results / `StaleDocIdError`** → the `doc_id` rotated. Re-run

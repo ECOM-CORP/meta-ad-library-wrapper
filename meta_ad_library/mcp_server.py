@@ -1,0 +1,160 @@
+"""MCP server (Streamable HTTP) exposing the Ad Library wrapper as tools.
+
+Wraps the AdLibraryClient in-process (same session_cache.json as the FastAPI layer).
+Blocking client calls run in a worker thread so the server stays responsive. Tools
+return plain dicts; on a dead/missing session they return {"error": ...} so the model
+can tell the user to re-bootstrap rather than crashing.
+
+Run:  python -m meta_ad_library.mcp_server   (or:  python run_mcp.py)
+Endpoint: http://127.0.0.1:8765/mcp
+"""
+
+from __future__ import annotations
+
+import functools
+from pathlib import Path
+
+import anyio
+from mcp.server.fastmcp import FastMCP
+
+from .client import AdLibraryClient
+from .exceptions import AdLibraryError, SessionExpiredError, StaleDocIdError
+from .models import SessionData
+
+CACHE_PATH = Path("session_cache.json")
+_ACTIVE = {"all": "all", "true": "active", "false": "inactive"}
+
+mcp = FastMCP("meta-ad-library", host="127.0.0.1", port=8765)
+
+_client: AdLibraryClient | None = None
+
+
+def _get_client() -> AdLibraryClient | None:
+    global _client
+    if _client is None and CACHE_PATH.exists():
+        _client = AdLibraryClient(SessionData.load(CACHE_PATH))
+    return _client
+
+
+def _active(value: str) -> str:
+    return _ACTIVE.get((value or "all").strip().lower(), "all")
+
+
+async def _call(method: str, **kwargs) -> dict:
+    """Run a blocking client method in a thread; normalize result/errors to a dict."""
+    global _client
+    client = _get_client()
+    if client is None:
+        return {"error": "No session_cache.json — run bootstrap_session() first."}
+    try:
+        result = await anyio.to_thread.run_sync(
+            functools.partial(getattr(client, method), **kwargs)
+        )
+        return result.to_dict() if hasattr(result, "to_dict") else result
+    except (StaleDocIdError, SessionExpiredError) as exc:
+        _client = None  # force reload next call
+        return {"error": f"Session invalid: {exc} Re-run bootstrap_session()."}
+    except AdLibraryError as exc:
+        return {"error": str(exc)}
+
+
+@mcp.tool()
+async def search_keyword(
+    query: str, country: str = "ALL", active: str = "all", ad_type: str = "all",
+    limit: int = 30, cursor: str | None = None, with_reach: bool = False,
+) -> dict:
+    """Search the Meta Ad Library by keyword. Returns one page:
+    {count, has_next_page, next_cursor, ads}. For the next page, call again with
+    cursor=next_cursor. country is an ISO code (BG, DE, ...) or ALL. active is
+    all|true|false (true=active only). with_reach=true adds EU reach per ad (slower:
+    one extra request per ad)."""
+    return await _call(
+        "fetch_by_keyword", query=query, country=country, active_status=_active(active),
+        ad_type=ad_type, limit=limit, cursor=cursor, with_reach=with_reach,
+    )
+
+
+@mcp.tool()
+async def search_page(
+    page_id: str, country: str = "ALL", active: str = "all", ad_type: str = "all",
+    limit: int = 30, cursor: str | None = None, with_reach: bool = False,
+) -> dict:
+    """Search all ads from one advertiser page. page_id is the INTERNAL page id
+    (the ad.page_id from a keyword result), NOT the number in a facebook.com/<id>
+    profile URL. Returns one page; paginate with cursor=next_cursor."""
+    return await _call(
+        "fetch_by_page_id", page_id=page_id, country=country, active_status=_active(active),
+        ad_type=ad_type, limit=limit, cursor=cursor, with_reach=with_reach,
+    )
+
+
+@mcp.tool()
+async def get_ad_reach(ad_archive_id: str, page_id: str, country: str = "BG") -> dict:
+    """EU transparency reach for one ad (the 'EU ad delivery' panel): eu_total_reach
+    plus targeted countries/age/gender and payer/beneficiary. eu_total_reach is null
+    for ads that don't target the EU."""
+    return await _call(
+        "get_ad_reach", ad_archive_id=ad_archive_id, page_id=page_id, country=country
+    )
+
+
+@mcp.tool()
+async def scan_keyword(
+    query: str, reach_threshold: int, country: str = "ALL", patience: int = 3,
+    active: str = "all", ad_type: str = "all", cursor: str | None = None, streak: int = 0,
+) -> dict:
+    """Find an advertiser's high-reach 'winning' ads. Sorts by impressions desc,
+    enriches EU reach, and stops after `patience` ads in a row below reach_threshold.
+    Returns ONE page: {count, done, stop_reason, streak, next_cursor, ads}. IMPORTANT:
+    if done is false, call again with cursor=next_cursor AND streak=streak (the streak
+    is stateful across pages). Stop when done is true. stop_reason is
+    streak|exhausted."""
+    return await _call(
+        "scan_page_by_keyword", query=query, country=country, reach_threshold=reach_threshold,
+        patience=patience, active_status=_active(active), ad_type=ad_type,
+        cursor=cursor, streak=streak,
+    )
+
+
+@mcp.tool()
+async def scan_page(
+    page_id: str, reach_threshold: int, country: str = "ALL", patience: int = 3,
+    active: str = "all", ad_type: str = "all", cursor: str | None = None, streak: int = 0,
+) -> dict:
+    """Like scan_keyword but for one advertiser page (internal page_id). Returns one
+    page; if done is false, call again with cursor=next_cursor and streak=streak."""
+    return await _call(
+        "scan_page_by_page_id", page_id=page_id, country=country, reach_threshold=reach_threshold,
+        patience=patience, active_status=_active(active), ad_type=ad_type,
+        cursor=cursor, streak=streak,
+    )
+
+
+@mcp.tool()
+async def session_status(probe: bool = True) -> dict:
+    """Check the harvested session. Returns {cached, doc_id, has_details_doc_id,
+    age_minutes} and, when probe=true, `valid` from a tiny live request. If valid is
+    false, tell the user to re-run bootstrap_session()."""
+    if not CACHE_PATH.exists():
+        return {"cached": False, "valid": False, "detail": "no session_cache.json"}
+    s = SessionData.load(CACHE_PATH)
+    info = {
+        "cached": True, "doc_id": s.doc_id,
+        "has_details_doc_id": s.details_doc_id is not None,
+        "age_minutes": round(s.age_seconds / 60, 1),
+    }
+    if not probe:
+        return info
+    res = await _call("fetch_by_keyword", query="shop", country="BG", limit=1)
+    info["valid"] = "error" not in res
+    if "error" in res:
+        info["detail"] = res["error"]
+    return info
+
+
+def main() -> None:
+    mcp.run(transport="streamable-http")
+
+
+if __name__ == "__main__":
+    main()

@@ -12,6 +12,7 @@ dependencies = [
     "playwright>=1.44",
     "fastapi>=0.111",
     "uvicorn[standard]>=0.30",
+    "mcp>=1.9",
 ]
 
 [project.optional-dependencies]
