@@ -161,20 +161,30 @@ async def get_ad_reach(ad_archive_id: str, page_id: str, country: str = "BG") ->
 async def scan_keyword(
     query: str, reach_threshold: int, country: str = "ALL", patience: int = 3,
     active: str = "all", ad_type: str = "all", cursor: str | None = None, streak: int = 0,
-    verbose: bool = False,
+    all_pages: bool = False, limit: int = 200, verbose: bool = False,
 ) -> dict:
     """Find an advertiser's high-reach 'winning' ads. Sorts by impressions desc,
     enriches EU reach, and stops after `patience` ads in a row below reach_threshold.
-    Returns ONE page: {count, done, stop_reason, streak, next_cursor, ads}. IMPORTANT:
+
+    By default returns ONE page: {count, done, stop_reason, streak, next_cursor, ads};
     if done is false, call again with cursor=next_cursor AND streak=streak (the streak
-    is stateful across pages). Stop when done is true. stop_reason is
-    streak|exhausted. Each ad returns a lean field set by default; pass verbose=true
-    for all fields (raw excluded)."""
-    res = await _call(
-        "scan_page_by_keyword", query=query, country=country, reach_threshold=reach_threshold,
-        patience=patience, active_status=_active(active), ad_type=ad_type,
-        cursor=cursor, streak=streak,
-    )
+    is stateful across pages). Pass all_pages=true to walk every page internally and
+    return the COMPLETE result in one call: {threshold, patience, scanned_count,
+    stop_reason, ads} (no cursor/streak to thread), capped at `limit` ads — a
+    stop_reason of 'limit' means the cap was hit and more may exist. Each ad returns a
+    lean field set by default; pass verbose=true for all fields (raw excluded)."""
+    if all_pages:
+        res = await _call(
+            "scan_by_keyword", query=query, country=country,
+            reach_threshold=reach_threshold, patience=patience, limit=limit,
+            active_status=_active(active), ad_type=ad_type,
+        )
+    else:
+        res = await _call(
+            "scan_page_by_keyword", query=query, country=country,
+            reach_threshold=reach_threshold, patience=patience,
+            active_status=_active(active), ad_type=ad_type, cursor=cursor, streak=streak,
+        )
     return _shape(res, verbose)
 
 
@@ -182,17 +192,26 @@ async def scan_keyword(
 async def scan_page(
     page_id: str, reach_threshold: int, country: str = "ALL", patience: int = 3,
     active: str = "all", ad_type: str = "all", cursor: str | None = None, streak: int = 0,
-    verbose: bool = False,
+    all_pages: bool = False, limit: int = 200, verbose: bool = False,
 ) -> dict:
-    """Like scan_keyword but for one advertiser page (internal page_id). Returns one
-    page; if done is false, call again with cursor=next_cursor and streak=streak. Each
-    ad returns a lean field set by default; pass verbose=true for all fields (raw
-    excluded)."""
-    res = await _call(
-        "scan_page_by_page_id", page_id=page_id, country=country, reach_threshold=reach_threshold,
-        patience=patience, active_status=_active(active), ad_type=ad_type,
-        cursor=cursor, streak=streak,
-    )
+    """Like scan_keyword but for one advertiser page (internal page_id). By default
+    returns one page; if done is false, call again with cursor=next_cursor and
+    streak=streak. Pass all_pages=true to walk every page internally and return the
+    COMPLETE result in one call (capped at `limit` ads; stop_reason='limit' means the
+    cap was hit). Each ad returns a lean field set by default; pass verbose=true for all
+    fields (raw excluded)."""
+    if all_pages:
+        res = await _call(
+            "scan_by_page_id", page_id=page_id, country=country,
+            reach_threshold=reach_threshold, patience=patience, limit=limit,
+            active_status=_active(active), ad_type=ad_type,
+        )
+    else:
+        res = await _call(
+            "scan_page_by_page_id", page_id=page_id, country=country,
+            reach_threshold=reach_threshold, patience=patience,
+            active_status=_active(active), ad_type=ad_type, cursor=cursor, streak=streak,
+        )
     return _shape(res, verbose)
 
 

@@ -56,6 +56,27 @@ def test_verbose_keeps_all_fields_except_raw():
     assert ad["reach"]["eu_total_reach"] == 1234
 
 
+def test_shapes_full_scan_result_shape():
+    # all_pages=true returns a ScanResult shape: {threshold, patience, scanned_count,
+    # stop_reason, ads}. _shape must project ads and preserve the page-level keys.
+    result = {
+        "threshold": 65000,
+        "patience": 4,
+        "scanned_count": 2,
+        "stop_reason": "limit",
+        "ads": [
+            {"id": "1", "page_name": "A", "eu_total_reach": 90000, "caption": "x",
+             "raw": {"big": "blob"}},
+            {"id": "2", "page_name": "B", "eu_total_reach": 70000, "raw": {"big": "blob"}},
+        ],
+    }
+    out = _shape(result)
+    assert out["scanned_count"] == 2 and out["stop_reason"] == "limit"
+    assert out["threshold"] == 65000
+    assert all("raw" not in ad and "caption" not in ad for ad in out["ads"])
+    assert {ad["id"] for ad in out["ads"]} == {"1", "2"}
+
+
 def test_strips_raw_from_get_ad_reach_shape():
     # get_ad_reach returns an AdReach-shaped dict (no `ads`); only raw is dropped.
     result = {"ad_archive_id": "1", "eu_total_reach": 99, "raw": {"details": "blob"}}
