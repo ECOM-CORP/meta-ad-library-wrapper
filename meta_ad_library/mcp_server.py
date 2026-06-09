@@ -46,7 +46,23 @@ _PATH = f"/mcp/{_TOKEN}" if _TOKEN else "/mcp"
 
 _ACTIVE = {"all": "all", "true": "active", "false": "inactive"}
 
-mcp = FastMCP("meta-ad-library", host=_HOST, port=_PORT, streamable_http_path=_PATH)
+# Sent to the client on connect (MCP `instructions`) so the model knows the session
+# lifecycle without being told each time.
+_INSTRUCTIONS = (
+    "These tools query the Meta (Facebook) Ad Library through a harvested browser "
+    "session that expires over time. WHEN YOU START using this server in a conversation "
+    "— and whenever a tool returns an \"error\" mentioning an invalid or missing session "
+    "— call `session_status` first. If it reports valid=false (or no session), call "
+    "`bootstrap` to re-harvest the session, then retry the original call. "
+    "`search_*` and `scan_*` return ONE page at a time: to get more results call the same "
+    "tool again with the returned `next_cursor` (and, for `scan_*`, the returned `streak`) "
+    "until `done` is true or there is no `next_cursor`."
+)
+
+mcp = FastMCP(
+    "meta-ad-library", host=_HOST, port=_PORT, streamable_http_path=_PATH,
+    instructions=_INSTRUCTIONS,
+)
 
 _client: AdLibraryClient | None = None
 
