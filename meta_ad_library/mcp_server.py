@@ -322,31 +322,8 @@ async def bootstrap(country: str = "BG", headless: bool = True) -> dict:
     }
 
 
-class _NormalizeAccept:
-    """ASGI middleware that forces `Accept: application/json, text/event-stream`.
-
-    The MCP Streamable HTTP transport returns 406 unless the request's Accept header
-    contains BOTH of those media types. Some clients — notably claude.ai's web custom
-    connector — send `*/*` (or just `application/json`), which the SDK rejects; the
-    connector then misreads the 406 and falls back to a doomed OAuth registration. We
-    rewrite the header so any such client can complete the handshake."""
-
-    def __init__(self, app):
-        self.app = app
-
-    async def __call__(self, scope, receive, send):
-        if scope["type"] == "http":
-            headers = [(k, v) for (k, v) in scope["headers"] if k.lower() != b"accept"]
-            headers.append((b"accept", b"application/json, text/event-stream"))
-            scope = {**scope, "headers": headers}
-        await self.app(scope, receive, send)
-
-
 def main() -> None:
-    import uvicorn
-
-    app = _NormalizeAccept(mcp.streamable_http_app())
-    uvicorn.run(app, host=_HOST, port=_PORT)
+    mcp.run(transport="streamable-http")
 
 
 if __name__ == "__main__":
