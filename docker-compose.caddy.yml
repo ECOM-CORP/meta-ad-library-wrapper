@@ -1,0 +1,35 @@
+# OPTIONAL: full stack with Caddy for automatic HTTPS — ONLY for a VPS that does NOT
+# already run a web server on ports 80/443 (Caddy binds them). If you already use
+# Apache/nginx, use the default docker-compose.yml instead and proxy from there.
+#
+#   docker compose -f docker-compose.caddy.yml up -d --build
+# Needs .env with MCP_TOKEN and MCP_DOMAIN. Endpoint: https://${MCP_DOMAIN}/mcp/${MCP_TOKEN}
+
+services:
+  mcp:
+    build: .
+    restart: unless-stopped
+    environment:
+      MCP_TOKEN: "${MCP_TOKEN:?set MCP_TOKEN in .env}"
+    volumes:
+      - ./data:/data
+    # No host port: reached only via caddy on the internal network.
+
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      MCP_DOMAIN: "${MCP_DOMAIN:?set MCP_DOMAIN in .env}"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - mcp
+
+volumes:
+  caddy_data:
+  caddy_config:

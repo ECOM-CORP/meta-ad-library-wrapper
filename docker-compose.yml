@@ -1,0 +1,17 @@
+# Default deploy: MCP server only, bound to LOCALHOST (127.0.0.1:8765).
+# Use this when the VPS already runs a web server (Apache/nginx) — point an existing
+# vhost at http://127.0.0.1:8765 (see DEPLOY.md). Caddy is NOT used here, so it won't
+# fight Apache over ports 80/443.
+#
+#   docker compose up -d --build      (needs .env with MCP_TOKEN — see .env.example)
+
+services:
+  mcp:
+    build: .
+    restart: unless-stopped
+    environment:
+      MCP_TOKEN: "${MCP_TOKEN:?set MCP_TOKEN in .env}"
+    ports:
+      - "127.0.0.1:8765:8765"   # localhost only; your reverse proxy fronts it
+    volumes:
+      - ./data:/data            # persists session_cache.json + .pw-profile

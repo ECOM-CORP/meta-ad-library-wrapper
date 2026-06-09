@@ -231,6 +231,12 @@ reach (`AdLibraryV3AdDetailsQuery`) doc_id is only captured reliably with a visi
 window; `headless=true` works for search but returns `has_details_doc_id:false`, so
 reach stays unavailable until a headed bootstrap.
 
+**Deploying to a VPS:** the server is env-configurable (`MCP_HOST`, `MCP_PORT`,
+`MCP_TOKEN` for a secret-in-URL `…/mcp/<token>`, `MCP_SESSION_CACHE`, `MCP_PROFILE_DIR`)
+and ships with a `Dockerfile` (Chromium + xvfb so the headed bootstrap works headless).
+See [DEPLOY.md](DEPLOY.md) — it covers running behind an existing Apache/nginx (the
+common case) or with bundled Caddy HTTPS, plus seeding/refreshing the session.
+
 The `search_*` and `scan_*` tools are **paginated** — they return one page plus a
 `next_cursor` (and, for scans, a `streak`). The tool descriptions instruct the model to
 call again with those values until `done`/no `next_cursor`, so the AI client walks

@@ -12,6 +12,7 @@ Endpoint: http://127.0.0.1:8765/mcp
 from __future__ import annotations
 
 import functools
+import os
 from pathlib import Path
 
 import anyio
@@ -27,10 +28,25 @@ from .exceptions import (
 from .models import SessionData
 from .session import bootstrap_session
 
-CACHE_PATH = Path("session_cache.json")
+# Config via env (so the same code runs locally and on a VPS):
+#   MCP_HOST           bind address (default 127.0.0.1; use 0.0.0.0 in a container)
+#   MCP_PORT           port (default 8765)
+#   MCP_TOKEN          secret embedded in the URL path — the endpoint becomes
+#                      /mcp/<MCP_TOKEN>; requests to any other path 404. This is the
+#                      capability-URL auth: only callers who know the full URL get in.
+#                      Empty = no token (endpoint at /mcp) — local dev only.
+#   MCP_SESSION_CACHE  path to session_cache.json (default ./session_cache.json)
+#   MCP_PROFILE_DIR    Playwright profile dir for bootstrap (default ./.pw-profile)
+CACHE_PATH = Path(os.environ.get("MCP_SESSION_CACHE", "session_cache.json"))
+PROFILE_DIR = os.environ.get("MCP_PROFILE_DIR", ".pw-profile")
+_HOST = os.environ.get("MCP_HOST", "127.0.0.1")
+_PORT = int(os.environ.get("MCP_PORT", "8765"))
+_TOKEN = os.environ.get("MCP_TOKEN", "").strip()
+_PATH = f"/mcp/{_TOKEN}" if _TOKEN else "/mcp"
+
 _ACTIVE = {"all": "all", "true": "active", "false": "inactive"}
 
-mcp = FastMCP("meta-ad-library", host="127.0.0.1", port=8765)
+mcp = FastMCP("meta-ad-library", host=_HOST, port=_PORT, streamable_http_path=_PATH)
 
 _client: AdLibraryClient | None = None
 
@@ -250,7 +266,7 @@ async def bootstrap(country: str = "BG", headless: bool = False) -> dict:
         session = await anyio.to_thread.run_sync(
             functools.partial(
                 bootstrap_session, country=country, headless=headless,
-                save_to=str(CACHE_PATH),
+                profile_dir=PROFILE_DIR, save_to=str(CACHE_PATH),
             )
         )
     except BootstrapError as exc:
