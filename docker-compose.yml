@@ -17,6 +17,7 @@ services:
       # Public base for OAuth metadata (only used when MCP_OAUTH=1), from your domain.
       MCP_DOMAIN: "${MCP_DOMAIN:-}"
       MCP_PUBLIC_URL: "${MCP_PUBLIC_URL:-}"
+      MCP_LOG_LEVEL: "${MCP_LOG_LEVEL:-INFO}"
     ports:
       - "127.0.0.1:8765:8765"   # localhost only; your reverse proxy fronts it
     volumes:

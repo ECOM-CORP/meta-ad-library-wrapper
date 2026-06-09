@@ -14,6 +14,7 @@ services:
       MCP_OAUTH: "${MCP_OAUTH:-0}"   # set MCP_OAUTH=1 in .env to enable OAuth
       MCP_DOMAIN: "${MCP_DOMAIN:?set MCP_DOMAIN in .env}"
       MCP_PUBLIC_URL: "${MCP_PUBLIC_URL:-}"
+      MCP_LOG_LEVEL: "${MCP_LOG_LEVEL:-INFO}"
     volumes:
       - ./data:/data
     # No host port: reached only via caddy on the internal network.

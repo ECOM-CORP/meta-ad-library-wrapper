@@ -7,12 +7,15 @@ the POST field set mirror what the website itself sends.
 from __future__ import annotations
 
 import json
+import logging
 import re
 import threading
 import time
 import uuid
 from concurrent.futures import ThreadPoolExecutor
 from typing import Iterable
+
+log = logging.getLogger(__name__)
 
 # curl_cffi (not plain requests): Meta's edge TLS-fingerprints clients and soft-rejects
 # non-browser handshakes with error 1357054. curl_cffi impersonates Chrome's TLS so the
@@ -496,10 +499,16 @@ class AdLibraryClient:
                 GRAPHQL_URL, data=body, headers=headers,
                 cookies=self.session.cookies, timeout=self.timeout,
             )
+            if resp.status_code != 200:
+                log.warning("%s HTTP %s", friendly_name, resp.status_code)
             try:
                 return self._parse(resp.text)
             except TransientError as exc:
                 last_exc = exc
+                log.warning(
+                    "%s transient error (attempt %d/%d): %s",
+                    friendly_name, attempt + 1, self.retries, exc,
+                )
                 if attempt < self.retries - 1:
                     time.sleep(self.retry_backoff * (attempt + 1))
         raise last_exc  # exhausted retries
@@ -543,7 +552,9 @@ class AdLibraryClient:
             ) from exc
 
         if isinstance(data, dict) and data.get("errors") and "data" not in data:
-            msg = data["errors"][0].get("message", "unknown error")
+            err = data["errors"][0]
+            msg = err.get("message", "unknown error")
+            log.warning("GraphQL error (code=%s): %s", err.get("code"), msg)
             if _is_transient(msg):
                 raise TransientError(f"Transient GraphQL error: {msg}")
             raise StaleDocIdError(

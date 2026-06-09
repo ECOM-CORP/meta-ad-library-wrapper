@@ -12,11 +12,14 @@ Endpoint: http://127.0.0.1:8765/mcp
 from __future__ import annotations
 
 import functools
+import logging
 import os
 from pathlib import Path
 
 import anyio
 from mcp.server.fastmcp import FastMCP
+
+log = logging.getLogger("meta_ad_library.mcp")
 
 from .client import AdLibraryClient
 from .exceptions import (
@@ -149,8 +152,10 @@ def _shape(result: dict, verbose: bool = False) -> dict:
 async def _call(method: str, **kwargs) -> dict:
     """Run a blocking client method in a thread; normalize result/errors to a dict."""
     global _client
+    log.info("tool %s(%s)", method, ", ".join(f"{k}={v!r}" for k, v in kwargs.items()))
     client = _get_client()
     if client is None:
+        log.warning("%s: no session", method)
         return {"error": "No session_cache.json — run bootstrap_session() first."}
     try:
         result = await anyio.to_thread.run_sync(
@@ -159,9 +164,14 @@ async def _call(method: str, **kwargs) -> dict:
         return result.to_dict() if hasattr(result, "to_dict") else result
     except (StaleDocIdError, SessionExpiredError) as exc:
         _client = None  # force reload next call
+        log.warning("%s: session invalid: %s", method, exc)
         return {"error": f"Session invalid: {exc} Re-run bootstrap_session()."}
     except AdLibraryError as exc:
+        log.warning("%s: %s", method, exc)
         return {"error": str(exc)}
+    except Exception as exc:  # noqa: BLE001 — never crash the tool; log + report
+        log.exception("%s: unexpected error", method)
+        return {"error": f"{type(exc).__name__}: {exc}"}
 
 
 @mcp.tool()
@@ -339,6 +349,11 @@ async def bootstrap(country: str = "BG", headless: bool = True) -> dict:
 
 
 def main() -> None:
+    logging.basicConfig(
+        level=os.environ.get("MCP_LOG_LEVEL", "INFO").upper(),
+        format="%(asctime)s %(levelname)s %(name)s: %(message)s",
+        force=True,  # take precedence over uvicorn's logging config
+    )
     mcp.run(transport="streamable-http")
 
 
