@@ -67,14 +67,14 @@ Caddy fetches HTTPS automatically. URL: `https://<MCP_DOMAIN>/mcp/<MCP_TOKEN>`.
 The container can serve search/scan/reach as soon as `data/session_cache.json` exists.
 Two ways to get one:
 
-- **Seed from your PC (most reliable).** Run `bootstrap_session()` locally (headed, clears
-  the EU consent once) and copy the file up:
+- **Bootstrap in the container (recommended).** Call the `bootstrap` MCP tool. It runs
+  **headless** — the browser is forced to English so it captures everything including the
+  reach (`details`) doc_id, and it auto-dismisses the cookie-consent dialog. No display /
+  xvfb needed. If it ever fails on a login/consent wall, fall back to seeding from your PC.
+- **Seed from your PC.** Run `bootstrap_session()` locally and copy the file up:
   ```bash
   scp session_cache.json user@vps:/path/meta-ad-library-wrapper/data/session_cache.json
   ```
-- **Bootstrap in the container.** Call the `bootstrap` tool (it runs the headed browser
-  under xvfb and auto-tries to dismiss the consent dialog). If it fails on a consent/login
-  wall, fall back to seeding from your PC.
 
 **Tokens expire**, so refresh periodically: call `bootstrap` again, or re-`scp` a fresh
 `session_cache.json`. `session_status` reports `valid:false` when it's time.

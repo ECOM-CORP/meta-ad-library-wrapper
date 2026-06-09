@@ -137,7 +137,11 @@ def bootstrap_session(
         context = p.chromium.launch_persistent_context(
             user_data_dir=profile_dir,
             headless=headless,
-            viewport={"width": 1280, "height": 900},
+            viewport={"width": 1920, "height": 1080},
+            # Force English so our UI selectors ("See ad details", consent buttons)
+            # match. Without this the page can render in the country's language (e.g.
+            # Bulgarian) — which silently broke the headless details/reach capture.
+            locale="en-US",
         )
         try:
             context.on("request", _on_request)

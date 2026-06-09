@@ -254,13 +254,14 @@ async def session_status(probe: bool = True) -> dict:
 
 
 @mcp.tool()
-async def bootstrap(country: str = "BG", headless: bool = False) -> dict:
+async def bootstrap(country: str = "BG", headless: bool = True) -> dict:
     """Re-harvest the session (doc_id, lsd, cookies + the ad-details doc_id for reach)
-    by driving a real browser, then reload it. Use this when session_status reports
-    valid=false (tokens rotate over time). Opens a VISIBLE browser by default — if a
-    cookie/consent dialog appears, clear it; pass headless=true to run without a window
-    once consent has been cleared once. Slow (~20-40s). Returns the fresh doc_id and
-    whether the reach (details) doc_id was captured."""
+    by driving a browser, then reload it. Use this when session_status reports
+    valid=false (tokens rotate over time). Runs HEADLESS by default and captures
+    everything including reach (the browser is forced to English so the 'See ad details'
+    UI is found) — no display needed, so it works on a headless VPS. Pass headless=false
+    only if you want to watch / hand-clear a consent dialog. Slow (~20-40s). Returns the
+    fresh doc_id and whether the reach (details) doc_id was captured."""
     global _client
     try:
         session = await anyio.to_thread.run_sync(

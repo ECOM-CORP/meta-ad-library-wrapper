@@ -226,16 +226,17 @@ Or in a Claude Desktop config:
 `scan_page`, `session_status`, `bootstrap`.
 
 `bootstrap` re-harvests the session from inside the server (use it when
-`session_status` reports `valid:false`). It defaults to a **headed** browser because the
-reach (`AdLibraryV3AdDetailsQuery`) doc_id is only captured reliably with a visible
-window; `headless=true` works for search but returns `has_details_doc_id:false`, so
-reach stays unavailable until a headed bootstrap.
+`session_status` reports `valid:false`). It runs **headless** and captures everything
+including the reach (`AdLibraryV3AdDetailsQuery`) doc_id — the browser is forced to
+English (`locale="en-US"`) so the "See ad details" UI is found regardless of the
+country's language, which means **no display/xvfb is needed** and it works on a headless
+VPS. (Pass `headless=false` only to watch / hand-clear a consent dialog.)
 
 **Deploying to a VPS:** the server is env-configurable (`MCP_HOST`, `MCP_PORT`,
 `MCP_TOKEN` for a secret-in-URL `…/mcp/<token>`, `MCP_SESSION_CACHE`, `MCP_PROFILE_DIR`)
-and ships with a `Dockerfile` (Chromium + xvfb so the headed bootstrap works headless).
-See [DEPLOY.md](DEPLOY.md) — it covers running behind an existing Apache/nginx (the
-common case) or with bundled Caddy HTTPS, plus seeding/refreshing the session.
+and ships with a `Dockerfile` (just Chromium — headless bootstrap captures reach, no
+xvfb). See [DEPLOY.md](DEPLOY.md) — it covers running behind an existing Apache/nginx
+(the common case) or with bundled Caddy HTTPS, plus seeding/refreshing the session.
 
 The `search_*` and `scan_*` tools are **paginated** — they return one page plus a
 `next_cursor` (and, for scans, a `streak`). The tool descriptions instruct the model to
