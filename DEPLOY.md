@@ -6,18 +6,21 @@ to be exposed. The Docker image runs `run_mcp.py` only.
 
 ## Auth
 
-Two layers, both gated by your secret URL:
+- **Secret-in-URL (always on)** — the endpoint is `…/<MCP_TOKEN>`; any other path 404s, so
+  only a caller who knows the full URL gets in (a "capability URL"). Always serve over HTTPS.
+  This is the real gate.
+- **Auto-approve OAuth (optional, `MCP_OAUTH=1`)** — **default is authless.** Only enable
+  this if claude.ai's *web* connector won't connect authless. It runs a no-users,
+  auto-approve OAuth layer purely to satisfy Claude's connector flow (Claude Code / the API
+  don't need it). When on, the metadata URL is built from `MCP_DOMAIN` (override with
+  `MCP_PUBLIC_URL`).
 
-- **Secret-in-URL** — the endpoint is `…/<MCP_TOKEN>`; any other path 404s, so only a
-  caller who knows the full URL gets in (a "capability URL"). Always serve over HTTPS.
-- **Auto-approve OAuth** (`MCP_OAUTH=1`, on by default in the compose) — claude.ai's web
-  connector *requires* OAuth, so the server runs a tiny OAuth layer that **auto-approves**
-  (no users, no login). It exists only to satisfy Claude's connector flow; real access is
-  still the secret URL. The OAuth metadata URL is built from `MCP_DOMAIN` (e.g.
-  `metamcp.example.com` → `https://metamcp.example.com`); set `MCP_PUBLIC_URL` only to
-  override it.
-  Clients that don't need OAuth (Claude Code, the API) also work — they just complete the
-  auto-approve handshake.
+> ⚠️ **If you're behind Cloudflare and OAuth "succeeds" but Claude still says "Authorization
+> with the MCP server failed":** that's **not** an auth problem — Cloudflare's Bot Fight Mode
+> / WAF is blocking Anthropic's server-to-server `Authorization: Bearer` POST to your MCP
+> endpoint (datacenter IP, no browser fingerprint → looks like a bot). Check **Security →
+> Events**, then **turn off Bot Fight Mode** or add a **WAF Skip rule** for the MCP hostname.
+> This is the usual cause and applies to authless too.
 
 ## 1. Build & run (behind your existing Apache/nginx)
 

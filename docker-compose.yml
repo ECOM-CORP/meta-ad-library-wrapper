@@ -11,9 +11,11 @@ services:
     restart: unless-stopped
     environment:
       MCP_TOKEN: "${MCP_TOKEN:?set MCP_TOKEN in .env}"
-      MCP_OAUTH: "1"            # auto-approve OAuth so claude.ai's web connector works
-      # public base for OAuth metadata, derived from your domain (override with MCP_PUBLIC_URL)
-      MCP_DOMAIN: "${MCP_DOMAIN:?set MCP_DOMAIN in .env (e.g. metamcp.example.com)}"
+      # Authless by default. Set MCP_OAUTH=1 in .env to enable the auto-approve OAuth
+      # layer (only needed if claude.ai's web connector won't connect authless).
+      MCP_OAUTH: "${MCP_OAUTH:-0}"
+      # Public base for OAuth metadata (only used when MCP_OAUTH=1), from your domain.
+      MCP_DOMAIN: "${MCP_DOMAIN:-}"
       MCP_PUBLIC_URL: "${MCP_PUBLIC_URL:-}"
     ports:
       - "127.0.0.1:8765:8765"   # localhost only; your reverse proxy fronts it

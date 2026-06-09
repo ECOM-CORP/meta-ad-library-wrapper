@@ -31,11 +31,13 @@ if [ ! -f .env ]; then
   echo "    Save it — it IS your URL path: https://<your-domain>/${TOKEN}"
 fi
 
-# OAuth metadata needs your real domain — fail loudly if it's missing or the placeholder.
-if grep -qE '^MCP_DOMAIN=.*example\.com' .env 2>/dev/null || ! grep -qE '^MCP_DOMAIN=' .env 2>/dev/null; then
-  echo "ERROR: set MCP_DOMAIN in .env to your real subdomain" >&2
-  echo "       e.g. MCP_DOMAIN=metamcp.yourdomain.com" >&2
-  exit 1
+# When OAuth is on, the metadata needs your real domain — fail loudly if it's missing.
+if grep -qE '^MCP_OAUTH=1' .env 2>/dev/null; then
+  if grep -qE '^MCP_DOMAIN=.*example\.com' .env 2>/dev/null || ! grep -qE '^MCP_DOMAIN=' .env 2>/dev/null; then
+    echo "ERROR: MCP_OAUTH=1 requires MCP_DOMAIN set to your real subdomain in .env" >&2
+    echo "       e.g. MCP_DOMAIN=metamcp.yourdomain.com" >&2
+    exit 1
+  fi
 fi
 
 echo "==> Pulling latest code"

@@ -11,8 +11,9 @@ services:
     restart: unless-stopped
     environment:
       MCP_TOKEN: "${MCP_TOKEN:?set MCP_TOKEN in .env}"
-      MCP_OAUTH: "1"
-      MCP_PUBLIC_URL: "https://${MCP_DOMAIN:?set MCP_DOMAIN in .env}"
+      MCP_OAUTH: "${MCP_OAUTH:-0}"   # set MCP_OAUTH=1 in .env to enable OAuth
+      MCP_DOMAIN: "${MCP_DOMAIN:?set MCP_DOMAIN in .env}"
+      MCP_PUBLIC_URL: "${MCP_PUBLIC_URL:-}"
     volumes:
       - ./data:/data
     # No host port: reached only via caddy on the internal network.
