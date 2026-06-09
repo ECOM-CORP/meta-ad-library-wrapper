@@ -91,13 +91,32 @@ mcp = FastMCP(
     instructions=_INSTRUCTIONS, **_auth_kwargs,
 )
 
+# Rate-limit avoidance (env-tunable): a random delay per request, low reach concurrency,
+# and a disk-backed reach cache so repeat ads aren't re-fetched.
+_DELAY_MIN = float(os.environ.get("MCP_REQUEST_DELAY_MIN", "2.0"))
+_DELAY_MAX = float(os.environ.get("MCP_REQUEST_DELAY_MAX", "3.0"))
+_REACH_WORKERS = int(os.environ.get("MCP_REACH_WORKERS", "2"))
+_REACH_CACHE_PATH = os.environ.get("MCP_REACH_CACHE", "reach_cache.json")
+_REACH_CACHE_TTL = float(os.environ.get("MCP_REACH_CACHE_TTL_DAYS", "3")) * 86400
+
 _client: AdLibraryClient | None = None
+_reach_cache = None
 
 
 def _get_client() -> AdLibraryClient | None:
-    global _client
+    global _client, _reach_cache
     if _client is None and CACHE_PATH.exists():
-        _client = AdLibraryClient(SessionData.load(CACHE_PATH))
+        if _reach_cache is None:
+            from .cache import ReachCache
+
+            _reach_cache = ReachCache(_REACH_CACHE_PATH, _REACH_CACHE_TTL)
+        _client = AdLibraryClient(
+            SessionData.load(CACHE_PATH),
+            min_delay=_DELAY_MIN,
+            max_delay=_DELAY_MAX,
+            reach_workers=_REACH_WORKERS,
+            reach_cache=_reach_cache,
+        )
     return _client
 
 

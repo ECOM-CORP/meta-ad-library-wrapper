@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import json
 import logging
+import random
 import re
 import threading
 import time
@@ -91,6 +92,10 @@ class AdLibraryClient:
         impersonate: str = "chrome",
         retries: int = 3,
         retry_backoff: float = 1.5,
+        min_delay: float = 0.0,
+        max_delay: float = 0.0,
+        reach_workers: int = 6,
+        reach_cache=None,
     ):
         self.session = session
         self.request_delay = request_delay
@@ -99,6 +104,13 @@ class AdLibraryClient:
         self.impersonate = impersonate
         self.retries = retries
         self.retry_backoff = retry_backoff
+        # Random per-request delay (seconds) to look like a human and dodge rate limits.
+        self.min_delay = min_delay
+        self.max_delay = max_delay
+        # Concurrency for parallel reach enrichment (lower = gentler on Meta).
+        self.reach_workers = reach_workers
+        # Optional ReachCache (disk-backed, TTL) so repeat ads aren't re-fetched.
+        self.reach_cache = reach_cache
         self.session_id = str(uuid.uuid4())
         self._http = cffi_requests.Session(impersonate=impersonate)
         # curl_cffi sessions aren't shared across threads; give each worker its own
@@ -217,8 +229,13 @@ class AdLibraryClient:
                 "No details_doc_id in this session (reach lookup unavailable). "
                 "Re-run bootstrap_session() to harvest it."
             )
+        key = str(ad_archive_id)
+        if self.reach_cache is not None:
+            cached = self.reach_cache.get(key)
+            if cached is not None:
+                return AdReach(**cached)  # cache hit — no network request
         variables = {
-            "adArchiveID": str(ad_archive_id),
+            "adArchiveID": key,
             "pageID": str(page_id),
             "country": country,
             "sessionID": self.session_id,
@@ -229,18 +246,23 @@ class AdLibraryClient:
         data = self._graphql(
             self.session.details_doc_id, DETAILS_FRIENDLY_NAME, variables, http=http
         )
-        return normalize_ad_details(data, ad_archive_id=str(ad_archive_id))
+        reach = normalize_ad_details(data, ad_archive_id=key)
+        if self.reach_cache is not None:
+            # Store without the bulky `raw` node (the model never needs it back).
+            self.reach_cache.set(key, {k: v for k, v in reach.to_dict().items() if k != "raw"})
+        return reach
 
     def reach_for_ad(self, ad: Ad, country: str = "BG") -> AdReach:
         """Convenience: fetch reach for an Ad object (uses its id + page_id)."""
         return self.get_ad_reach(ad.id, ad.page_id, country=country)
 
     def enrich_with_reach(
-        self, ads: list[Ad], country: str = "BG", max_workers: int = 6
+        self, ads: list[Ad], country: str = "BG", max_workers: int | None = None
     ) -> list[Ad]:
         """Populate `eu_total_reach` + `reach` on each ad via the per-ad details query,
-        in parallel. One extra request per ad (Meta has no batch). Individual transient
-        failures leave that ad's reach null; a stale session propagates."""
+        in parallel (concurrency = self.reach_workers unless overridden). Cache hits skip
+        the network. Individual transient failures leave that ad's reach null; a stale
+        session propagates."""
         if not self.session.details_doc_id:
             raise AdLibraryError(
                 "No details_doc_id in this session (reach lookup unavailable). "
@@ -260,13 +282,15 @@ class AdLibraryClient:
             except TransientError:
                 pass  # leave this ad's reach null; don't fail the whole batch
 
-        workers = min(max_workers, len(targets))
+        workers = min(max_workers or self.reach_workers, len(targets))
         if workers > 1:
             with ThreadPoolExecutor(max_workers=workers) as ex:
                 list(ex.map(work, targets))
         else:
             for ad in targets:
                 work(ad)
+        if self.reach_cache is not None:
+            self.reach_cache.save()  # flush any new entries from this batch
         return ads
 
     # -- public API: scan until reach drops off -----------------------------
@@ -493,6 +517,9 @@ class AdLibraryClient:
             "x-fb-friendly-name": friendly_name,
             "x-fb-lsd": self.session.lsd,
         }
+        # Human-like jittered pause before each network request (rate-limit avoidance).
+        if self.max_delay > 0:
+            time.sleep(random.uniform(self.min_delay, self.max_delay))
         last_exc: TransientError | None = None
         for attempt in range(self.retries):
             resp = http.post(

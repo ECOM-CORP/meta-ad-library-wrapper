@@ -18,7 +18,14 @@ services:
       MCP_DOMAIN: "${MCP_DOMAIN:-}"
       MCP_PUBLIC_URL: "${MCP_PUBLIC_URL:-}"
       MCP_LOG_LEVEL: "${MCP_LOG_LEVEL:-INFO}"
+      # Rate-limit avoidance: jittered per-request delay (seconds), low reach concurrency,
+      # and a 3-day disk cache of per-ad reach so repeat ads aren't re-fetched.
+      MCP_REQUEST_DELAY_MIN: "${MCP_REQUEST_DELAY_MIN:-2.0}"
+      MCP_REQUEST_DELAY_MAX: "${MCP_REQUEST_DELAY_MAX:-3.0}"
+      MCP_REACH_WORKERS: "${MCP_REACH_WORKERS:-2}"
+      MCP_REACH_CACHE: "/data/reach_cache.json"
+      MCP_REACH_CACHE_TTL_DAYS: "${MCP_REACH_CACHE_TTL_DAYS:-3}"
     ports:
       - "127.0.0.1:8765:8765"   # localhost only; your reverse proxy fronts it
     volumes:
-      - ./data:/data            # persists session_cache.json + .pw-profile
+      - ./data:/data            # persists session_cache.json + .pw-profile + reach_cache.json

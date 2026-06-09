@@ -4,6 +4,8 @@ __pycache__/
 .superpowers/
 .pw-profile/
 session_cache.json
+reach_cache.json
+reach_cache.json.tmp
 *.har
 .pytest_cache/
 *.egg-info/

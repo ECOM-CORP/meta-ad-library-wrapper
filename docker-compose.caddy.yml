@@ -15,6 +15,12 @@ services:
       MCP_DOMAIN: "${MCP_DOMAIN:?set MCP_DOMAIN in .env}"
       MCP_PUBLIC_URL: "${MCP_PUBLIC_URL:-}"
       MCP_LOG_LEVEL: "${MCP_LOG_LEVEL:-INFO}"
+      # Rate-limit avoidance (see docker-compose.yml for details).
+      MCP_REQUEST_DELAY_MIN: "${MCP_REQUEST_DELAY_MIN:-2.0}"
+      MCP_REQUEST_DELAY_MAX: "${MCP_REQUEST_DELAY_MAX:-3.0}"
+      MCP_REACH_WORKERS: "${MCP_REACH_WORKERS:-2}"
+      MCP_REACH_CACHE: "/data/reach_cache.json"
+      MCP_REACH_CACHE_TTL_DAYS: "${MCP_REACH_CACHE_TTL_DAYS:-3}"
     volumes:
       - ./data:/data
     # No host port: reached only via caddy on the internal network.
