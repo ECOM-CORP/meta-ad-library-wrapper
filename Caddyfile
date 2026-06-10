@@ -1,5 +1,0 @@
-# Caddy gets + renews HTTPS automatically for MCP_DOMAIN and proxies to the MCP
-# container. Public endpoint: https://<MCP_DOMAIN>/mcp/<MCP_TOKEN>
-{$MCP_DOMAIN} {
-	reverse_proxy mcp:8765
-}

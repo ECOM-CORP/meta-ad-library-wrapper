@@ -1,12 +1,13 @@
-"""MCP server (Streamable HTTP) exposing the Ad Library wrapper as tools.
+"""MCP server (stdio) exposing the Ad Library wrapper as tools.
 
-Wraps the AdLibraryClient in-process (same session_cache.json as the FastAPI layer).
-Blocking client calls run in a worker thread so the server stays responsive. Tools
-return plain dicts; on a dead/missing session they return {"error": ...} so the model
-can tell the user to re-bootstrap rather than crashing.
+Self-hosted: runs as a local subprocess of the AI client (Claude Desktop / Claude Code)
+over stdio, so every request to Meta leaves from your own IP. Wraps the AdLibraryClient
+in-process; blocking client calls run in a worker thread so the server stays responsive.
+Tools return plain dicts; on a dead/missing session they return {"error": ...} so the
+model can re-bootstrap rather than crashing.
 
 Run:  python -m meta_ad_library.mcp_server   (or:  python run_mcp.py)
-Endpoint: http://127.0.0.1:8765/mcp
+Usually launched via `uvx` from an AI client's MCP config — see the README.
 """
 
 from __future__ import annotations
@@ -32,20 +33,13 @@ from .exceptions import (
 from .models import SessionData
 from .session import bootstrap_session
 
-# Config via env (so the same code runs locally and on a VPS):
-#   MCP_HOST           bind address (default 127.0.0.1; use 0.0.0.0 in a container)
-#   MCP_PORT           port (default 8765)
-#   MCP_TOKEN          secret that becomes the URL path — the endpoint is /<MCP_TOKEN>
-#                      (e.g. https://mcp.example.com/<token>); any other path 404s. This
-#                      is the capability-URL auth: only callers who know the full URL get
-#                      in. Empty = no token (endpoint at /mcp) — local dev only.
-#   MCP_TRANSPORT      "stdio" (default, for Claude Desktop / local) or "streamable-http"
-#                      (for a networked/VPS deploy; the Docker image sets this)
+# Config via env (all optional):
 #   MCP_STATE_DIR      where session/profile/reach-cache live when their own vars are
 #                      unset (default: a per-user app dir — see _state_dir). Used so a
 #                      `uvx`-launched server (arbitrary CWD) always finds the same files.
 #   MCP_SESSION_CACHE  path to session_cache.json (default <state_dir>/session_cache.json)
 #   MCP_PROFILE_DIR    Playwright profile dir for bootstrap (default <state_dir>/.pw-profile)
+#   MCP_LOG_LEVEL      DEBUG | INFO | WARNING (default INFO; logs go to stderr)
 
 
 def _state_dir() -> Path:
@@ -53,7 +47,7 @@ def _state_dir() -> Path:
 
     `uvx`/Claude Desktop launch the server from an arbitrary working directory, so
     relative defaults (./session_cache.json) would scatter state. This pins everything
-    to one OS-appropriate folder. Explicit env vars (and the Docker image) override it."""
+    to one OS-appropriate folder. Explicit env vars override it."""
     base = os.environ.get("MCP_STATE_DIR")
     if base:
         d = Path(base)
@@ -73,19 +67,6 @@ def _resolve(env: str, filename: str) -> Path:
 
 CACHE_PATH = _resolve("MCP_SESSION_CACHE", "session_cache.json")
 PROFILE_DIR = str(_resolve("MCP_PROFILE_DIR", ".pw-profile"))
-_HOST = os.environ.get("MCP_HOST", "127.0.0.1")
-_PORT = int(os.environ.get("MCP_PORT", "8765"))
-_TOKEN = os.environ.get("MCP_TOKEN", "").strip()
-_PATH = f"/{_TOKEN}" if _TOKEN else "/mcp"
-# MCP_OAUTH=1 turns on an auto-approving OAuth layer (no users) so claude.ai's web
-# connector — which requires OAuth — can connect. The externally visible base used in
-# the OAuth metadata is taken from MCP_PUBLIC_URL, else https://<MCP_DOMAIN>, else the
-# local host:port.
-_OAUTH = os.environ.get("MCP_OAUTH", "0").strip().lower() in ("1", "true", "yes")
-_PUBLIC_URL = os.environ.get("MCP_PUBLIC_URL", "").strip().rstrip("/")
-if not _PUBLIC_URL:
-    _domain = os.environ.get("MCP_DOMAIN", "").strip()
-    _PUBLIC_URL = f"https://{_domain}" if _domain else f"http://{_HOST}:{_PORT}"
 
 _ACTIVE = {"all": "all", "true": "active", "false": "inactive"}
 
@@ -102,31 +83,15 @@ _INSTRUCTIONS = (
     "until `done` is true or there is no `next_cursor`."
 )
 
-_auth_kwargs: dict = {}
-if _OAUTH:
-    from mcp.server.auth.settings import AuthSettings, ClientRegistrationOptions
+mcp = FastMCP("meta-ad-library", instructions=_INSTRUCTIONS)
 
-    from .oauth import AutoApproveOAuthProvider
-
-    _auth_kwargs = {
-        "auth_server_provider": AutoApproveOAuthProvider(),
-        "auth": AuthSettings(
-            issuer_url=_PUBLIC_URL,
-            resource_server_url=_PUBLIC_URL + _PATH,
-            client_registration_options=ClientRegistrationOptions(enabled=True),
-        ),
-    }
-
-mcp = FastMCP(
-    "meta-ad-library", host=_HOST, port=_PORT, streamable_http_path=_PATH,
-    instructions=_INSTRUCTIONS, **_auth_kwargs,
-)
-
-# Rate-limit avoidance (env-tunable): a random delay per request, low reach concurrency,
-# and a disk-backed reach cache so repeat ads aren't re-fetched.
-_DELAY_MIN = float(os.environ.get("MCP_REQUEST_DELAY_MIN", "2.0"))
-_DELAY_MAX = float(os.environ.get("MCP_REQUEST_DELAY_MAX", "3.0"))
-_REACH_WORKERS = int(os.environ.get("MCP_REACH_WORKERS", "2"))
+# Rate-limit avoidance (env-tunable). Self-hosted runs from your own residential IP, so
+# the defaults are fast: no artificial delay, 6 parallel reach lookups, plus a disk-backed
+# reach cache so repeat ads aren't re-fetched. If you ever see code 1675004 (rate limit),
+# add a delay (e.g. MCP_REQUEST_DELAY_MIN=2 / _MAX=3) and lower MCP_REACH_WORKERS.
+_DELAY_MIN = float(os.environ.get("MCP_REQUEST_DELAY_MIN", "0"))
+_DELAY_MAX = float(os.environ.get("MCP_REQUEST_DELAY_MAX", "0"))
+_REACH_WORKERS = int(os.environ.get("MCP_REACH_WORKERS", "6"))
 _REACH_CACHE_PATH = str(_resolve("MCP_REACH_CACHE", "reach_cache.json"))
 _REACH_CACHE_TTL = float(os.environ.get("MCP_REACH_CACHE_TTL_DAYS", "3")) * 86400
 
@@ -375,9 +340,10 @@ async def bootstrap(country: str = "BG", headless: bool = True) -> dict:
     by driving a browser, then reload it. Use this when session_status reports
     valid=false (tokens rotate over time). Runs HEADLESS by default and captures
     everything including reach (the browser is forced to English so the 'See ad details'
-    UI is found) — no display needed, so it works on a headless VPS. Pass headless=false
-    only if you want to watch / hand-clear a consent dialog. Slow (~20-40s). Returns the
-    fresh doc_id and whether the reach (details) doc_id was captured."""
+    UI is found) — no visible window needed. On the very first run it auto-downloads
+    Chromium if missing. Pass headless=false only if you want to watch / hand-clear a
+    consent dialog. Slow (~20-40s). Returns the fresh doc_id and whether the reach
+    (details) doc_id was captured."""
     global _client
     try:
         session = await anyio.to_thread.run_sync(
@@ -403,19 +369,12 @@ def main() -> None:
         level=os.environ.get("MCP_LOG_LEVEL", "INFO").upper(),
         format="%(asctime)s %(levelname)s %(name)s: %(message)s",
         # stdout is the stdio transport's JSON-RPC channel — keep logs off it or we
-        # corrupt the protocol. stderr is captured into Claude Desktop's MCP logs.
+        # corrupt the protocol. stderr is captured into the client's MCP logs.
         stream=sys.stderr,
-        force=True,  # take precedence over uvicorn's logging config
+        force=True,
     )
-    # Default to stdio (Claude Desktop / local subprocess). A networked deploy sets
-    # MCP_TRANSPORT=streamable-http (the Docker image does this).
-    transport = os.environ.get("MCP_TRANSPORT", "stdio").strip().lower().replace("_", "-")
-    if transport in ("http", "streamable-http"):
-        log.info("starting MCP (streamable-http) on %s:%s%s", _HOST, _PORT, _PATH)
-        mcp.run(transport="streamable-http")
-    else:
-        log.info("starting MCP (stdio); state dir defaults under %s", CACHE_PATH.parent)
-        mcp.run(transport="stdio")
+    log.info("starting MCP (stdio); state dir defaults under %s", CACHE_PATH.parent)
+    mcp.run(transport="stdio")
 
 
 if __name__ == "__main__":

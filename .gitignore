@@ -17,7 +17,6 @@ dp*.json
 scan_results.json
 scan_results.txt
 
-# deployment: secrets + persisted session/browser-profile volume
+# local env overrides
 .env
-data/
 

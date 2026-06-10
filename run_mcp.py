@@ -1,4 +1,4 @@
-"""Run the MCP server (Streamable HTTP) on http://127.0.0.1:8765/mcp."""
+"""Run the MCP server over stdio (for a local AI client like Claude Desktop)."""
 
 from meta_ad_library.mcp_server import main
 

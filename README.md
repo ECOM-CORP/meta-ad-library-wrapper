@@ -201,15 +201,15 @@ In the library: `client.scan_by_keyword(query, country, reach_threshold, patienc
 
 ## MCP server (for AI clients)
 
-The wrapper is exposed as an **MCP server** so AI clients (Claude Desktop, Claude Code,
-…) can search the Ad Library as tools. There are two ways to run it.
+The wrapper is exposed as a **self-hosted MCP server** so AI clients (Claude Desktop,
+Claude Code, …) can search the Ad Library as tools.
 
-### Self-hosted (recommended) — Claude Desktop / Claude Code via `uvx`
+### Claude Desktop / Claude Code via `uvx`
 
 Run the server **as a local subprocess on your own machine** (stdio transport). No port,
-no token, no tunnel. The big win: every request to Meta then leaves from **your own
+no token, no tunnel. The big win: every request to Meta leaves from **your own
 residential IP**, which dodges the aggressive rate-limiting (`code 1675004`) that hits
-shared datacenter/VPS IPs.
+shared datacenter IPs.
 
 It installs like `npx` does for Node — via [`uv`](https://docs.astral.sh/uv/)'s `uvx`,
 which fetches + runs the package in a cached throwaway env. Same config on
@@ -258,25 +258,10 @@ Restart Claude Desktop. **That's the whole setup** — no clone, no venv, no man
 - To **update** to the latest code, clear uv's cache for it: `uv cache clean`. Pin a
   version by appending `@<tag>` to the git URL.
 
-> On a home IP the cautious pacing defaults (2–3 s/request, 2 reach workers) are
-> overkill and just slow you down. Speed it up by adding an `"env"` block to the config:
-> `{"MCP_REQUEST_DELAY_MIN": "0", "MCP_REQUEST_DELAY_MAX": "0", "MCP_REACH_WORKERS": "6"}`.
-
-### Networked / VPS — Streamable HTTP
-
-For a shared, always-on server reachable over the network (e.g. the claude.ai web
-connector), run it with the HTTP transport instead:
-
-```powershell
-$env:MCP_TRANSPORT="streamable-http"; .venv\Scripts\python run_mcp.py   # http://127.0.0.1:8765/mcp
-```
-
-The server is env-configurable (`MCP_TRANSPORT`, `MCP_HOST`, `MCP_PORT`, `MCP_TOKEN` for
-a secret-in-URL `…/<token>`, `MCP_SESSION_CACHE`, `MCP_PROFILE_DIR`) and ships with a
-`Dockerfile` (which pins `MCP_TRANSPORT=streamable-http`). See [DEPLOY.md](DEPLOY.md) for
-running behind an existing Apache/nginx or with bundled Caddy HTTPS. **Note:** a
-datacenter IP hits Meta's rate limit quickly — prefer the self-hosted path above for
-heavy use.
+> Because it runs from your own IP, the pacing defaults are fast: no artificial
+> per-request delay and 6 parallel reach lookups. If you ever hit `code 1675004`
+> (rate limit), slow it down with an `"env"` block in the config:
+> `{"MCP_REQUEST_DELAY_MIN": "2", "MCP_REQUEST_DELAY_MAX": "3", "MCP_REACH_WORKERS": "2"}`.
 
 ### Tools & behaviour
 

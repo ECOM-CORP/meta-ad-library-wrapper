@@ -85,7 +85,7 @@ def _install_chromium() -> None:
 
     Lets a `uvx`/`pipx` install be truly zero-setup: the ephemeral env has the
     `playwright` package but no browser until the first bootstrap fetches it. Already-
-    installed environments (e.g. the Docker image) never hit this path."""
+    environments that already have the browser never hit this path."""
     log.info("Chromium not found — downloading it once (this can take a minute)...")
     subprocess.run(
         [sys.executable, "-m", "playwright", "install", "chromium"], check=True
