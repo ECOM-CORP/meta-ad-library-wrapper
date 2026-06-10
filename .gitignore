@@ -20,3 +20,4 @@ scan_results.txt
 # local env overrides
 .env
 
+.playwright-mcp/
