@@ -515,12 +515,28 @@ class AdLibraryClient:
         worker thread pass its own curl_cffi session (sessions aren't thread-shared)."""
         http = http or self._http
         body = self._build_body(doc_id, friendly_name, variables)
+        # Headers tuned to match a real browser's JS fetch to the GraphQL endpoint —
+        # mismatches here are what got us rate-limited (code 1675004) while a real browser
+        # on the same IP browsed freely. Two critical points, verified against a TLS/header
+        # reflector:
+        #  1. DON'T override user-agent. curl_cffi's impersonation already sets a UA +
+        #     sec-ch-ua that match its TLS fingerprint (all "Chrome 146"). Injecting the
+        #     harvested UA (e.g. Chrome 137) made UA disagree with sec-ch-ua/TLS — a textbook
+        #     automation tell.
+        #  2. A GraphQL call is a fetch(), not a page navigation. Use CORS fetch sec-fetch-*
+        #     values and drop the navigate-only headers curl_cffi adds (set them to None).
         headers = {
-            "user-agent": self.session.user_agent,
             "content-type": "application/x-www-form-urlencoded",
             "accept": "*/*",
+            "accept-language": "en-US,en;q=0.9",
             "origin": "https://www.facebook.com",
             "referer": "https://www.facebook.com/ads/library/",
+            "sec-fetch-site": "same-origin",
+            "sec-fetch-mode": "cors",
+            "sec-fetch-dest": "empty",
+            "sec-fetch-user": None,            # drop: navigate-only
+            "upgrade-insecure-requests": None,  # drop: navigate-only
+            "priority": "u=1, i",
             "x-fb-friendly-name": friendly_name,
             "x-fb-lsd": self.session.lsd,
         }
