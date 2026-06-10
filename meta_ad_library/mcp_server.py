@@ -151,9 +151,13 @@ def _get_client():
     elif _BROWSER:
         from .browser_fetch import BrowserFetchClient
 
+        # Optional persistent profile to warm the session across runs (set MCP_BROWSER_PROFILE=1).
+        profile = None
+        if os.environ.get("MCP_BROWSER_PROFILE", "0").strip().lower() in ("1", "true", "yes"):
+            profile = str(_resolve("MCP_BROWSER_PROFILE_DIR", ".pw-fetch-profile"))
         _client = BrowserFetchClient(
             headless=_HEADLESS, reach_cache=_get_reach_cache(),
-            keep_open_seconds=_keep_open_seconds(),
+            keep_open_seconds=_keep_open_seconds(), profile_dir=profile,
         )
     elif CACHE_PATH.exists():
         _client = AdLibraryClient(
