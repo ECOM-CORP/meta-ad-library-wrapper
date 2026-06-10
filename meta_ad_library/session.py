@@ -84,12 +84,26 @@ def _install_chromium() -> None:
     """Download the Chromium build Playwright needs (one-time, cached by the OS).
 
     Lets a `uvx`/`pipx` install be truly zero-setup: the ephemeral env has the
-    `playwright` package but no browser until the first bootstrap fetches it. Already-
-    environments that already have the browser never hit this path."""
+    `playwright` package but no browser until the first bootstrap fetches it.
+    Environments that already have the browser never hit this path.
+
+    CRITICAL: capture the installer's output. In the MCP stdio server, this process's
+    stdout IS the JSON-RPC channel — Playwright's "Downloading Chromium |████|" progress
+    would otherwise be written there and corrupt the protocol (invalid-JSON errors on the
+    client). `capture_output` keeps every byte off our stdout/stderr fds."""
     log.info("Chromium not found — downloading it once (this can take a minute)...")
-    subprocess.run(
-        [sys.executable, "-m", "playwright", "install", "chromium"], check=True
+    proc = subprocess.run(
+        [sys.executable, "-m", "playwright", "install", "chromium"],
+        capture_output=True,
+        text=True,
     )
+    if proc.returncode != 0:
+        tail = (proc.stderr or proc.stdout or "").strip()[-500:]
+        raise BootstrapError(
+            f"Auto-install of Chromium failed (exit {proc.returncode}). "
+            f"Run `python -m playwright install chromium` manually. Details: {tail}"
+        )
+    log.info("Chromium installed.")
 
 
 def _launch_persistent(p, profile_dir: str, headless: bool):
