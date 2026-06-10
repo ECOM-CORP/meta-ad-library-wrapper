@@ -14,6 +14,7 @@ from __future__ import annotations
 import functools
 import logging
 import os
+import sys
 from pathlib import Path
 
 import anyio
@@ -38,10 +39,40 @@ from .session import bootstrap_session
 #                      (e.g. https://mcp.example.com/<token>); any other path 404s. This
 #                      is the capability-URL auth: only callers who know the full URL get
 #                      in. Empty = no token (endpoint at /mcp) — local dev only.
-#   MCP_SESSION_CACHE  path to session_cache.json (default ./session_cache.json)
-#   MCP_PROFILE_DIR    Playwright profile dir for bootstrap (default ./.pw-profile)
-CACHE_PATH = Path(os.environ.get("MCP_SESSION_CACHE", "session_cache.json"))
-PROFILE_DIR = os.environ.get("MCP_PROFILE_DIR", ".pw-profile")
+#   MCP_TRANSPORT      "stdio" (default, for Claude Desktop / local) or "streamable-http"
+#                      (for a networked/VPS deploy; the Docker image sets this)
+#   MCP_STATE_DIR      where session/profile/reach-cache live when their own vars are
+#                      unset (default: a per-user app dir — see _state_dir). Used so a
+#                      `uvx`-launched server (arbitrary CWD) always finds the same files.
+#   MCP_SESSION_CACHE  path to session_cache.json (default <state_dir>/session_cache.json)
+#   MCP_PROFILE_DIR    Playwright profile dir for bootstrap (default <state_dir>/.pw-profile)
+
+
+def _state_dir() -> Path:
+    """Stable per-user data dir for session/profile/cache, created on demand.
+
+    `uvx`/Claude Desktop launch the server from an arbitrary working directory, so
+    relative defaults (./session_cache.json) would scatter state. This pins everything
+    to one OS-appropriate folder. Explicit env vars (and the Docker image) override it."""
+    base = os.environ.get("MCP_STATE_DIR")
+    if base:
+        d = Path(base)
+    elif os.name == "nt":
+        d = Path(os.environ.get("LOCALAPPDATA") or Path.home()) / "meta-ad-library"
+    else:
+        d = Path(os.environ.get("XDG_DATA_HOME") or (Path.home() / ".local" / "share")) / "meta-ad-library"
+    d.mkdir(parents=True, exist_ok=True)
+    return d
+
+
+def _resolve(env: str, filename: str) -> Path:
+    """Env var if set, else <state_dir>/<filename> (state dir created only if needed)."""
+    val = os.environ.get(env)
+    return Path(val) if val else _state_dir() / filename
+
+
+CACHE_PATH = _resolve("MCP_SESSION_CACHE", "session_cache.json")
+PROFILE_DIR = str(_resolve("MCP_PROFILE_DIR", ".pw-profile"))
 _HOST = os.environ.get("MCP_HOST", "127.0.0.1")
 _PORT = int(os.environ.get("MCP_PORT", "8765"))
 _TOKEN = os.environ.get("MCP_TOKEN", "").strip()
@@ -96,7 +127,7 @@ mcp = FastMCP(
 _DELAY_MIN = float(os.environ.get("MCP_REQUEST_DELAY_MIN", "2.0"))
 _DELAY_MAX = float(os.environ.get("MCP_REQUEST_DELAY_MAX", "3.0"))
 _REACH_WORKERS = int(os.environ.get("MCP_REACH_WORKERS", "2"))
-_REACH_CACHE_PATH = os.environ.get("MCP_REACH_CACHE", "reach_cache.json")
+_REACH_CACHE_PATH = str(_resolve("MCP_REACH_CACHE", "reach_cache.json"))
 _REACH_CACHE_TTL = float(os.environ.get("MCP_REACH_CACHE_TTL_DAYS", "3")) * 86400
 
 _client: AdLibraryClient | None = None
@@ -371,9 +402,20 @@ def main() -> None:
     logging.basicConfig(
         level=os.environ.get("MCP_LOG_LEVEL", "INFO").upper(),
         format="%(asctime)s %(levelname)s %(name)s: %(message)s",
+        # stdout is the stdio transport's JSON-RPC channel — keep logs off it or we
+        # corrupt the protocol. stderr is captured into Claude Desktop's MCP logs.
+        stream=sys.stderr,
         force=True,  # take precedence over uvicorn's logging config
     )
-    mcp.run(transport="streamable-http")
+    # Default to stdio (Claude Desktop / local subprocess). A networked deploy sets
+    # MCP_TRANSPORT=streamable-http (the Docker image does this).
+    transport = os.environ.get("MCP_TRANSPORT", "stdio").strip().lower().replace("_", "-")
+    if transport in ("http", "streamable-http"):
+        log.info("starting MCP (streamable-http) on %s:%s%s", _HOST, _PORT, _PATH)
+        mcp.run(transport="streamable-http")
+    else:
+        log.info("starting MCP (stdio); state dir defaults under %s", CACHE_PATH.parent)
+        mcp.run(transport="stdio")
 
 
 if __name__ == "__main__":

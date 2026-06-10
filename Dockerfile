@@ -16,8 +16,10 @@ RUN pip install -r requirements.txt \
 COPY meta_ad_library/ ./meta_ad_library/
 COPY run_mcp.py ./
 
-# Container defaults: bind public, persist the session under the /data volume.
-ENV MCP_HOST=0.0.0.0 \
+# Container defaults: networked transport, bind public, persist session under /data.
+# (The package now defaults to stdio for local/Claude-Desktop use; the VPS needs HTTP.)
+ENV MCP_TRANSPORT=streamable-http \
+    MCP_HOST=0.0.0.0 \
     MCP_PORT=8765 \
     MCP_SESSION_CACHE=/data/session_cache.json \
     MCP_PROFILE_DIR=/data/.pw-profile

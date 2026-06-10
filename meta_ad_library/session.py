@@ -13,6 +13,9 @@ can go headless.
 from __future__ import annotations
 
 import json
+import logging
+import subprocess
+import sys
 from pathlib import Path
 from urllib.parse import parse_qs
 
@@ -20,6 +23,8 @@ from playwright.sync_api import Request, sync_playwright
 
 from .exceptions import BootstrapError
 from .models import SessionData
+
+log = logging.getLogger(__name__)
 
 GRAPHQL_PATH = "/api/graphql/"
 SEARCH_FRIENDLY_NAME = "AdLibrarySearchPaginationQuery"
@@ -67,6 +72,44 @@ def _page_search_url(country: str, page_id: str) -> str:
 def _first_value(qs: dict[str, list[str]], key: str) -> str | None:
     vals = qs.get(key)
     return vals[0] if vals else None
+
+
+def _is_missing_browser(exc: Exception) -> bool:
+    """True if a Playwright launch failed because Chromium isn't downloaded."""
+    msg = str(exc).lower()
+    return "executable doesn't exist" in msg or "playwright install" in msg
+
+
+def _install_chromium() -> None:
+    """Download the Chromium build Playwright needs (one-time, cached by the OS).
+
+    Lets a `uvx`/`pipx` install be truly zero-setup: the ephemeral env has the
+    `playwright` package but no browser until the first bootstrap fetches it. Already-
+    installed environments (e.g. the Docker image) never hit this path."""
+    log.info("Chromium not found — downloading it once (this can take a minute)...")
+    subprocess.run(
+        [sys.executable, "-m", "playwright", "install", "chromium"], check=True
+    )
+
+
+def _launch_persistent(p, profile_dir: str, headless: bool):
+    """Launch the persistent context, auto-installing Chromium on first run if missing."""
+    kwargs = dict(
+        user_data_dir=profile_dir,
+        headless=headless,
+        viewport={"width": 1920, "height": 1080},
+        # Force English so our UI selectors ("See ad details", consent buttons) match.
+        # Without this the page can render in the country's language (e.g. Bulgarian) —
+        # which silently broke the headless details/reach capture.
+        locale="en-US",
+    )
+    try:
+        return p.chromium.launch_persistent_context(**kwargs)
+    except Exception as exc:  # noqa: BLE001 — only retry the missing-browser case
+        if not _is_missing_browser(exc):
+            raise
+        _install_chromium()
+        return p.chromium.launch_persistent_context(**kwargs)
 
 
 def bootstrap_session(
@@ -134,15 +177,7 @@ def bootstrap_session(
                 search["details_doc_id"] = doc_id
 
     with sync_playwright() as p:
-        context = p.chromium.launch_persistent_context(
-            user_data_dir=profile_dir,
-            headless=headless,
-            viewport={"width": 1920, "height": 1080},
-            # Force English so our UI selectors ("See ad details", consent buttons)
-            # match. Without this the page can render in the country's language (e.g.
-            # Bulgarian) — which silently broke the headless details/reach capture.
-            locale="en-US",
-        )
+        context = _launch_persistent(p, profile_dir, headless)
         try:
             context.on("request", _on_request)
             page = context.pages[0] if context.pages else context.new_page()

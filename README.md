@@ -201,50 +201,100 @@ In the library: `client.scan_by_keyword(query, country, reach_threshold, patienc
 
 ## MCP server (for AI clients)
 
-The same wrapper is exposed as an **MCP server** (Streamable HTTP) so AI clients
-(Claude Code, Claude Desktop, etc.) can search the Ad Library as tools. It wraps the
-library in-process and shares `session_cache.json` with the REST API.
+The wrapper is exposed as an **MCP server** so AI clients (Claude Desktop, Claude Code,
+…) can search the Ad Library as tools. There are two ways to run it.
+
+### Self-hosted (recommended) — Claude Desktop / Claude Code via `uvx`
+
+Run the server **as a local subprocess on your own machine** (stdio transport). No port,
+no token, no tunnel. The big win: every request to Meta then leaves from **your own
+residential IP**, which dodges the aggressive rate-limiting (`code 1675004`) that hits
+shared datacenter/VPS IPs.
+
+It installs like `npx` does for Node — via [`uv`](https://docs.astral.sh/uv/)'s `uvx`,
+which fetches + runs the package in a cached throwaway env. Same config on
+Windows / macOS / Linux.
+
+**1. Install `uv`** (once per machine):
 
 ```powershell
-.venv\Scripts\python run_mcp.py        # http://127.0.0.1:8765/mcp
+# Windows (PowerShell)
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+```bash
+# macOS / Linux
+curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-Add it to Claude Code:
-
-```powershell
-claude mcp add --transport http meta-ad-library http://127.0.0.1:8765/mcp
-```
-
-Or in a Claude Desktop config:
+**2. Add to your Claude Desktop config** (`claude_desktop_config.json` → Settings →
+Developer → Edit Config), or run `claude mcp add` for Claude Code:
 
 ```json
-{ "mcpServers": { "meta-ad-library": {
-  "type": "streamable-http", "url": "http://127.0.0.1:8765/mcp" } } }
+{
+  "mcpServers": {
+    "meta-ad-library": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/ECOM-CORP/meta-ad-library-wrapper",
+        "meta-ad-library-mcp"
+      ]
+    }
+  }
+}
 ```
 
+Restart Claude Desktop. **That's the whole setup** — no clone, no venv, no manual
+`playwright install`:
+
+- On first use the model calls `session_status`, sees no session, and calls `bootstrap`,
+  which **auto-downloads Chromium** if it's missing (once, cached by the OS) and harvests
+  the session headlessly.
+- Session, browser profile, and reach cache live in a per-user app folder
+  (`%LOCALAPPDATA%\meta-ad-library\` on Windows, `~/.local/share/meta-ad-library/`
+  elsewhere) — independent of whatever directory `uvx` launches from. Override with
+  `MCP_STATE_DIR` (or the individual `MCP_SESSION_CACHE` / `MCP_PROFILE_DIR` /
+  `MCP_REACH_CACHE`).
+- To **update** to the latest code, clear uv's cache for it: `uv cache clean`. Pin a
+  version by appending `@<tag>` to the git URL.
+
+> On a home IP the cautious pacing defaults (2–3 s/request, 2 reach workers) are
+> overkill and just slow you down. Speed it up by adding an `"env"` block to the config:
+> `{"MCP_REQUEST_DELAY_MIN": "0", "MCP_REQUEST_DELAY_MAX": "0", "MCP_REACH_WORKERS": "6"}`.
+
+### Networked / VPS — Streamable HTTP
+
+For a shared, always-on server reachable over the network (e.g. the claude.ai web
+connector), run it with the HTTP transport instead:
+
+```powershell
+$env:MCP_TRANSPORT="streamable-http"; .venv\Scripts\python run_mcp.py   # http://127.0.0.1:8765/mcp
+```
+
+The server is env-configurable (`MCP_TRANSPORT`, `MCP_HOST`, `MCP_PORT`, `MCP_TOKEN` for
+a secret-in-URL `…/<token>`, `MCP_SESSION_CACHE`, `MCP_PROFILE_DIR`) and ships with a
+`Dockerfile` (which pins `MCP_TRANSPORT=streamable-http`). See [DEPLOY.md](DEPLOY.md) for
+running behind an existing Apache/nginx or with bundled Caddy HTTPS. **Note:** a
+datacenter IP hits Meta's rate limit quickly — prefer the self-hosted path above for
+heavy use.
+
+### Tools & behaviour
+
 **Tools:** `search_keyword`, `search_page`, `get_ad_reach`, `scan_keyword`,
-`scan_page`, `session_status`, `bootstrap`.
+`scan_page`, `session_status`, `clear_session`, `bootstrap`.
 
 `bootstrap` re-harvests the session from inside the server (use it when
 `session_status` reports `valid:false`). It runs **headless** and captures everything
 including the reach (`AdLibraryV3AdDetailsQuery`) doc_id — the browser is forced to
 English (`locale="en-US"`) so the "See ad details" UI is found regardless of the
-country's language, which means **no display/xvfb is needed** and it works on a headless
-VPS. (Pass `headless=false` only to watch / hand-clear a consent dialog.)
-
-**Deploying to a VPS:** the server is env-configurable (`MCP_HOST`, `MCP_PORT`,
-`MCP_TOKEN` for a secret-in-URL `…/<token>`, `MCP_SESSION_CACHE`, `MCP_PROFILE_DIR`)
-and ships with a `Dockerfile` (just Chromium — headless bootstrap captures reach, no
-xvfb). See [DEPLOY.md](DEPLOY.md) — it covers running behind an existing Apache/nginx
-(the common case) or with bundled Caddy HTTPS, plus seeding/refreshing the session.
+country's language (no display/xvfb needed). Pass `headless=false` only to watch /
+hand-clear a consent dialog.
 
 The `search_*` and `scan_*` tools are **paginated** — they return one page plus a
 `next_cursor` (and, for scans, a `streak`). The tool descriptions instruct the model to
 call again with those values until `done`/no `next_cursor`, so the AI client walks
 through results page by page. Tools return `{"error": ...}` (not a crash) when the
-session is missing/stale, so the model can ask you to re-run `bootstrap_session()`.
-Bootstrap stays a manual CLI step (it opens a browser); the MCP server only consumes
-the cached session.
+session is missing/stale, so the model knows to call `bootstrap`.
 
 ## Troubleshooting
 
