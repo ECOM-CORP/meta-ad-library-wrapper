@@ -215,19 +215,24 @@ It installs like `npx` does for Node — via [`uv`](https://docs.astral.sh/uv/)'
 which fetches + runs the package in a cached throwaway env. Same config on
 Windows / macOS / Linux.
 
-**1. Install `uv`** (once per machine):
+#### 1. Install `uv` (once per machine)
 
-```powershell
-# Windows (PowerShell)
-powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
-```
+| OS | Command |
+|----|---------|
+| **macOS / Linux** | `curl -LsSf https://astral.sh/uv/install.sh \| sh` (or `brew install uv`) |
+| **Windows** (PowerShell) | `powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 \| iex"` |
+
+Open a **new** terminal afterwards so `uv`/`uvx` are on your PATH, and confirm:
+
 ```bash
-# macOS / Linux
-curl -LsSf https://astral.sh/uv/install.sh | sh
+uvx --version
 ```
 
-**2. Add to your Claude Desktop config** (`claude_desktop_config.json` → Settings →
-Developer → Edit Config), or run `claude mcp add` for Claude Code:
+#### 2. Add it to your AI client
+
+**Claude Desktop** — Settings → Developer → **Edit Config**, which opens
+`claude_desktop_config.json`. Merge in the `meta-ad-library` block (keep any servers you
+already have):
 
 ```json
 {
@@ -244,24 +249,74 @@ Developer → Edit Config), or run `claude mcp add` for Claude Code:
 }
 ```
 
-Restart Claude Desktop. **That's the whole setup** — no clone, no venv, no manual
-`playwright install`:
+The config file lives at:
 
-- On first use the model calls `session_status`, sees no session, and calls `bootstrap`,
-  which **auto-downloads Chromium** if it's missing (once, cached by the OS) and harvests
-  the session headlessly.
-- Session, browser profile, and reach cache live in a per-user app folder
-  (`%LOCALAPPDATA%\meta-ad-library\` on Windows, `~/.local/share/meta-ad-library/`
-  elsewhere) — independent of whatever directory `uvx` launches from. Override with
-  `MCP_STATE_DIR` (or the individual `MCP_SESSION_CACHE` / `MCP_PROFILE_DIR` /
-  `MCP_REACH_CACHE`).
-- To **update** to the latest code, clear uv's cache for it: `uv cache clean`. Pin a
+| OS | `claude_desktop_config.json` path |
+|----|-----------------------------------|
+| **macOS** | `~/Library/Application Support/Claude/claude_desktop_config.json` |
+| **Windows** | `%APPDATA%\Claude\claude_desktop_config.json` |
+| **Linux** | `~/.config/Claude/claude_desktop_config.json` |
+
+**Claude Code** — instead of editing JSON, run:
+
+```bash
+claude mcp add meta-ad-library -- uvx --from git+https://github.com/ECOM-CORP/meta-ad-library-wrapper meta-ad-library-mcp
+```
+
+> **If the server shows as failed / "disconnected":** the client couldn't find `uvx` on
+> its PATH (common for GUI apps on macOS/Linux, which don't inherit your shell PATH).
+> Replace `"uvx"` with the absolute path from `which uvx` (e.g.
+> `/opt/homebrew/bin/uvx`, `~/.local/bin/uvx`, or on Windows
+> `%USERPROFILE%\.local\bin\uvx.exe`).
+
+#### 3. Restart the client + first run
+
+Fully **quit and reopen** Claude Desktop (⌘Q on macOS / Quit from the tray on Windows —
+closing the window isn't enough). **That's the whole setup** — no clone, no venv, no
+manual `playwright install`. On first use ask it to *"check the Meta Ad Library session
+status"*: with no session it calls `bootstrap`, which **auto-downloads Chromium** once
+(~150 MB, cached by the OS) and harvests the session headlessly (~1–2 min the first time;
+fast after).
+
+#### Notes
+
+- **State location** — session, browser profile, and reach cache live in a per-user app
+  folder, independent of where `uvx` launches from. Override with `MCP_STATE_DIR` (or the
+  individual `MCP_SESSION_CACHE` / `MCP_PROFILE_DIR` / `MCP_REACH_CACHE`).
+
+  | OS | State dir | Chromium cache |
+  |----|-----------|----------------|
+  | **macOS** | `~/.local/share/meta-ad-library/` | `~/Library/Caches/ms-playwright/` |
+  | **Linux** | `~/.local/share/meta-ad-library/` | `~/.cache/ms-playwright/` |
+  | **Windows** | `%LOCALAPPDATA%\meta-ad-library\` | `%LOCALAPPDATA%\ms-playwright\` |
+
+- **Update** to the latest code: `uv cache clean` (uvx re-fetches on next launch). Pin a
   version by appending `@<tag>` to the git URL.
+- **Pacing** — because it runs from your own IP, defaults are fast (no per-request delay,
+  6 parallel reach lookups). If you ever hit `code 1675004` (rate limit), slow it down
+  with an `"env"` block in the config:
+  `{"MCP_REQUEST_DELAY_MIN": "2", "MCP_REQUEST_DELAY_MAX": "3", "MCP_REACH_WORKERS": "2"}`.
 
-> Because it runs from your own IP, the pacing defaults are fast: no artificial
-> per-request delay and 6 parallel reach lookups. If you ever hit `code 1675004`
-> (rate limit), slow it down with an `"env"` block in the config:
-> `{"MCP_REQUEST_DELAY_MIN": "2", "MCP_REQUEST_DELAY_MAX": "3", "MCP_REACH_WORKERS": "2"}`.
+### Uninstall
+
+Remove the `meta-ad-library` block from `claude_desktop_config.json` (or run
+`claude mcp remove meta-ad-library` for Claude Code), then restart the client. The tools
+disconnect immediately. **This does not delete any files** — to also reclaim disk space:
+
+```bash
+# macOS / Linux
+rm -rf ~/.local/share/meta-ad-library      # your harvested session (the only personal data)
+rm -rf ~/Library/Caches/ms-playwright      # Chromium (Linux: ~/.cache/ms-playwright); only if nothing else uses Playwright
+uv cache clean                             # uv's cached copy of the package
+```
+```powershell
+# Windows (PowerShell)
+Remove-Item "$env:LOCALAPPDATA\meta-ad-library" -Recurse -Force
+Remove-Item "$env:LOCALAPPDATA\ms-playwright" -Recurse -Force   # only if nothing else uses Playwright
+uv cache clean
+```
+
+If you don't use `uv` for anything else, remove it too with `uv self uninstall`.
 
 ### Tools & behaviour
 
