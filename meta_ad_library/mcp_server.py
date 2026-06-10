@@ -23,6 +23,7 @@ from mcp.server.fastmcp import FastMCP
 
 log = logging.getLogger("meta_ad_library.mcp")
 
+from . import __version__
 from .client import AdLibraryClient
 from .exceptions import (
     AdLibraryError,
@@ -363,6 +364,18 @@ async def bootstrap(country: str = "BG", headless: bool = True) -> dict:
         "status": "bootstrapped",
         "doc_id": session.doc_id,
         "has_details_doc_id": session.details_doc_id is not None,
+    }
+
+
+@mcp.tool()
+async def server_version() -> dict:
+    """Report the running server's package version (and reach pacing config). Use this to
+    confirm a `uvx` update actually took effect after a new push — compare `version` to the
+    latest in the repo."""
+    return {
+        "version": __version__,
+        "reach_workers": _REACH_WORKERS,
+        "request_delay_seconds": [_DELAY_MIN, _DELAY_MAX],
     }
 
 
