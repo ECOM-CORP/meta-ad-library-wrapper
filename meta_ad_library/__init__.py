@@ -2,7 +2,7 @@
 
 # Bumped on every meaningful push so a running MCP can report exactly which code it's on
 # (the `server_version` tool / session_status). Keep in sync with pyproject `version`.
-__version__ = "0.5.0"
+__version__ = "0.6.0"
 
 from .client import AdLibraryClient
 from .exceptions import (

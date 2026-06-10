@@ -99,11 +99,17 @@ _REACH_CACHE_PATH = str(_resolve("MCP_REACH_CACHE", "reach_cache.json"))
 _REACH_CACHE_TTL = float(os.environ.get("MCP_REACH_CACHE_TTL_DAYS", "3")) * 86400
 
 # Transport for the actual queries:
-#   MCP_BROWSER=1 (default)  drive a real Chromium and read results off the network — no
-#                            token harvesting, no curl replay. Looks human; same IP that
-#                            browses freely. Set MCP_HEADLESS=1 to hide the window.
-#   MCP_BROWSER=0            legacy curl_cffi replay (needs a bootstrapped session_cache).
+#   MCP_BROWSER=1 (default)  use a real Chromium so requests carry a genuine browser
+#                            fingerprint (same IP that browses freely). MCP_BROWSER_MODE:
+#                              "fetch" (default) — run our GraphQL via fetch() INSIDE the
+#                                       page; the browser supplies perfect cookies/headers/
+#                                       TLS. Fast, reach works, dodges code 1675004.
+#                              "scroll" — drive the UI (scroll + intercept); reach is flaky.
+#                            Set MCP_HEADLESS=1 to hide the window.
+#   MCP_BROWSER=0            legacy curl_cffi replay (needs a bootstrapped session_cache;
+#                            currently gets rate-limited — kept as a fallback/for the lib).
 _BROWSER = os.environ.get("MCP_BROWSER", "1").strip().lower() in ("1", "true", "yes")
+_BROWSER_MODE = os.environ.get("MCP_BROWSER_MODE", "fetch").strip().lower()
 _HEADLESS = os.environ.get("MCP_HEADLESS", "0").strip().lower() in ("1", "true", "yes")
 _STEALTH_UA = os.environ.get("MCP_STEALTH_UA", "0").strip().lower() in ("1", "true", "yes")
 
@@ -124,12 +130,16 @@ def _get_client():
     global _client
     if _client is not None:
         return _client
-    if _BROWSER:
+    if _BROWSER and _BROWSER_MODE == "scroll":
         from .browser import BrowserAdClient
 
         _client = BrowserAdClient(
             headless=_HEADLESS, reach_cache=_get_reach_cache(), stealth_ua=_STEALTH_UA,
         )
+    elif _BROWSER:
+        from .browser_fetch import BrowserFetchClient
+
+        _client = BrowserFetchClient(headless=_HEADLESS, reach_cache=_get_reach_cache())
     elif CACHE_PATH.exists():
         _client = AdLibraryClient(
             SessionData.load(CACHE_PATH),
@@ -325,7 +335,7 @@ async def session_status(probe: bool = True) -> dict:
     — it reports ready and you can search right away (no bootstrap needed). In legacy
     curl mode it reports the cached session + a live `valid` probe."""
     if _BROWSER:
-        return {"mode": "browser", "headless": _HEADLESS, "valid": True,
+        return {"mode": f"browser/{_BROWSER_MODE}", "headless": _HEADLESS, "valid": True,
                 "detail": "browser mode — no session to bootstrap; just search."}
     if not CACHE_PATH.exists():
         return {"cached": False, "valid": False, "detail": "no session_cache.json"}
@@ -399,7 +409,7 @@ async def server_version() -> dict:
     latest in the repo."""
     return {
         "version": __version__,
-        "transport": "browser" if _BROWSER else "curl",
+        "transport": f"browser/{_BROWSER_MODE}" if _BROWSER else "curl",
         "headless": _HEADLESS,
         "reach_workers": _REACH_WORKERS,
         "request_delay_seconds": [_DELAY_MIN, _DELAY_MAX],
