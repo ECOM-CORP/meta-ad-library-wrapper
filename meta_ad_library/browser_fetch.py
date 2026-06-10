@@ -100,7 +100,14 @@ class _PageHTTP:
         except Exception as exc:  # noqa: BLE001 — surface as a transient (empty) response
             log.warning("in-page fetch failed: %s", exc)
             return _Resp(0, "")
-        return _Resp(int(res.get("status", 0)), res.get("text", ""))
+        status, text = int(res.get("status", 0)), res.get("text", "")
+        flagged = "1675004" in text
+        log.info(
+            "in-page fetch %s -> status=%s len=%s%s",
+            fwd.get("x-fb-friendly-name", "?"), status, len(text),
+            " [RATE LIMIT 1675004 — OUR fetch]" if flagged else "",
+        )
+        return _Resp(status, text)
 
 
 class BrowserFetchClient(AdLibraryClient):

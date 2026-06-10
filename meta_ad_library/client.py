@@ -96,9 +96,14 @@ class AdLibraryClient:
         max_delay: float = 0.0,
         reach_workers: int = 6,
         reach_cache=None,
+        minimal_body: bool = True,
     ):
         self.session = session
         self.request_delay = request_delay
+        # Send only the functional POST params, not the per-request telemetry blob. The
+        # server doesn't need it, and replaying a frozen copy of it triggers rate limiting
+        # (code 1675004). See _build_body.
+        self.minimal_body = minimal_body
         self.page_size = page_size
         self.timeout = timeout
         self.impersonate = impersonate
@@ -584,14 +589,33 @@ class AdLibraryClient:
                 self._inflight -= 1
 
     def _build_body(self, doc_id: str, friendly_name: str, variables: dict) -> dict:
-        # Replay the live-captured request body verbatim; reconstructing a minimal
-        # body gets rejected (FB error 1357054). We override only the per-call fields.
-        if self.session.request_template:
+        jazoest = self.session.jazoest or (
+            _jazoest(self.session.fb_dtsg) if self.session.fb_dtsg else ""
+        )
+        if self.minimal_body:
+            # Send ONLY the functional params. The big telemetry blob a real client sends
+            # (__dyn/__csr/__hsdp/__hblp/__sjsp/__s/__req/__spin_*/__hsi/...) is per-request
+            # and the server does NOT require it (verified live: a minimal body returns 200
+            # + data and survives a 30-request burst). Replaying a FROZEN snapshot of those
+            # tokens — same __req counter, same __s, every request — is what got us rate-
+            # limited (code 1675004): a genuine client never repeats them. Omitting them
+            # entirely removes the tell.
+            tmpl = self.session.request_template or {}
+            body = {
+                "av": tmpl.get("av", "0"),
+                "__user": tmpl.get("__user", "0"),
+                "__a": tmpl.get("__a", "1"),
+                "__comet_req": tmpl.get("__comet_req", "1"),
+                "dpr": tmpl.get("dpr", "1"),
+                "lsd": self.session.lsd,
+                "jazoest": jazoest,
+            }
+            if self.session.fb_dtsg:
+                body["fb_dtsg"] = self.session.fb_dtsg
+        elif self.session.request_template:
+            # Legacy: replay the full captured body verbatim (kept for comparison/debug).
             body = dict(self.session.request_template)
         else:
-            jazoest = self.session.jazoest or (
-                _jazoest(self.session.fb_dtsg) if self.session.fb_dtsg else ""
-            )
             body = dict(self.session.extra_params)
             body.update({"lsd": self.session.lsd, "jazoest": jazoest})
             if self.session.fb_dtsg:
