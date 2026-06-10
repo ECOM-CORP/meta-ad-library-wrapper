@@ -292,10 +292,12 @@ fast after).
 
 - **Update** to the latest code: `uv cache clean` (uvx re-fetches on next launch). Pin a
   version by appending `@<tag>` to the git URL.
-- **Pacing** — because it runs from your own IP, defaults are fast (no per-request delay,
-  6 parallel reach lookups). If you ever hit `code 1675004` (rate limit), slow it down
-  with an `"env"` block in the config:
-  `{"MCP_REQUEST_DELAY_MIN": "2", "MCP_REQUEST_DELAY_MAX": "3", "MCP_REACH_WORKERS": "2"}`.
+- **Pacing** — Meta's `code 1675004` (rate limit) is keyed to the *request pattern*, not
+  the IP. The reach/details query is the trigger, so by default reach runs **serial**
+  (`MCP_REACH_WORKERS=1`) with a **jittered 1–3s pause** per request — mimicking a human
+  opening "See ad details" one ad at a time. The reach cache + the scan's impressions-sort
+  early-stop keep the *number* of reach calls down. Only raise
+  `MCP_REACH_WORKERS` / lower the delays if you've confirmed you stay under the limit.
 
 ### Uninstall
 

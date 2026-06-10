@@ -116,6 +116,13 @@ class AdLibraryClient:
         # curl_cffi sessions aren't shared across threads; give each worker its own
         # for parallel reach enrichment.
         self._local = threading.local()
+        # Diagnostics: lifetime request counter + timing + in-flight concurrency, so
+        # rate-limit logs reveal WHICH query, at what volume/velocity/parallelism.
+        self._diag_lock = threading.Lock()
+        self._req_seq = 0
+        self._inflight = 0
+        self._t0 = None
+        self._t_last = None
 
     def _thread_http(self):
         http = getattr(self._local, "http", None)
@@ -520,25 +527,45 @@ class AdLibraryClient:
         # Human-like jittered pause before each network request (rate-limit avoidance).
         if self.max_delay > 0:
             time.sleep(random.uniform(self.min_delay, self.max_delay))
+        # --- diagnostics: record sequence/velocity/concurrency for this request ------
+        with self._diag_lock:
+            now = time.monotonic()
+            self._req_seq += 1
+            self._inflight += 1
+            seq, inflight = self._req_seq, self._inflight
+            if self._t0 is None:
+                self._t0 = now
+            gap = (now - self._t_last) if self._t_last is not None else 0.0
+            self._t_last = now
+            total = now - self._t0
+        log.debug(
+            "graphql req#%d %s — inflight=%d, +%.2fs since last, %.1fs total",
+            seq, friendly_name, inflight, gap, total,
+        )
         last_exc: TransientError | None = None
-        for attempt in range(self.retries):
-            resp = http.post(
-                GRAPHQL_URL, data=body, headers=headers,
-                cookies=self.session.cookies, timeout=self.timeout,
-            )
-            if resp.status_code != 200:
-                log.warning("%s HTTP %s", friendly_name, resp.status_code)
-            try:
-                return self._parse(resp.text)
-            except TransientError as exc:
-                last_exc = exc
-                log.warning(
-                    "%s transient error (attempt %d/%d): %s",
-                    friendly_name, attempt + 1, self.retries, exc,
+        try:
+            for attempt in range(self.retries):
+                resp = http.post(
+                    GRAPHQL_URL, data=body, headers=headers,
+                    cookies=self.session.cookies, timeout=self.timeout,
                 )
-                if attempt < self.retries - 1:
-                    time.sleep(self.retry_backoff * (attempt + 1))
-        raise last_exc  # exhausted retries
+                if resp.status_code != 200:
+                    log.warning("%s HTTP %s", friendly_name, resp.status_code)
+                try:
+                    return self._parse(resp.text, friendly_name=friendly_name)
+                except TransientError as exc:
+                    last_exc = exc
+                    log.warning(
+                        "%s transient error (req#%d, inflight=%d, %.1fs into session, "
+                        "attempt %d/%d): %s",
+                        friendly_name, seq, inflight, total, attempt + 1, self.retries, exc,
+                    )
+                    if attempt < self.retries - 1:
+                        time.sleep(self.retry_backoff * (attempt + 1))
+            raise last_exc  # exhausted retries
+        finally:
+            with self._diag_lock:
+                self._inflight -= 1
 
     def _build_body(self, doc_id: str, friendly_name: str, variables: dict) -> dict:
         # Replay the live-captured request body verbatim; reconstructing a minimal
@@ -564,7 +591,7 @@ class AdLibraryClient:
         )
         return body
 
-    def _parse(self, text: str) -> dict:
+    def _parse(self, text: str, friendly_name: str = "?") -> dict:
         stripped = _FORJSON_PREFIX.sub("", text, count=1).strip()
         if not stripped:
             # Could be a transient blip or a stale doc_id; retry first.
@@ -581,7 +608,16 @@ class AdLibraryClient:
         if isinstance(data, dict) and data.get("errors") and "data" not in data:
             err = data["errors"][0]
             msg = err.get("message", "unknown error")
-            log.warning("GraphQL error (code=%s): %s", err.get("code"), msg)
+            code = err.get("code")
+            if code == 1675004 or "rate limit" in msg.lower():
+                # The signal we're hunting: log WHICH query was throttled + how many
+                # requests were in flight, so we can tell search from reach/details.
+                log.warning(
+                    "RATE LIMIT (code=%s) on %s — req#%d, inflight=%d, sessionID=%s",
+                    code, friendly_name, self._req_seq, self._inflight, self.session_id,
+                )
+            else:
+                log.warning("GraphQL error (code=%s) on %s: %s", code, friendly_name, msg)
             if _is_transient(msg):
                 raise TransientError(f"Transient GraphQL error: {msg}")
             raise StaleDocIdError(

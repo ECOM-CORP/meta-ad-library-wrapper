@@ -85,13 +85,15 @@ _INSTRUCTIONS = (
 
 mcp = FastMCP("meta-ad-library", instructions=_INSTRUCTIONS)
 
-# Rate-limit avoidance (env-tunable). Self-hosted runs from your own residential IP, so
-# the defaults are fast: no artificial delay, 6 parallel reach lookups, plus a disk-backed
-# reach cache so repeat ads aren't re-fetched. If you ever see code 1675004 (rate limit),
-# add a delay (e.g. MCP_REQUEST_DELAY_MIN=2 / _MAX=3) and lower MCP_REACH_WORKERS.
-_DELAY_MIN = float(os.environ.get("MCP_REQUEST_DELAY_MIN", "0"))
-_DELAY_MAX = float(os.environ.get("MCP_REQUEST_DELAY_MAX", "0"))
-_REACH_WORKERS = int(os.environ.get("MCP_REACH_WORKERS", "6"))
+# Rate-limit avoidance (env-tunable). Meta's code 1675004 is keyed to the REQUEST PATTERN,
+# not the IP (the same IP browses fine in a real browser). The reach/details query is the
+# trigger: a human opens "See ad details" one ad at a time, seconds apart, so we mimic that
+# — serial reach (1 worker) + a jittered 1-3s pause per request. The disk reach cache and
+# the scan's impressions-sort early-stop keep the NUMBER of reach calls down; this keeps the
+# RATE human. Raise the delays / workers only if you've confirmed you're well under the limit.
+_DELAY_MIN = float(os.environ.get("MCP_REQUEST_DELAY_MIN", "1.0"))
+_DELAY_MAX = float(os.environ.get("MCP_REQUEST_DELAY_MAX", "3.0"))
+_REACH_WORKERS = int(os.environ.get("MCP_REACH_WORKERS", "1"))
 _REACH_CACHE_PATH = str(_resolve("MCP_REACH_CACHE", "reach_cache.json"))
 _REACH_CACHE_TTL = float(os.environ.get("MCP_REACH_CACHE_TTL_DAYS", "3")) * 86400
 
