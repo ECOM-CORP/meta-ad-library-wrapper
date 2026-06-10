@@ -111,7 +111,7 @@ class _PageHTTP:
 
 
 class BrowserFetchClient(AdLibraryClient):
-    def __init__(self, headless: bool = False, reach_cache=None):
+    def __init__(self, headless: bool = False, reach_cache=None, keep_open_seconds: int = 0):
         # Placeholder session; filled live from the page each call. Serial reach + no
         # artificial pacing (a real browser fetch needs neither).
         placeholder = SessionData(doc_id="", lsd="", cookies={}, user_agent="")
@@ -119,7 +119,10 @@ class BrowserFetchClient(AdLibraryClient):
             placeholder, request_delay=0.0, min_delay=0.0, max_delay=0.0,
             reach_workers=1, reach_cache=reach_cache,
         )
-        self.headless = headless
+        # Debug: keep the window open this many seconds after a run (forces headed) so you
+        # can inspect the Network tab. 0 = off (close immediately).
+        self.keep_open_seconds = keep_open_seconds
+        self.headless = headless and not keep_open_seconds
         self._page = None
         self._asbd_id = None
 
@@ -180,8 +183,24 @@ class BrowserFetchClient(AdLibraryClient):
                 self._apply_capture(cap)
                 self._page = page
                 self._http = _PageHTTP(self)
+                if self.keep_open_seconds:
+                    log.info(
+                        "KEEP_OPEN: tokens captured. Open DevTools > Network now "
+                        "(filter: graphql) — our fetches start in 12s."
+                    )
+                    page.wait_for_timeout(12000)
                 yield
             finally:
+                if self.keep_open_seconds and self._page is not None:
+                    log.info(
+                        "KEEP_OPEN: run done — leaving the browser open for %ss so you can "
+                        "inspect the Network tab. It will close after that.",
+                        self.keep_open_seconds,
+                    )
+                    try:
+                        self._page.wait_for_timeout(self.keep_open_seconds * 1000)
+                    except Exception:  # noqa: BLE001 — window may have been closed by hand
+                        pass
                 self._page = None
                 context.close()
                 browser.close()

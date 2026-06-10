@@ -7,7 +7,7 @@ build-backend = "setuptools.build_meta"
 # `uvx --from git+https://github.com/ECOM-CORP/meta-ad-library-wrapper meta-ad-library-mcp`)
 # resolves cleanly. The import package stays `meta_ad_library`.
 name = "meta-ad-library-mcp"
-version = "0.7.0"
+version = "0.7.1"
 description = "Unofficial Meta Ad Library wrapper exposed as an MCP server (self-hosted, runs on your own IP)."
 requires-python = ">=3.11"
 dependencies = [

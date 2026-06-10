@@ -113,6 +113,18 @@ _BROWSER_MODE = os.environ.get("MCP_BROWSER_MODE", "fetch").strip().lower()
 _HEADLESS = os.environ.get("MCP_HEADLESS", "0").strip().lower() in ("1", "true", "yes")
 _STEALTH_UA = os.environ.get("MCP_STEALTH_UA", "0").strip().lower() in ("1", "true", "yes")
 
+
+def _keep_open_seconds() -> int:
+    """MCP_BROWSER_KEEP_OPEN: debug — keep the fetch-mode window open after a run so you
+    can inspect the Network tab. "1"/"true" -> 300s; a number -> that many seconds; else 0."""
+    v = os.environ.get("MCP_BROWSER_KEEP_OPEN", "0").strip().lower()
+    if v in ("1", "true", "yes"):
+        return 300
+    try:
+        return max(0, int(float(v)))
+    except ValueError:
+        return 0
+
 _client = None
 _reach_cache = None
 
@@ -139,7 +151,10 @@ def _get_client():
     elif _BROWSER:
         from .browser_fetch import BrowserFetchClient
 
-        _client = BrowserFetchClient(headless=_HEADLESS, reach_cache=_get_reach_cache())
+        _client = BrowserFetchClient(
+            headless=_HEADLESS, reach_cache=_get_reach_cache(),
+            keep_open_seconds=_keep_open_seconds(),
+        )
     elif CACHE_PATH.exists():
         _client = AdLibraryClient(
             SessionData.load(CACHE_PATH),
