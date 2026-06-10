@@ -292,7 +292,14 @@ fast after).
 
 - **Update** to the latest code: `uv cache clean` (uvx re-fetches on next launch). Pin a
   version by appending `@<tag>` to the git URL.
-- **Pacing** — Meta's `code 1675004` (rate limit) is keyed to the *request pattern*, not
+- **Transport** — by default the server now **drives a real Chromium** and reads results
+  off the network (`MCP_BROWSER=1`), so traffic is indistinguishable from you browsing —
+  the most reliable way around `code 1675004`. The window is **visible by default**
+  (`MCP_HEADLESS=0`) so you can watch; set `MCP_HEADLESS=1` to hide it, or `MCP_BROWSER=0`
+  to fall back to the legacy curl_cffi replay (which needs a bootstrapped session).
+  `MCP_STEALTH_UA=1` rotates the User-Agent per run. In browser mode no `bootstrap` is
+  needed — just search.
+- **Pacing** (curl mode) — Meta's `code 1675004` (rate limit) is keyed to the *request pattern*, not
   the IP. The reach/details query is the trigger, so by default reach runs **serial**
   (`MCP_REACH_WORKERS=1`) with a **jittered 1–3s pause** per request — mimicking a human
   opening "See ad details" one ad at a time. The reach cache + the scan's impressions-sort

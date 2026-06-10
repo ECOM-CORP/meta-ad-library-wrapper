@@ -98,23 +98,43 @@ _REACH_WORKERS = int(os.environ.get("MCP_REACH_WORKERS", "1"))
 _REACH_CACHE_PATH = str(_resolve("MCP_REACH_CACHE", "reach_cache.json"))
 _REACH_CACHE_TTL = float(os.environ.get("MCP_REACH_CACHE_TTL_DAYS", "3")) * 86400
 
-_client: AdLibraryClient | None = None
+# Transport for the actual queries:
+#   MCP_BROWSER=1 (default)  drive a real Chromium and read results off the network — no
+#                            token harvesting, no curl replay. Looks human; same IP that
+#                            browses freely. Set MCP_HEADLESS=1 to hide the window.
+#   MCP_BROWSER=0            legacy curl_cffi replay (needs a bootstrapped session_cache).
+_BROWSER = os.environ.get("MCP_BROWSER", "1").strip().lower() in ("1", "true", "yes")
+_HEADLESS = os.environ.get("MCP_HEADLESS", "0").strip().lower() in ("1", "true", "yes")
+_STEALTH_UA = os.environ.get("MCP_STEALTH_UA", "0").strip().lower() in ("1", "true", "yes")
+
+_client = None
 _reach_cache = None
 
 
-def _get_client() -> AdLibraryClient | None:
-    global _client, _reach_cache
-    if _client is None and CACHE_PATH.exists():
-        if _reach_cache is None:
-            from .cache import ReachCache
+def _get_reach_cache():
+    global _reach_cache
+    if _reach_cache is None:
+        from .cache import ReachCache
 
-            _reach_cache = ReachCache(_REACH_CACHE_PATH, _REACH_CACHE_TTL)
+        _reach_cache = ReachCache(_REACH_CACHE_PATH, _REACH_CACHE_TTL)
+    return _reach_cache
+
+
+def _get_client():
+    global _client
+    if _client is not None:
+        return _client
+    if _BROWSER:
+        from .browser import BrowserAdClient
+
+        _client = BrowserAdClient(
+            headless=_HEADLESS, reach_cache=_get_reach_cache(), stealth_ua=_STEALTH_UA,
+        )
+    elif CACHE_PATH.exists():
         _client = AdLibraryClient(
             SessionData.load(CACHE_PATH),
-            min_delay=_DELAY_MIN,
-            max_delay=_DELAY_MAX,
-            reach_workers=_REACH_WORKERS,
-            reach_cache=_reach_cache,
+            min_delay=_DELAY_MIN, max_delay=_DELAY_MAX,
+            reach_workers=_REACH_WORKERS, reach_cache=_get_reach_cache(),
         )
     return _client
 
@@ -301,9 +321,12 @@ async def scan_page(
 
 @mcp.tool()
 async def session_status(probe: bool = True) -> dict:
-    """Check the harvested session. Returns {cached, doc_id, has_details_doc_id,
-    age_minutes} and, when probe=true, `valid` from a tiny live request. If valid is
-    false, tell the user to re-run bootstrap_session()."""
+    """Check readiness. In browser mode (default) there is no harvested session to manage
+    — it reports ready and you can search right away (no bootstrap needed). In legacy
+    curl mode it reports the cached session + a live `valid` probe."""
+    if _BROWSER:
+        return {"mode": "browser", "headless": _HEADLESS, "valid": True,
+                "detail": "browser mode — no session to bootstrap; just search."}
     if not CACHE_PATH.exists():
         return {"cached": False, "valid": False, "detail": "no session_cache.json"}
     s = SessionData.load(CACHE_PATH)
@@ -348,6 +371,8 @@ async def bootstrap(country: str = "BG", headless: bool = True) -> dict:
     consent dialog. Slow (~20-40s). Returns the fresh doc_id and whether the reach
     (details) doc_id was captured."""
     global _client
+    if _BROWSER:
+        return {"status": "browser mode — no bootstrap needed; search directly."}
     try:
         session = await anyio.to_thread.run_sync(
             functools.partial(
@@ -374,6 +399,8 @@ async def server_version() -> dict:
     latest in the repo."""
     return {
         "version": __version__,
+        "transport": "browser" if _BROWSER else "curl",
+        "headless": _HEADLESS,
         "reach_workers": _REACH_WORKERS,
         "request_delay_seconds": [_DELAY_MIN, _DELAY_MAX],
     }
